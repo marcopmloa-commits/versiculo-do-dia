@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: "Fraunces"; font-weight: 500; src: url("../fontes/fraunces-latin-500.woff2") format("woff2"); }
+  @font-face { font-family: "Fraunces"; font-weight: 500; src: url("../fontes/fraunces-latin-ext-500.woff2") format("woff2"); unicode-range: U+0100-024F; }
+  @font-face { font-family: "Fraunces"; font-weight: 600; src: url("../fontes/fraunces-latin-600.woff2") format("woff2"); }
+  @font-face { font-family: "Fraunces"; font-weight: 600; src: url("../fontes/fraunces-latin-ext-600.woff2") format("woff2"); unicode-range: U+0100-024F; }
+  :root {
+    --fundo: #fbf9f4;      /* branco quente da página */
+    --papel: #f6efe0;      /* creme do arco */
+    --azul: #5a86c5;       /* azul claro do texto */
+    --borda: #6f9bd6;      /* azul da moldura */
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1920px; background: var(--fundo); overflow: hidden; }
+  body { position: relative; font-family: "Fraunces", serif; color: var(--azul); }
+  #grao { position: absolute; inset: 0; opacity: .5; }
+  /* arco: 840 x 1300, topo em 250 (fora da faixa de legenda/ícones do TikTok) */
+  #arco { position: absolute; left: 120px; top: 250px; width: 840px; height: 1300px; }
+  #conteudo {
+    position: absolute; left: 120px; top: 250px; width: 840px; height: 1300px;
+    padding: 330px 90px 90px; display: flex; flex-direction: column; align-items: center;
+  }
+  #rotulo { font-size: 30px; font-weight: 500; letter-spacing: .32em; text-transform: uppercase; opacity: .75; height: 60px; }
+  #texto {
+    flex: 1; display: flex; align-items: center; justify-content: center; text-align: center;
+    font-weight: 600; line-height: 1.32; width: 100%; text-wrap: balance;
+    font-variation-settings: "SOFT" 100, "WONK" 0;
+  }
+  #ref { font-size: 46px; font-weight: 600; height: 90px; display: flex; align-items: flex-end; }
+</style>
+</head>
+<body>
+<svg id="grao" width="1080" height="1920">
+  <filter id="ruido"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3"/>
+    <feColorMatrix values="0 0 0 0 .55  0 0 0 0 .5  0 0 0 0 .42  0 0 0 .09 0"/></filter>
+  <rect width="1080" height="1920" filter="url(#ruido)"/>
+</svg>
+<svg id="arco" width="840" height="1300" viewBox="0 0 840 1300">
+  <defs>
+    <!-- moldura "carimbada": falhas e rachaduras finas como na impressão do adesivo -->
+    <filter id="gasto" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".055" numOctaves="3" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3"/>
+      <feComponentTransfer result="b"><feFuncA type="linear" slope="1"/></feComponentTransfer>
+      <feTurbulence type="fractalNoise" baseFrequency=".35" numOctaves="2" seed="11" result="m"/>
+      <feColorMatrix in="m" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -3.2 2.1" result="mascara"/>
+      <feComposite in="b" in2="mascara" operator="in"/>
+    </filter>
+    <filter id="papelgrao"><feTurbulence type="fractalNoise" baseFrequency=".6" numOctaves="3" seed="5"/>
+      <feColorMatrix values="0 0 0 0 .62  0 0 0 0 .55  0 0 0 0 .42  0 0 0 .10 0"/></filter>
+    <clipPath id="dentro"><path d="M0,1300 L0,420 A420,420 0 0 1 840,420 L840,1300 Z"/></clipPath>
+  </defs>
+  <path d="M0,1300 L0,420 A420,420 0 0 1 840,420 L840,1300 Z" fill="var(--papel)"/>
+  <rect width="840" height="1300" filter="url(#papelgrao)" clip-path="url(#dentro)"/>
+  <g filter="url(#gasto)" fill="none" stroke="var(--borda)">
+    <path d="M10,1290 L10,420 A410,410 0 0 1 830,420 L830,1290 Z" stroke-width="9"/>
+    <path d="M26,1274 L26,420 A394,394 0 0 1 814,420 L814,1274 Z" stroke-width="2.5"/>
+  </g>
+</svg>
+<div id="conteudo">
+  <div id="rotulo"></div>
+  <div id="texto"></div>
+  <div id="ref"></div>
+</div>
+<script>
+  // Desenha um quadro. Diminui a fonte até o texto caber.
+  window.desenhar = async (c) => {
+    document.getElementById("rotulo").textContent = c.rotulo || "";
+    document.getElementById("ref").textContent = c.ref || "";
+    const t = document.getElementById("texto");
+    t.textContent = c.texto;
+    await document.fonts.ready;
+    const maxH = t.clientHeight, maxW = t.clientWidth;
+    let tam = c.tamanho || 78;
+    t.innerHTML = '<span id="s"></span>';
+    const s = document.getElementById("s"); s.textContent = c.texto;
+    do { s.style.fontSize = tam + "px"; tam -= 2; }
+    while ((s.offsetHeight > maxH || s.offsetWidth > maxW) && tam > 30);
+  };
+</script>
+</body>
+</html>

@@ -17,19 +17,19 @@
   html, body { width: 1080px; height: 1920px; background: var(--fundo); overflow: hidden; }
   body { position: relative; font-family: "Fraunces", serif; color: var(--azul); }
   #grao { position: absolute; inset: 0; opacity: .5; }
-  /* arco: 840 x 1300, topo em 250 (fora da faixa de legenda/ícones do TikTok) */
-  #arco { position: absolute; left: 120px; top: 250px; width: 840px; height: 1300px; }
+  /* arco: 940 x 1640, quase a tela toda (9:16) */
+  #arco { position: absolute; left: 70px; top: 140px; width: 940px; height: 1640px; }
   #conteudo {
-    position: absolute; left: 120px; top: 250px; width: 840px; height: 1300px;
-    padding: 330px 90px 90px; display: flex; flex-direction: column; align-items: center;
+    position: absolute; left: 70px; top: 140px; width: 940px; height: 1640px;
+    padding: 330px 105px 120px; display: flex; flex-direction: column; align-items: center;
   }
-  #rotulo { font-size: 30px; font-weight: 500; letter-spacing: .32em; text-transform: uppercase; opacity: .75; height: 60px; }
+  #rotulo { font-size: 30px; font-weight: 500; letter-spacing: .32em; text-transform: uppercase; opacity: .75; height: 70px; }
   #texto {
     flex: 1; display: flex; align-items: center; justify-content: center; text-align: center;
     font-weight: 600; line-height: 1.32; width: 100%; text-wrap: balance;
     font-variation-settings: "SOFT" 100, "WONK" 0;
   }
-  #ref { font-size: 46px; font-weight: 600; height: 90px; display: flex; align-items: flex-end; }
+  #ref { font-size: 52px; font-weight: 600; height: 90px; display: flex; align-items: flex-end; }
 </style>
 </head>
 <body>
@@ -38,7 +38,7 @@
     <feColorMatrix values="0 0 0 0 .55  0 0 0 0 .5  0 0 0 0 .42  0 0 0 .09 0"/></filter>
   <rect width="1080" height="1920" filter="url(#ruido)"/>
 </svg>
-<svg id="arco" width="840" height="1300" viewBox="0 0 840 1300">
+<svg id="arco" width="940" height="1640" viewBox="0 0 940 1640">
   <defs>
     <!-- moldura "carimbada": falhas e rachaduras finas como na impressão do adesivo -->
     <filter id="gasto" x="-5%" y="-5%" width="110%" height="110%">
@@ -51,13 +51,13 @@
     </filter>
     <filter id="papelgrao"><feTurbulence type="fractalNoise" baseFrequency=".6" numOctaves="3" seed="5"/>
       <feColorMatrix values="0 0 0 0 .62  0 0 0 0 .55  0 0 0 0 .42  0 0 0 .10 0"/></filter>
-    <clipPath id="dentro"><path d="M0,1300 L0,420 A420,420 0 0 1 840,420 L840,1300 Z"/></clipPath>
+    <clipPath id="dentro"><path d="M0,1640 L0,470 A470,470 0 0 1 940,470 L940,1640 Z"/></clipPath>
   </defs>
-  <path d="M0,1300 L0,420 A420,420 0 0 1 840,420 L840,1300 Z" fill="var(--papel)"/>
-  <rect width="840" height="1300" filter="url(#papelgrao)" clip-path="url(#dentro)"/>
+  <path d="M0,1640 L0,470 A470,470 0 0 1 940,470 L940,1640 Z" fill="var(--papel)"/>
+  <rect width="940" height="1640" filter="url(#papelgrao)" clip-path="url(#dentro)"/>
   <g filter="url(#gasto)" fill="none" stroke="var(--borda)">
-    <path d="M10,1290 L10,420 A410,410 0 0 1 830,420 L830,1290 Z" stroke-width="9"/>
-    <path d="M26,1274 L26,420 A394,394 0 0 1 814,420 L814,1274 Z" stroke-width="2.5"/>
+    <path d="M10,1630 L10,470 A460,460 0 0 1 930,470 L930,1630 Z" stroke-width="10"/>
+    <path d="M28,1612 L28,470 A442,442 0 0 1 912,470 L912,1612 Z" stroke-width="3"/>
   </g>
 </svg>
 <div id="conteudo">
@@ -74,7 +74,7 @@
     t.textContent = c.texto;
     await document.fonts.ready;
     const maxH = t.clientHeight, maxW = t.clientWidth;
-    let tam = c.tamanho || 78;
+    let tam = c.tamanho || 90;
     t.innerHTML = '<span id="s"></span>';
     const s = document.getElementById("s"); s.textContent = c.texto;
     do { s.style.fontSize = tam + "px"; tam -= 2; }

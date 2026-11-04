@@ -8,7 +8,8 @@ import numpy as np
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 RAIZ = os.path.abspath(os.path.join(AQUI, "..", ".."))
-VOZ = os.environ.get("VOZ", "pt-BR-AntonioNeural:-6%:-2Hz")   # nome:velocidade:tom
+VOZES = {"antonio": "pt-BR-AntonioNeural:-6%:-2Hz", "thalita": "pt-BR-ThalitaMultilingualNeural:-6%:+0Hz"}  # nome:velocidade:tom
+VOZ = os.environ.get("VOZ", VOZES["antonio"])
 SR = 24000
 TRANSICAO = 0.6          # segundos do esmaecimento entre quadros
 HASHTAGS_PADRAO = ["#versiculododia", "#biblia", "#palavradedeus", "#fe", "#deus"]
@@ -30,10 +31,14 @@ def ref_falada(ref):
         else: s += f", versículo {v}"
     return s + "."
 
+def falada(t):
+    """Ajustes só para a narração (o texto na tela fica igual ao do app)."""
+    return re.sub(r"\bd(Ele|Ela)\b", lambda m: "d" + m.group(1).lower(), t)
+
 def frases(t):
     return [f.strip() for f in re.split(r"(?<=[.!?…])\s+(?=[A-ZÁÉÍÓÚÂÊÔÃÕÇ“\"«—-])", t.strip()) if f.strip()]
 
-def trechos(paragrafos, max_palavras=30):
+def trechos(paragrafos, max_palavras=26):
     """Divide a reflexão em quadros de até ~max_palavras (sem quebrar frase, exceto frases enormes)."""
     out = []
     for p in paragrafos:
@@ -53,11 +58,11 @@ def trechos(paragrafos, max_palavras=30):
     return out
 
 # ---------- voz ----------
-def tts(textos, wav):
+def tts(textos, wav, voz=None):
     """Narra os trechos num fluxo só. Devolve (duração, [início de cada trecho em s])."""
     import edge_tts
-    nome, rate, pitch = VOZ.split(":")
-    texto = " ".join(textos)
+    nome, rate, pitch = (voz or VOZ).split(":")
+    texto = falada(" ".join(textos))
     mp3 = wav[:-4] + ".mp3"; marcas = []
     async def run():
         c = edge_tts.Communicate(texto, nome, rate=rate, pitch=pitch, boundary="WordBoundary",
@@ -136,20 +141,23 @@ def gerar(entrada, forcar=False):
     # reflexão
     r_trechos = trechos(d["reflexao"] if isinstance(d["reflexao"], list) else [d["reflexao"]])
 
-    dv, iv = tts(v_trechos + [ref_txt], os.path.join(tmp, "v.wav"))
-    dr, ir = tts(r_trechos, os.path.join(tmp, "r.wav"))
+    # voz: campo "voz" da entrada (antonio/thalita); se faltar, alterna pelo número do arquivo
+    num = int(re.match(r"\d+", nome).group()) if re.match(r"\d+", nome) else 1
+    voz = VOZES.get(d.get("voz") or ("antonio" if num % 2 else "thalita"), VOZ)
+    dv, iv = tts(v_trechos + [ref_txt], os.path.join(tmp, "v.wav"), voz)
+    dr, ir = tts(r_trechos, os.path.join(tmp, "r.wav"), voz)
 
     INICIO, PAUSA, FIM = 0.5, 1.4, 3.2
     quadros, tempos = [], []
     for k, tx in enumerate(v_trechos):
-        quadros.append({"texto": tx, "ref": ref, "rotulo": "", "tamanho": 82})
+        quadros.append({"texto": tx, "ref": ref, "rotulo": "", "tamanho": 96})
         tempos.append(0.0 if k == 0 else INICIO + iv[k] - 0.25)
     off_r = INICIO + dv + PAUSA
     for k, tx in enumerate(r_trechos):
-        quadros.append({"texto": tx, "ref": ref, "rotulo": "reflexão", "tamanho": 66})
+        quadros.append({"texto": tx, "ref": ref, "rotulo": "reflexão", "tamanho": 76})
         tempos.append(off_r + ir[k] - 0.35)
     fim_voz = off_r + dr
-    quadros.append({"texto": d["versiculo"], "ref": ref, "rotulo": "", "tamanho": 82})
+    quadros.append({"texto": d["versiculo"], "ref": ref, "rotulo": "", "tamanho": 96})
     tempos.append(fim_voz + 0.5)
     total = fim_voz + FIM
 

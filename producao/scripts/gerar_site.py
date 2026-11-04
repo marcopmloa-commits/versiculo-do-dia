@@ -3,7 +3,7 @@ import html, json, os, glob, re
 AQUI = os.path.dirname(os.path.abspath(__file__))
 RAIZ = os.path.abspath(os.path.join(AQUI, "..", ".."))
 REPO = "marcopmloa-commits/versiculo-do-dia"
-NOME = "Inabaláveis"
+NOME = "Versículo Diário"
 
 def gerar():
     itens = []

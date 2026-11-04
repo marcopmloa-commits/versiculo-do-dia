@@ -33,7 +33,7 @@ def ref_falada(ref):
 
 def falada(t):
     """Ajustes só para a narração (o texto na tela fica igual ao do app)."""
-    return re.sub(r"\bd(Ele|Ela)\b", lambda m: "d" + m.group(1).lower(), t)
+    return re.sub(r"\bd'?(Ele|Ela)\b", lambda m: "d" + m.group(1).lower(), t)
 
 def frases(t):
     return [f.strip() for f in re.split(r"(?<=[.!?…])\s+(?=[A-ZÁÉÍÓÚÂÊÔÃÕÇ“\"«—-])", t.strip()) if f.strip()]
@@ -150,14 +150,14 @@ def gerar(entrada, forcar=False):
     INICIO, PAUSA, FIM = 0.5, 1.4, 3.2
     quadros, tempos = [], []
     for k, tx in enumerate(v_trechos):
-        quadros.append({"texto": tx, "ref": ref, "rotulo": "", "tamanho": 96})
+        quadros.append({"texto": tx, "ref": ref, "rotulo": "", "tamanho": 96 if len(tx.split()) > 12 else 130})
         tempos.append(0.0 if k == 0 else INICIO + iv[k] - 0.25)
     off_r = INICIO + dv + PAUSA
     for k, tx in enumerate(r_trechos):
         quadros.append({"texto": tx, "ref": ref, "rotulo": "reflexão", "tamanho": 76})
         tempos.append(off_r + ir[k] - 0.35)
     fim_voz = off_r + dr
-    quadros.append({"texto": d["versiculo"], "ref": ref, "rotulo": "", "tamanho": 96})
+    quadros.append({"texto": d["versiculo"], "ref": ref, "rotulo": "", "tamanho": 96 if len(d["versiculo"].split()) > 12 else 130})
     tempos.append(fim_voz + 0.5)
     total = fim_voz + FIM
 

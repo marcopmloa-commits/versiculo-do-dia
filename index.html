@@ -3,240 +3,220 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Versículo do Dia — vídeos</title>
+<meta name="robots" content="noindex">
+<title>Inabaláveis — vídeos para postar</title>
+<link rel="icon" href="perfil.png"><link rel="apple-touch-icon" href="perfil.png">
 <style>
   @font-face { font-family: "Fraunces"; font-weight: 600; src: url("producao/fontes/fraunces-latin-600.woff2") format("woff2"); }
   @font-face { font-family: "Fraunces"; font-weight: 600; src: url("producao/fontes/fraunces-latin-ext-600.woff2") format("woff2"); unicode-range: U+0100-024F; }
-  :root { --fundo:#fbf9f4; --papel:#f6efe0; --azul:#5a86c5; --borda:#6f9bd6; --texto:#3d5f91; }
+  :root { --fundo:#fbf9f4; --papel:#f6efe0; --azul:#5a86c5; --borda:#d9e3f1; --texto:#3d5f91; --suave:#8a9ab3; }
   * { box-sizing: border-box; }
   body { margin:0; background:var(--fundo); color:var(--texto); font-family: system-ui, -apple-system, sans-serif; }
-  header { max-width: 420px; margin: 32px auto 8px; padding: 0 16px; }
-  .arco { background:var(--papel); border:3px solid var(--borda); outline:1px solid var(--borda); outline-offset:-10px;
-           border-radius: 210px 210px 6px 6px; padding: 90px 28px 32px; text-align:center; }
+  .w { max-width: 680px; margin: 0 auto; padding: 20px 16px 60px; }
+  header { display:flex; gap:14px; align-items:center; }
+  header img { width:64px; height:64px; border-radius:50%; }
   h1, h2 { font-family:"Fraunces", Georgia, serif; font-weight:600; color:var(--azul); margin:0; }
-  h1 { font-size: 34px; }
-  header p { margin:10px 0 0; font-size:15px; }
-  main { max-width: 1100px; margin: 24px auto 60px; padding: 0 16px; display:grid; gap:20px;
-          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
-  .card { background:#fff; border:1px solid #e3e9f3; border-radius:14px; overflow:hidden; }
-  video { width:100%; aspect-ratio:9/16; background:var(--papel); display:block; }
-  .info { padding: 14px 16px 18px; display:flex; flex-direction:column; gap:8px; }
-  h2 { font-size: 22px; }
-  .meta { margin:0; font-size:13px; opacity:.7; }
-  label { font-size:13px; font-weight:600; margin-top:6px; }
-  textarea { width:100%; font: 14px/1.4 system-ui, sans-serif; color:var(--texto); border:1px solid #dbe3ef; border-radius:8px; padding:8px; resize:vertical; background:var(--fundo); }
-  .btn { display:block; text-align:center; text-decoration:none; background:var(--azul); color:#fff; border:0; border-radius:10px;
-          padding:12px; font-size:15px; font-weight:600; cursor:pointer; }
-  .btn.sec { background:#fff; color:var(--azul); border:1.5px solid var(--azul); }
-  .vazio { text-align:center; grid-column: 1/-1; opacity:.7; }
+  h1 { font-size: 24px; }
+  .sub { color:var(--suave); font-size:14px; }
+  article { display:flex; gap:14px; background:#fff; border:1px solid var(--borda); border-radius:12px; padding:16px; margin-top:16px; }
+  .n { font-family:"Fraunces", Georgia, serif; font-size:30px; font-weight:600; color:var(--azul); min-width:34px; }
+  .c { flex:1; min-width:0; }
+  h2 { font-size: 20px; margin-bottom: 2px; }
+  .meta { color:var(--suave); font-size:13px; margin-bottom:8px; }
+  .btn { display:block; width:100%; text-align:center; padding:12px; border-radius:8px; font-size:16px; font-weight:600;
+          border:0; margin:8px 0; cursor:pointer; text-decoration:none; font-family:inherit; }
+  .dl { background:var(--azul); color:#fff; }
+  .cp { background:var(--papel); color:var(--texto); }
+  .ok { background:#fff; color:var(--suave); border:1.5px solid var(--borda); }
+  pre { white-space:pre-wrap; background:var(--fundo); border-radius:8px; padding:10px; font-size:14px; font-family:inherit; margin:8px 0 0; }
+  .vazio { text-align:center; margin-top:40px; }
 </style>
 </head>
-<body>
-<header><div class="arco"><h1>Versículo do Dia</h1><p>Vídeos prontos para baixar e postar, com a legenda do post.</p></div></header>
-<main>
-  <article class="card">
-    <video src="videos/014-joao-3-36.mp4" poster="videos/014-joao-3-36.jpg" controls preload="none" playsinline></video>
-    <div class="info">
-      <h2>João 3:36</h2>
-      <p class="meta">0:53 · 3.6 MB</p>
-      <a class="btn" href="videos/014-joao-3-36.mp4" download="014-joao-3-36.mp4">Baixar vídeo</a>
-      <label>Legenda do post</label>
-      <textarea readonly rows="6">“Aquele que crê no Filho tem a vida eterna; mas aquele que não crê no Filho não verá a vida, mas a ira de Deus sobre ele permanece.”
-— João 3:36
+<body><div class="w">
+<header><img src="perfil.png" alt=""><div><h1>Inabaláveis</h1><div class="sub">Vídeos para postar · <span id="qtd">14</span> na fila</div></div></header>
 
-#versiculododia #biblia #fe #joao #vidaeterna</textarea>
-      <button class="btn sec" onclick="copiar(this)">Copiar legenda</button>
-    </div>
-  </article>
-  <article class="card">
-    <video src="videos/013-1-joao-4-16.mp4" poster="videos/013-1-joao-4-16.jpg" controls preload="none" playsinline></video>
-    <div class="info">
-      <h2>1 João 4:16</h2>
-      <p class="meta">0:59 · 3.9 MB</p>
-      <a class="btn" href="videos/013-1-joao-4-16.mp4" download="013-1-joao-4-16.mp4">Baixar vídeo</a>
-      <label>Legenda do post</label>
-      <textarea readonly rows="6">“E nós conhecemos, e cremos no amor que Deus nos tem. Deus é amor; e quem está em amor está em Deus, e Deus nele.”
-— 1 João 4:16
-
-#versiculododia #biblia #fe #joao #deuseamor</textarea>
-      <button class="btn sec" onclick="copiar(this)">Copiar legenda</button>
-    </div>
-  </article>
-  <article class="card">
-    <video src="videos/012-2-corintios-5-21.mp4" poster="videos/012-2-corintios-5-21.jpg" controls preload="none" playsinline></video>
-    <div class="info">
-      <h2>2 Coríntios 5:21</h2>
-      <p class="meta">1:05 · 4.3 MB</p>
-      <a class="btn" href="videos/012-2-corintios-5-21.mp4" download="012-2-corintios-5-21.mp4">Baixar vídeo</a>
-      <label>Legenda do post</label>
-      <textarea readonly rows="6">“Àquele que não conheceu pecado, o fez pecado por nós; para que nele fôssemos feitos justiça de Deus.”
-— 2 Coríntios 5:21
-
-#versiculododia #biblia #fe #corintios #graca</textarea>
-      <button class="btn sec" onclick="copiar(this)">Copiar legenda</button>
-    </div>
-  </article>
-  <article class="card">
-    <video src="videos/011-exodo-20-13.mp4" poster="videos/011-exodo-20-13.jpg" controls preload="none" playsinline></video>
-    <div class="info">
-      <h2>Êxodo 20:13</h2>
-      <p class="meta">0:45 · 2.8 MB</p>
-      <a class="btn" href="videos/011-exodo-20-13.mp4" download="011-exodo-20-13.mp4">Baixar vídeo</a>
-      <label>Legenda do post</label>
-      <textarea readonly rows="6">“Não matarás.”
-— Êxodo 20:13
-
-#versiculododia #biblia #fe #exodo #dezmandamentos</textarea>
-      <button class="btn sec" onclick="copiar(this)">Copiar legenda</button>
-    </div>
-  </article>
-  <article class="card">
-    <video src="videos/010-apocalipse-22-12.mp4" poster="videos/010-apocalipse-22-12.jpg" controls preload="none" playsinline></video>
-    <div class="info">
-      <h2>Apocalipse 22:12</h2>
-      <p class="meta">0:58 · 3.9 MB</p>
-      <a class="btn" href="videos/010-apocalipse-22-12.mp4" download="010-apocalipse-22-12.mp4">Baixar vídeo</a>
-      <label>Legenda do post</label>
-      <textarea readonly rows="6">“Eis que venho em breve! A minha recompensa está comigo, e eu retribuirei a cada um de acordo com o que fez.”
-— Apocalipse 22:12
-
-#versiculododia #biblia #fe #apocalipse #voltadejesus</textarea>
-      <button class="btn sec" onclick="copiar(this)">Copiar legenda</button>
-    </div>
-  </article>
-  <article class="card">
-    <video src="videos/009-numeros-6-24-26.mp4" poster="videos/009-numeros-6-24-26.jpg" controls preload="none" playsinline></video>
-    <div class="info">
-      <h2>Números 6:24-26</h2>
-      <p class="meta">1:04 · 4.1 MB</p>
-      <a class="btn" href="videos/009-numeros-6-24-26.mp4" download="009-numeros-6-24-26.mp4">Baixar vídeo</a>
-      <label>Legenda do post</label>
-      <textarea readonly rows="6">“O Senhor te abençoe e te guarde; O Senhor faça resplandecer o seu rosto sobre ti, e tenha misericórdia de ti; O Senhor sobre ti levante o seu rosto e te dê a paz.”
-— Números 6:24-26
-
-#versiculododia #biblia #fe #numeros #bencao</textarea>
-      <button class="btn sec" onclick="copiar(this)">Copiar legenda</button>
-    </div>
-  </article>
-  <article class="card">
-    <video src="videos/008-2-corintios-5-10.mp4" poster="videos/008-2-corintios-5-10.jpg" controls preload="none" playsinline></video>
-    <div class="info">
-      <h2>2 Coríntios 5:10</h2>
-      <p class="meta">1:02 · 4.1 MB</p>
-      <a class="btn" href="videos/008-2-corintios-5-10.mp4" download="008-2-corintios-5-10.mp4">Baixar vídeo</a>
-      <label>Legenda do post</label>
-      <textarea readonly rows="6">“Pois todos nós devemos comparecer perante o tribunal de Cristo, para que cada um receba de acordo com as obras praticadas por meio do corpo, quer sejam boas quer sejam más.”
-— 2 Coríntios 5:10
-
-#versiculododia #biblia #fe #corintios #vidacrista</textarea>
-      <button class="btn sec" onclick="copiar(this)">Copiar legenda</button>
-    </div>
-  </article>
-  <article class="card">
-    <video src="videos/007-romanos-12-14-15.mp4" poster="videos/007-romanos-12-14-15.jpg" controls preload="none" playsinline></video>
-    <div class="info">
-      <h2>Romanos 12:14-15</h2>
-      <p class="meta">0:59 · 3.9 MB</p>
-      <a class="btn" href="videos/007-romanos-12-14-15.mp4" download="007-romanos-12-14-15.mp4">Baixar vídeo</a>
-      <label>Legenda do post</label>
-      <textarea readonly rows="6">“Abençoai os que vos perseguem; abençoai-os, e não os praguejeis. Alegrai-vos com os que se alegram; chorai com os que choram.”
-— Romanos 12:14-15
-
-#versiculododia #biblia #fe #romanos #amoraoproximo</textarea>
-      <button class="btn sec" onclick="copiar(this)">Copiar legenda</button>
-    </div>
-  </article>
-  <article class="card">
-    <video src="videos/006-salmos-51-17.mp4" poster="videos/006-salmos-51-17.jpg" controls preload="none" playsinline></video>
-    <div class="info">
-      <h2>Salmos 51:17</h2>
-      <p class="meta">0:54 · 3.6 MB</p>
-      <a class="btn" href="videos/006-salmos-51-17.mp4" download="006-salmos-51-17.mp4">Baixar vídeo</a>
-      <label>Legenda do post</label>
-      <textarea readonly rows="6">“Os sacrifícios para Deus são o espírito quebrantado; a um coração quebrantado e contrito não desprezarás, ó Deus.”
-— Salmos 51:17
-
-#versiculododia #biblia #fe #salmos #perdao</textarea>
-      <button class="btn sec" onclick="copiar(this)">Copiar legenda</button>
-    </div>
-  </article>
-  <article class="card">
-    <video src="videos/005-lucas-14-26.mp4" poster="videos/005-lucas-14-26.jpg" controls preload="none" playsinline></video>
-    <div class="info">
-      <h2>Lucas 14:26</h2>
-      <p class="meta">1:35 · 6.3 MB</p>
-      <a class="btn" href="videos/005-lucas-14-26.mp4" download="005-lucas-14-26.mp4">Baixar vídeo</a>
-      <label>Legenda do post</label>
-      <textarea readonly rows="6">“Se alguém vem a mim e ama seu pai, sua mãe, sua mulher, seus filhos, seus irmãos e irmãs e até sua própria vida mais do que a mim, não pode ser meu discípulo.”
-— Lucas 14:26
-
-#versiculododia #biblia #fe #lucas #discipulado</textarea>
-      <button class="btn sec" onclick="copiar(this)">Copiar legenda</button>
-    </div>
-  </article>
-  <article class="card">
-    <video src="videos/004-filipenses-2-13.mp4" poster="videos/004-filipenses-2-13.jpg" controls preload="none" playsinline></video>
-    <div class="info">
-      <h2>Filipenses 2:13</h2>
-      <p class="meta">0:45 · 2.9 MB</p>
-      <a class="btn" href="videos/004-filipenses-2-13.mp4" download="004-filipenses-2-13.mp4">Baixar vídeo</a>
-      <label>Legenda do post</label>
-      <textarea readonly rows="6">“Pois é Deus quem efetua em vocês tanto o querer quanto o realizar, de acordo com a boa vontade dele.”
-— Filipenses 2:13
-
-#versiculododia #biblia #fe #filipenses #proposito</textarea>
-      <button class="btn sec" onclick="copiar(this)">Copiar legenda</button>
-    </div>
-  </article>
-  <article class="card">
-    <video src="videos/003-efesios-6-17.mp4" poster="videos/003-efesios-6-17.jpg" controls preload="none" playsinline></video>
-    <div class="info">
-      <h2>Efésios 6:17</h2>
-      <p class="meta">0:55 · 3.6 MB</p>
-      <a class="btn" href="videos/003-efesios-6-17.mp4" download="003-efesios-6-17.mp4">Baixar vídeo</a>
-      <label>Legenda do post</label>
-      <textarea readonly rows="6">“Usem o capacete da salvação e a espada do Espírito, que é a palavra de Deus.”
-— Efésios 6:17
-
-#versiculododia #biblia #fe #efesios #armaduradedeus</textarea>
-      <button class="btn sec" onclick="copiar(this)">Copiar legenda</button>
-    </div>
-  </article>
-  <article class="card">
-    <video src="videos/002-tiago-1-17.mp4" poster="videos/002-tiago-1-17.jpg" controls preload="none" playsinline></video>
-    <div class="info">
-      <h2>Tiago 1:17</h2>
-      <p class="meta">0:47 · 3.1 MB</p>
-      <a class="btn" href="videos/002-tiago-1-17.mp4" download="002-tiago-1-17.mp4">Baixar vídeo</a>
-      <label>Legenda do post</label>
-      <textarea readonly rows="6">“Toda boa dádiva e todo dom perfeito vêm do alto, descendo do Pai das luzes, que não muda como sombras inconstantes.”
-— Tiago 1:17
-
-#versiculododia #biblia #fe #tiago #gratidao</textarea>
-      <button class="btn sec" onclick="copiar(this)">Copiar legenda</button>
-    </div>
-  </article>
-  <article class="card">
-    <video src="videos/001-ezequiel-18-4.mp4" poster="videos/001-ezequiel-18-4.jpg" controls preload="none" playsinline></video>
-    <div class="info">
-      <h2>Ezequiel 18:4</h2>
-      <p class="meta">0:56 · 3.6 MB</p>
-      <a class="btn" href="videos/001-ezequiel-18-4.mp4" download="001-ezequiel-18-4.mp4">Baixar vídeo</a>
-      <label>Legenda do post</label>
-      <textarea readonly rows="6">“Eis que todas as almas são minhas; como o é a alma do pai, assim também a alma do filho é minha: a alma que pecar, essa morrerá.”
+<article id="001-ezequiel-18-4"><div class="n">1</div><div class="c">
+ <h2>Ezequiel 18:4</h2>
+ <div class="meta">0:56</div>
+ <a class="btn dl" href="videos/001-ezequiel-18-4.mp4" download="001-ezequiel-18-4.mp4">⬇ Baixar vídeo</a>
+ <pre>“Eis que todas as almas são minhas; como o é a alma do pai, assim também a alma do filho é minha: a alma que pecar, essa morrerá.”
 — Ezequiel 18:4
 
-#versiculododia #biblia #fe #ezequiel #arrependimento</textarea>
-      <button class="btn sec" onclick="copiar(this)">Copiar legenda</button>
-    </div>
-  </article>
-</main>
+#versiculododia #biblia #fe #ezequiel #arrependimento</pre>
+ <button class="btn cp" onclick="cp(this)">📋 Copiar legenda</button>
+ <button class="btn ok" onclick="postei('001-ezequiel-18-4', this)">✔ Já postei</button>
+</div></article>
+<article id="002-tiago-1-17"><div class="n">2</div><div class="c">
+ <h2>Tiago 1:17</h2>
+ <div class="meta">0:47</div>
+ <a class="btn dl" href="videos/002-tiago-1-17.mp4" download="002-tiago-1-17.mp4">⬇ Baixar vídeo</a>
+ <pre>“Toda boa dádiva e todo dom perfeito vêm do alto, descendo do Pai das luzes, que não muda como sombras inconstantes.”
+— Tiago 1:17
+
+#versiculododia #biblia #fe #tiago #gratidao</pre>
+ <button class="btn cp" onclick="cp(this)">📋 Copiar legenda</button>
+ <button class="btn ok" onclick="postei('002-tiago-1-17', this)">✔ Já postei</button>
+</div></article>
+<article id="003-efesios-6-17"><div class="n">3</div><div class="c">
+ <h2>Efésios 6:17</h2>
+ <div class="meta">0:55</div>
+ <a class="btn dl" href="videos/003-efesios-6-17.mp4" download="003-efesios-6-17.mp4">⬇ Baixar vídeo</a>
+ <pre>“Usem o capacete da salvação e a espada do Espírito, que é a palavra de Deus.”
+— Efésios 6:17
+
+#versiculododia #biblia #fe #efesios #armaduradedeus</pre>
+ <button class="btn cp" onclick="cp(this)">📋 Copiar legenda</button>
+ <button class="btn ok" onclick="postei('003-efesios-6-17', this)">✔ Já postei</button>
+</div></article>
+<article id="004-filipenses-2-13"><div class="n">4</div><div class="c">
+ <h2>Filipenses 2:13</h2>
+ <div class="meta">0:45</div>
+ <a class="btn dl" href="videos/004-filipenses-2-13.mp4" download="004-filipenses-2-13.mp4">⬇ Baixar vídeo</a>
+ <pre>“Pois é Deus quem efetua em vocês tanto o querer quanto o realizar, de acordo com a boa vontade dele.”
+— Filipenses 2:13
+
+#versiculododia #biblia #fe #filipenses #proposito</pre>
+ <button class="btn cp" onclick="cp(this)">📋 Copiar legenda</button>
+ <button class="btn ok" onclick="postei('004-filipenses-2-13', this)">✔ Já postei</button>
+</div></article>
+<article id="005-lucas-14-26"><div class="n">5</div><div class="c">
+ <h2>Lucas 14:26</h2>
+ <div class="meta">1:35</div>
+ <a class="btn dl" href="videos/005-lucas-14-26.mp4" download="005-lucas-14-26.mp4">⬇ Baixar vídeo</a>
+ <pre>“Se alguém vem a mim e ama seu pai, sua mãe, sua mulher, seus filhos, seus irmãos e irmãs e até sua própria vida mais do que a mim, não pode ser meu discípulo.”
+— Lucas 14:26
+
+#versiculododia #biblia #fe #lucas #discipulado</pre>
+ <button class="btn cp" onclick="cp(this)">📋 Copiar legenda</button>
+ <button class="btn ok" onclick="postei('005-lucas-14-26', this)">✔ Já postei</button>
+</div></article>
+<article id="006-salmos-51-17"><div class="n">6</div><div class="c">
+ <h2>Salmos 51:17</h2>
+ <div class="meta">0:54</div>
+ <a class="btn dl" href="videos/006-salmos-51-17.mp4" download="006-salmos-51-17.mp4">⬇ Baixar vídeo</a>
+ <pre>“Os sacrifícios para Deus são o espírito quebrantado; a um coração quebrantado e contrito não desprezarás, ó Deus.”
+— Salmos 51:17
+
+#versiculododia #biblia #fe #salmos #perdao</pre>
+ <button class="btn cp" onclick="cp(this)">📋 Copiar legenda</button>
+ <button class="btn ok" onclick="postei('006-salmos-51-17', this)">✔ Já postei</button>
+</div></article>
+<article id="007-romanos-12-14-15"><div class="n">7</div><div class="c">
+ <h2>Romanos 12:14-15</h2>
+ <div class="meta">0:59</div>
+ <a class="btn dl" href="videos/007-romanos-12-14-15.mp4" download="007-romanos-12-14-15.mp4">⬇ Baixar vídeo</a>
+ <pre>“Abençoai os que vos perseguem; abençoai-os, e não os praguejeis. Alegrai-vos com os que se alegram; chorai com os que choram.”
+— Romanos 12:14-15
+
+#versiculododia #biblia #fe #romanos #amoraoproximo</pre>
+ <button class="btn cp" onclick="cp(this)">📋 Copiar legenda</button>
+ <button class="btn ok" onclick="postei('007-romanos-12-14-15', this)">✔ Já postei</button>
+</div></article>
+<article id="008-2-corintios-5-10"><div class="n">8</div><div class="c">
+ <h2>2 Coríntios 5:10</h2>
+ <div class="meta">1:02</div>
+ <a class="btn dl" href="videos/008-2-corintios-5-10.mp4" download="008-2-corintios-5-10.mp4">⬇ Baixar vídeo</a>
+ <pre>“Pois todos nós devemos comparecer perante o tribunal de Cristo, para que cada um receba de acordo com as obras praticadas por meio do corpo, quer sejam boas quer sejam más.”
+— 2 Coríntios 5:10
+
+#versiculododia #biblia #fe #corintios #vidacrista</pre>
+ <button class="btn cp" onclick="cp(this)">📋 Copiar legenda</button>
+ <button class="btn ok" onclick="postei('008-2-corintios-5-10', this)">✔ Já postei</button>
+</div></article>
+<article id="009-numeros-6-24-26"><div class="n">9</div><div class="c">
+ <h2>Números 6:24-26</h2>
+ <div class="meta">1:04</div>
+ <a class="btn dl" href="videos/009-numeros-6-24-26.mp4" download="009-numeros-6-24-26.mp4">⬇ Baixar vídeo</a>
+ <pre>“O Senhor te abençoe e te guarde; O Senhor faça resplandecer o seu rosto sobre ti, e tenha misericórdia de ti; O Senhor sobre ti levante o seu rosto e te dê a paz.”
+— Números 6:24-26
+
+#versiculododia #biblia #fe #numeros #bencao</pre>
+ <button class="btn cp" onclick="cp(this)">📋 Copiar legenda</button>
+ <button class="btn ok" onclick="postei('009-numeros-6-24-26', this)">✔ Já postei</button>
+</div></article>
+<article id="010-apocalipse-22-12"><div class="n">10</div><div class="c">
+ <h2>Apocalipse 22:12</h2>
+ <div class="meta">0:58</div>
+ <a class="btn dl" href="videos/010-apocalipse-22-12.mp4" download="010-apocalipse-22-12.mp4">⬇ Baixar vídeo</a>
+ <pre>“Eis que venho em breve! A minha recompensa está comigo, e eu retribuirei a cada um de acordo com o que fez.”
+— Apocalipse 22:12
+
+#versiculododia #biblia #fe #apocalipse #voltadejesus</pre>
+ <button class="btn cp" onclick="cp(this)">📋 Copiar legenda</button>
+ <button class="btn ok" onclick="postei('010-apocalipse-22-12', this)">✔ Já postei</button>
+</div></article>
+<article id="011-exodo-20-13"><div class="n">11</div><div class="c">
+ <h2>Êxodo 20:13</h2>
+ <div class="meta">0:45</div>
+ <a class="btn dl" href="videos/011-exodo-20-13.mp4" download="011-exodo-20-13.mp4">⬇ Baixar vídeo</a>
+ <pre>“Não matarás.”
+— Êxodo 20:13
+
+#versiculododia #biblia #fe #exodo #dezmandamentos</pre>
+ <button class="btn cp" onclick="cp(this)">📋 Copiar legenda</button>
+ <button class="btn ok" onclick="postei('011-exodo-20-13', this)">✔ Já postei</button>
+</div></article>
+<article id="012-2-corintios-5-21"><div class="n">12</div><div class="c">
+ <h2>2 Coríntios 5:21</h2>
+ <div class="meta">1:05</div>
+ <a class="btn dl" href="videos/012-2-corintios-5-21.mp4" download="012-2-corintios-5-21.mp4">⬇ Baixar vídeo</a>
+ <pre>“Àquele que não conheceu pecado, o fez pecado por nós; para que nele fôssemos feitos justiça de Deus.”
+— 2 Coríntios 5:21
+
+#versiculododia #biblia #fe #corintios #graca</pre>
+ <button class="btn cp" onclick="cp(this)">📋 Copiar legenda</button>
+ <button class="btn ok" onclick="postei('012-2-corintios-5-21', this)">✔ Já postei</button>
+</div></article>
+<article id="013-1-joao-4-16"><div class="n">13</div><div class="c">
+ <h2>1 João 4:16</h2>
+ <div class="meta">0:59</div>
+ <a class="btn dl" href="videos/013-1-joao-4-16.mp4" download="013-1-joao-4-16.mp4">⬇ Baixar vídeo</a>
+ <pre>“E nós conhecemos, e cremos no amor que Deus nos tem. Deus é amor; e quem está em amor está em Deus, e Deus nele.”
+— 1 João 4:16
+
+#versiculododia #biblia #fe #joao #deuseamor</pre>
+ <button class="btn cp" onclick="cp(this)">📋 Copiar legenda</button>
+ <button class="btn ok" onclick="postei('013-1-joao-4-16', this)">✔ Já postei</button>
+</div></article>
+<article id="014-joao-3-36"><div class="n">14</div><div class="c">
+ <h2>João 3:36</h2>
+ <div class="meta">0:53</div>
+ <a class="btn dl" href="videos/014-joao-3-36.mp4" download="014-joao-3-36.mp4">⬇ Baixar vídeo</a>
+ <pre>“Aquele que crê no Filho tem a vida eterna; mas aquele que não crê no Filho não verá a vida, mas a ira de Deus sobre ele permanece.”
+— João 3:36
+
+#versiculododia #biblia #fe #joao #vidaeterna</pre>
+ <button class="btn cp" onclick="cp(this)">📋 Copiar legenda</button>
+ <button class="btn ok" onclick="postei('014-joao-3-36', this)">✔ Já postei</button>
+</div></article>
+<p class="sub vazio" id="vazio" hidden>Nenhum vídeo na fila. Tudo postado! 🙌</p>
+<p class="sub" style="margin-top:24px">Se o download abrir o vídeo em vez de baixar: toque e segure no vídeo → Baixar/Salvar.<br>
+"Já postei" tira o vídeo da lista e abre o GitHub para confirmar: toque em <b>Create</b> e o vídeo é apagado do site em ~1 minuto.</p>
+</div>
 <script>
-function copiar(b) {
-  const t = b.parentElement.querySelector("textarea");
-  const ok = () => { b.textContent = "Copiada!"; setTimeout(() => b.textContent = "Copiar legenda", 1500); };
-  if (navigator.clipboard) navigator.clipboard.writeText(t.value).then(ok, () => { t.select(); document.execCommand("copy"); ok(); });
-  else { t.select(); document.execCommand("copy"); ok(); }
+const CHAVE = "postados";
+function lista() { try { return JSON.parse(localStorage.getItem(CHAVE) || "[]"); } catch (e) { return []; } }
+function some(id) {
+  const a = document.getElementById(id); if (a) a.remove();
+  const n = document.querySelectorAll("article").length;
+  document.getElementById("qtd").textContent = n;
+  document.getElementById("vazio").hidden = n > 0;
+}
+lista().forEach(some);
+function cp(b) {
+  const t = b.parentElement.querySelector("pre").innerText;
+  const ok = () => { b.textContent = "✔ Copiada"; setTimeout(() => b.textContent = "📋 Copiar legenda", 1500); };
+  if (navigator.clipboard) navigator.clipboard.writeText(t).then(ok);
+  else { const r = document.createRange(); r.selectNodeContents(b.parentElement.querySelector("pre"));
+         getSelection().removeAllRanges(); getSelection().addRange(r); document.execCommand("copy"); ok(); }
+}
+function postei(id, b) {
+  if (!confirm("Marcar como postado? O vídeo será apagado do site.")) return;
+  try { const l = lista(); l.push(id); localStorage.setItem(CHAVE, JSON.stringify(l)); } catch (e) {}
+  const url = "https://github.com/marcopmloa-commits/versiculo-do-dia/issues/new?title=" + encodeURIComponent("postado: " + id) +
+              "&body=" + encodeURIComponent("Toque em Create para apagar este vídeo do site.");
+  window.open(url, "_blank");
+  some(id);
 }
 </script>
 </body>

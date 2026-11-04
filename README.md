@@ -26,3 +26,9 @@ Gera vídeos verticais (1080x1920, formato TikTok). Cada vídeo traz o versícul
 - Trilha: um fundo de acordes suaves sintetizado no próprio script (sem direitos autorais), bem baixo, abaixo da voz.
 - Visual: `producao/scripts/card.html` (fonte Fraunces, licença OFL, em `producao/fontes/`).
 - Sem data por enquanto.
+
+## "Já postei"
+No site, o botão "Já postei" tira o vídeo da lista e abre uma issue `postado: NNN-nome` no GitHub. Ao tocar em **Create**, o workflow `.github/workflows/ja-postei.yml` apaga `videos/NNN.mp4`/`.jpg`, anota o nome em `postados.txt` (assim o `gerar.py` não recria esse vídeo) e atualiza o `index.html`. Só issues abertas pelo dono do repositório disparam a remoção.
+
+## Perfil
+Nome: **Inabaláveis**. A foto de perfil é `perfil.png`, gerada a partir de `producao/arte/perfil.html`.

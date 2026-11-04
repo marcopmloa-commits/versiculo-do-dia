@@ -130,6 +130,9 @@ def gerar(entrada, forcar=False):
     legenda = os.path.join(pasta_v, nome + ".txt")
     tags = d.get("hashtags") or HASHTAGS_PADRAO
     open(legenda, "w", encoding="utf-8").write(f"“{d['versiculo'].strip()}”\n— {d['referencia']}\n\n" + " ".join(tags[:5]) + "\n")
+    postados = os.path.join(RAIZ, "postados.txt")
+    if os.path.exists(postados) and nome in open(postados, encoding="utf-8").read().split():
+        print("já postado (pulando):", nome); return None
     if os.path.exists(mp4) and not forcar:
         print("já existe:", mp4); return mp4
     tmp = tempfile.mkdtemp(prefix="vdd-")
@@ -196,6 +199,7 @@ def gerar(entrada, forcar=False):
     subprocess.run(cmd, check=True)
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", os.path.join(tmp, "q00.png"), "-vf", "scale=540:-1", "-q:v", "4",
                     os.path.join(pasta_v, nome + ".jpg")], check=True)
+    json.dump({"duracao": round(total, 1)}, open(os.path.join(pasta_v, nome + ".json"), "w"))
     print(f"ok: {mp4} ({total:.1f}s, {n} quadros)")
     return mp4
 

@@ -261,7 +261,8 @@
 </div></article>
 <p class="sub vazio" id="vazio" hidden>Nenhum vídeo na fila. Tudo postado! 🙌</p>
 <p class="sub" style="margin-top:24px">Se o download abrir o vídeo em vez de baixar: toque e segure no vídeo → Baixar/Salvar.<br>
-"Já postei" apaga o vídeo do site sozinho (em ~1 minuto) depois que o celular estiver conectado ao GitHub.
+"Já postei" tira o vídeo da lista neste celular, sem login.
+Opcional: conectando uma chave do GitHub, ele também apaga o arquivo do site.
 <a href="#" onclick="configurar(); return false;" id="cfg">⚙ Conectar ao GitHub</a></p>
 </div>
 <script>
@@ -285,7 +286,7 @@ function cp(b) {
 // Fica guardada SOMENTE neste celular (localStorage); nunca vai para o site nem para o repositório.
 const TK = "gh_token";
 function token() { try { return localStorage.getItem(TK) || ""; } catch (e) { return ""; } }
-function rotulo() { const c = document.getElementById("cfg"); if (c) c.textContent = token() ? "⚙ Conectado ao GitHub (trocar chave)" : "⚙ Conectar ao GitHub"; }
+function rotulo() { const c = document.getElementById("cfg"); if (c) c.textContent = token() ? "⚙ Conectado ao GitHub (trocar chave)" : "⚙ Conectar ao GitHub (opcional)"; }
 rotulo();
 function configurar() {
   const passos = "Para o “Já postei” funcionar sozinho, cole uma chave do GitHub (só uma vez neste celular).\n\n" +
@@ -302,7 +303,7 @@ function configurar() {
   rotulo();
 }
 async function postei(id, b) {
-  if (!confirm("Marcar como postado? O vídeo será apagado do site.")) return;
+  if (!confirm("Marcar como postado?")) return;
   const t = token();
   if (t) {
     b.disabled = true; b.textContent = "Apagando…";
@@ -318,11 +319,8 @@ async function postei(id, b) {
       alert("Não deu para apagar automaticamente (" + e.message + "). Confira a chave em “Conectar ao GitHub”.");
       return;
     }
-  } else {
-    // sem chave: jeito manual (abre o GitHub para tocar em Create)
-    window.open("https://github.com/marcopmloa-commits/versiculo-do-dia/issues/new?title=" + encodeURIComponent("postado: " + id) +
-                "&body=" + encodeURIComponent("Toque em Create para apagar este vídeo do site."), "_blank");
   }
+  // sem chave: só marca neste celular (sem login, sem abrir nada); o arquivo continua no repositório
   try { const l = lista(); l.push(id); localStorage.setItem(CHAVE, JSON.stringify(l)); } catch (e) {}
   some(id);
 }

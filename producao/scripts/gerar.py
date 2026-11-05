@@ -8,7 +8,7 @@ import numpy as np
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 RAIZ = os.path.abspath(os.path.join(AQUI, "..", ".."))
-VOZES = {"antonio": "pt-BR-AntonioNeural:-6%:-2Hz", "thalita": "pt-BR-ThalitaMultilingualNeural:-6%:+0Hz"}  # nome:velocidade:tom
+VOZES = {"antonio": "pt-BR-AntonioNeural:+8%:-8Hz", "thalita": "pt-BR-ThalitaMultilingualNeural:-6%:+0Hz"}  # nome:velocidade:tom
 VOZ = os.environ.get("VOZ", VOZES["antonio"])
 SR = 24000
 TRANSICAO = 0.6          # segundos do esmaecimento entre quadros
@@ -146,7 +146,7 @@ def gerar(entrada, forcar=False):
 
     # voz: campo "voz" da entrada (antonio/thalita); se faltar, alterna pelo número do arquivo
     num = int(re.match(r"\d+", nome).group()) if re.match(r"\d+", nome) else 1
-    voz = VOZES.get(d.get("voz") or ("antonio" if num % 2 else "thalita"), VOZ)
+    voz = VOZES.get(d.get("voz") or "antonio", VOZ)   # Thalita (multilíngue) às vezes lê trechos em espanhol: não usar
     dv, iv = tts(v_trechos + [ref_txt], os.path.join(tmp, "v.wav"), voz)
     dr, ir = tts(r_trechos, os.path.join(tmp, "r.wav"), voz)
 
@@ -192,7 +192,7 @@ def gerar(entrada, forcar=False):
     for i in range(1, n):
         filtros.append(f"{ult}[{i}:v]xfade=transition=fade:duration={TRANSICAO}:offset={tempos[i]:.3f}[x{i}]")
         ult = f"[x{i}]"
-    filtros.append(f"{ult}format=yuv420p,fade=t=in:st=0:d=0.4[vout]")
+    filtros.append(f"{ult}format=yuv420p[vout]")
     cmd += ["-filter_complex", ";".join(filtros), "-map", "[vout]", "-map", f"{n}:a",
             "-c:v", "libx264", "-preset", "medium", "-crf", "27", "-r", "30", "-tune", "stillimage",
             "-c:a", "aac", "-b:a", "160k", "-ar", "48000", "-t", f"{total:.3f}", "-movflags", "+faststart", mp4]

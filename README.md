@@ -1,5 +1,7 @@
 # Versículo do Dia: vídeos
 
+> Antes de produzir, leia `producao/REGRAS.md`.
+
 Gera vídeos verticais (1080x1920, formato TikTok). Cada vídeo traz o versículo e a reflexão narrados, no estilo do cartão em arco: creme e azul claro, simples e sem imagens. Os vídeos ficam no site (GitHub Pages, `index.html`) com botão de download e a legenda do post.
 
 ## Como adicionar um vídeo
@@ -22,7 +24,7 @@ Gera vídeos verticais (1080x1920, formato TikTok). Cada vídeo traz o versícul
 3. Faça o commit e o push. Saídas: `videos/NNN.mp4`, `videos/NNN.jpg` (capa) e `videos/NNN.txt` (legenda: versículo + referência + hashtags).
 
 ## Detalhes
-- Voz: alterna por vídeo. Os números ímpares usam Antonio (`pt-BR-AntonioNeural`) e os pares usam Thalita (`pt-BR-ThalitaMultilingualNeural`). Para forçar uma das duas, coloque `"voz": "antonio"` ou `"voz": "thalita"` na entrada.
+- Voz: `pt-BR-AntonioNeural` em todos os vídeos. A Thalita (multilíngue) foi abandonada porque às vezes lia trechos em espanhol.
 - Trilha: um fundo de acordes suaves sintetizado no próprio script (sem direitos autorais), bem baixo, abaixo da voz.
 - Visual: `producao/scripts/card.html` (fonte Fraunces, licença OFL, em `producao/fontes/`).
 - Sem data por enquanto.

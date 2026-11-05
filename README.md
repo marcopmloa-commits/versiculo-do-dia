@@ -31,7 +31,7 @@ Gera vídeos verticais (1080x1920, formato TikTok). Cada vídeo traz o versícul
 
 ## "Já postei"
 No site, o botão "Já postei" cria a issue `postado: NNN-nome`. O workflow `.github/workflows/ja-postei.yml` então apaga `videos/NNN.mp4`/`.jpg`, anota o nome em `postados.txt` (assim o `gerar.py` não recria esse vídeo) e atualiza o `index.html`. Só issues abertas pelo dono do repositório disparam a remoção.
-- **Automático:** em "⚙ Conectar ao GitHub", cole uma vez uma chave fine-grained com acesso **somente a este repositório** e permissão **Issues: Read and write**. A chave fica só no `localStorage` do celular.
+- **Automático:** em "⚙ Conectar ao GitHub", cole uma vez uma chave fine-grained com acesso **somente a este repositório** e permissão **Issues: Read and write**. A chave fica no **link favorito** (`…/#chave=github_pat_…`; o trecho depois do `#` nunca é enviado a servidor) e, se der, no `localStorage`. Assim funciona no modo anônimo: abra o site sempre pelo favorito.
 - **Sem chave (padrão):** o botão só esconde o vídeo neste celular (`localStorage`), sem login. O arquivo continua no repositório até alguém limpar.
 
 ## Perfil

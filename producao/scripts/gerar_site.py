@@ -69,8 +69,8 @@ def gerar():
 {''.join(itens)}
 <p class="sub vazio" id="vazio" {'' if not itens else 'hidden'}>Nenhum vídeo na fila. Tudo postado! 🙌</p>
 <p class="sub" style="margin-top:24px">Se o download abrir o vídeo em vez de baixar: toque e segure no vídeo → Baixar/Salvar.<br>
-"Já postei" tira o vídeo da lista neste celular, sem login.
-Opcional: conectando uma chave do GitHub, ele também apaga o arquivo do site.
+"Já postei": com a chave do GitHub conectada, apaga o vídeo do site para sempre (~1 min), sem login — no modo anônimo, abra o site pelo <b>link favorito com a chave</b>.
+Sem a chave, só esconde o vídeo neste navegador (no modo anônimo, volta ao fechar a aba).
 <a href="#" onclick="configurar(); return false;" id="cfg">⚙ Conectar ao GitHub</a></p>
 </div>
 <script>
@@ -91,24 +91,35 @@ function cp(b) {{
          getSelection().removeAllRanges(); getSelection().addRange(r); document.execCommand("copy"); ok(); }}
 }}
 // Chave do GitHub (token fine-grained só deste repositório, permissão Issues: escrita).
-// Fica guardada SOMENTE neste celular (localStorage); nunca vai para o site nem para o repositório.
+// Fica no LINK FAVORITO (depois do #, que nunca é enviado a servidor nenhum) e, se der, no localStorage.
+// Assim funciona até no modo anônimo: é só abrir o site pelo favorito.
 const TK = "gh_token";
-function token() {{ try {{ return localStorage.getItem(TK) || ""; }} catch (e) {{ return ""; }} }}
+function token() {{
+  const m = location.hash.match(/chave=([^&]+)/);
+  if (m) return decodeURIComponent(m[1]);
+  try {{ return localStorage.getItem(TK) || ""; }} catch (e) {{ return ""; }}
+}}
 function rotulo() {{ const c = document.getElementById("cfg"); if (c) c.textContent = token() ? "⚙ Conectado ao GitHub (trocar chave)" : "⚙ Conectar ao GitHub (opcional)"; }}
 rotulo();
 function configurar() {{
-  const passos = "Para o “Já postei” funcionar sozinho, cole uma chave do GitHub (só uma vez neste celular).\\n\\n" +
-    "Como criar: GitHub → Settings → Developer settings → Fine-grained tokens → Generate new token\\n" +
-    "• Repository access: Only select repositories → {REPO_CURTO}\\n" +
-    "• Permissions → Issues: Read and write\\n" +
-    "• Gerar e copiar a chave (começa com github_pat_)\\n\\n" +
-    "Toque em OK para abrir a página do GitHub, ou Cancelar se já tiver a chave.";
-  if (confirm(passos)) window.open("https://github.com/settings/personal-access-tokens/new?name=" + encodeURIComponent("versiculo-diario-ja-postei") +
+  if (!confirm("Você já tem a chave do GitHub (começa com github_pat_)?\\n\\nOK = sim, vou colar\\nCancelar = não, abrir o GitHub para criar")) {{
+    alert("No GitHub: Generate new token\\n• Repository access: Only select repositories → {REPO_CURTO}\\n• Permissions → Issues: Read and write\\n• Gere, copie a chave e volte aqui em “Conectar ao GitHub”.");
+    window.open("https://github.com/settings/personal-access-tokens/new?name=" + encodeURIComponent("versiculo-diario-ja-postei") +
       "&description=" + encodeURIComponent("Botão Já postei do site") + "&target_name={DONO}&expires_in=366&issues=write", "_blank");
+    return;
+  }}
   const t = prompt("Cole aqui a chave (github_pat_...). Deixe vazio para desconectar:", token());
   if (t === null) return;
-  try {{ if (t.trim()) localStorage.setItem(TK, t.trim()); else localStorage.removeItem(TK); }} catch (e) {{ alert("Não consegui salvar a chave neste navegador."); }}
+  const chave = t.trim();
+  try {{ if (chave) localStorage.setItem(TK, chave); else localStorage.removeItem(TK); }} catch (e) {{}}
+  history.replaceState(null, "", location.pathname + (chave ? "#chave=" + encodeURIComponent(chave) : ""));
   rotulo();
+  if (chave) {{
+    const link = location.href;
+    if (navigator.clipboard) navigator.clipboard.writeText(link).catch(() => {{}});
+    prompt("Pronto! Agora ADICIONE ESTA PÁGINA AOS FAVORITOS (o endereço já tem a chave).\\n" +
+           "No modo anônimo, abra o site sempre por esse favorito.\\nO link também foi copiado — não compartilhe com ninguém:", link);
+  }}
 }}
 async function postei(id, b) {{
   if (!confirm("Marcar como postado?")) return;

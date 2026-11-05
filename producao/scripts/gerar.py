@@ -8,7 +8,7 @@ import numpy as np
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 RAIZ = os.path.abspath(os.path.join(AQUI, "..", ".."))
-VOZES = {"antonio": "pt-BR-AntonioNeural:+8%:-8Hz", "thalita": "pt-BR-ThalitaMultilingualNeural:-6%:+0Hz"}  # nome:velocidade:tom
+VOZES = {"antonio": "pt-BR-AntonioNeural:+10%:-12Hz", "thalita": "pt-BR-ThalitaMultilingualNeural:-6%:+0Hz"}  # nome:velocidade:tom
 VOZ = os.environ.get("VOZ", VOZES["antonio"])
 SR = 24000
 TRANSICAO = 0.6          # segundos do esmaecimento entre quadros

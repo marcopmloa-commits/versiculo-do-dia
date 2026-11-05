@@ -3,6 +3,7 @@ import html, json, os, glob, re
 AQUI = os.path.dirname(os.path.abspath(__file__))
 RAIZ = os.path.abspath(os.path.join(AQUI, "..", ".."))
 REPO = "marcopmloa-commits/versiculo-do-dia"
+DONO, REPO_CURTO = REPO.split("/")
 NOME = "Versículo Diário"
 
 def gerar():
@@ -64,7 +65,8 @@ def gerar():
 {''.join(itens)}
 <p class="sub vazio" id="vazio" {'' if not itens else 'hidden'}>Nenhum vídeo na fila. Tudo postado! 🙌</p>
 <p class="sub" style="margin-top:24px">Se o download abrir o vídeo em vez de baixar: toque e segure no vídeo → Baixar/Salvar.<br>
-"Já postei" tira o vídeo da lista e abre o GitHub para confirmar: toque em <b>Create</b> e o vídeo é apagado do site em ~1 minuto.</p>
+"Já postei" apaga o vídeo do site sozinho (em ~1 minuto) depois que o celular estiver conectado ao GitHub.
+<a href="#" onclick="configurar(); return false;" id="cfg">⚙ Conectar ao GitHub</a></p>
 </div>
 <script>
 const CHAVE = "postados";
@@ -83,12 +85,49 @@ function cp(b) {{
   else {{ const r = document.createRange(); r.selectNodeContents(b.parentElement.querySelector("pre"));
          getSelection().removeAllRanges(); getSelection().addRange(r); document.execCommand("copy"); ok(); }}
 }}
-function postei(id, b) {{
+// Chave do GitHub (token fine-grained só deste repositório, permissão Issues: escrita).
+// Fica guardada SOMENTE neste celular (localStorage); nunca vai para o site nem para o repositório.
+const TK = "gh_token";
+function token() {{ try {{ return localStorage.getItem(TK) || ""; }} catch (e) {{ return ""; }} }}
+function rotulo() {{ const c = document.getElementById("cfg"); if (c) c.textContent = token() ? "⚙ Conectado ao GitHub (trocar chave)" : "⚙ Conectar ao GitHub"; }}
+rotulo();
+function configurar() {{
+  const passos = "Para o “Já postei” funcionar sozinho, cole uma chave do GitHub (só uma vez neste celular).\\n\\n" +
+    "Como criar: GitHub → Settings → Developer settings → Fine-grained tokens → Generate new token\\n" +
+    "• Repository access: Only select repositories → {REPO_CURTO}\\n" +
+    "• Permissions → Issues: Read and write\\n" +
+    "• Gerar e copiar a chave (começa com github_pat_)\\n\\n" +
+    "Toque em OK para abrir a página do GitHub, ou Cancelar se já tiver a chave.";
+  if (confirm(passos)) window.open("https://github.com/settings/personal-access-tokens/new?name=" + encodeURIComponent("versiculo-diario-ja-postei") +
+      "&description=" + encodeURIComponent("Botão Já postei do site") + "&target_name={DONO}&expires_in=366&issues=write", "_blank");
+  const t = prompt("Cole aqui a chave (github_pat_...). Deixe vazio para desconectar:", token());
+  if (t === null) return;
+  try {{ if (t.trim()) localStorage.setItem(TK, t.trim()); else localStorage.removeItem(TK); }} catch (e) {{ alert("Não consegui salvar a chave neste navegador."); }}
+  rotulo();
+}}
+async function postei(id, b) {{
   if (!confirm("Marcar como postado? O vídeo será apagado do site.")) return;
+  const t = token();
+  if (t) {{
+    b.disabled = true; b.textContent = "Apagando…";
+    try {{
+      const r = await fetch("https://api.github.com/repos/{REPO}/issues", {{
+        method: "POST",
+        headers: {{ "Authorization": "Bearer " + t, "Accept": "application/vnd.github+json", "Content-Type": "application/json" }},
+        body: JSON.stringify({{ title: "postado: " + id, body: "Enviado pelo botão Já postei do site." }})
+      }});
+      if (!r.ok) throw new Error("GitHub respondeu " + r.status);
+    }} catch (e) {{
+      b.disabled = false; b.textContent = "✔ Já postei";
+      alert("Não deu para apagar automaticamente (" + e.message + "). Confira a chave em “Conectar ao GitHub”.");
+      return;
+    }}
+  }} else {{
+    // sem chave: jeito manual (abre o GitHub para tocar em Create)
+    window.open("https://github.com/{REPO}/issues/new?title=" + encodeURIComponent("postado: " + id) +
+                "&body=" + encodeURIComponent("Toque em Create para apagar este vídeo do site."), "_blank");
+  }}
   try {{ const l = lista(); l.push(id); localStorage.setItem(CHAVE, JSON.stringify(l)); }} catch (e) {{}}
-  const url = "https://github.com/{REPO}/issues/new?title=" + encodeURIComponent("postado: " + id) +
-              "&body=" + encodeURIComponent("Toque em Create para apagar este vídeo do site.");
-  window.open(url, "_blank");
   some(id);
 }}
 </script>

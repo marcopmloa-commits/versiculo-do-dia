@@ -30,7 +30,9 @@ Gera vídeos verticais (1080x1920, formato TikTok). Cada vídeo traz o versícul
 - Sem data por enquanto.
 
 ## "Já postei"
-No site, o botão "Já postei" tira o vídeo da lista e abre uma issue `postado: NNN-nome` no GitHub. Ao tocar em **Create**, o workflow `.github/workflows/ja-postei.yml` apaga `videos/NNN.mp4`/`.jpg`, anota o nome em `postados.txt` (assim o `gerar.py` não recria esse vídeo) e atualiza o `index.html`. Só issues abertas pelo dono do repositório disparam a remoção.
+No site, o botão "Já postei" cria a issue `postado: NNN-nome`. O workflow `.github/workflows/ja-postei.yml` então apaga `videos/NNN.mp4`/`.jpg`, anota o nome em `postados.txt` (assim o `gerar.py` não recria esse vídeo) e atualiza o `index.html`. Só issues abertas pelo dono do repositório disparam a remoção.
+- **Automático:** em "⚙ Conectar ao GitHub", cole uma vez uma chave fine-grained com acesso **somente a este repositório** e permissão **Issues: Read and write**. A chave fica só no `localStorage` do celular.
+- **Sem chave:** o botão abre o GitHub para tocar em **Create**.
 
 ## Perfil
 Nome: **Versículo Diário**. A foto de perfil é `perfil.png`, gerada a partir de `producao/arte/perfil.html`.

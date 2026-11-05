@@ -21,7 +21,7 @@ jobs:
         run: |
           NOME=$(echo "${TITULO#postado:}" | tr -d '[:space:]')
           if ! echo "$NOME" | grep -Eq '^[0-9]{3}-[a-z0-9-]+$'; then echo "nome inválido: $NOME"; exit 1; fi
-          git rm -q --ignore-unmatch "videos/$NOME.mp4" "videos/$NOME.jpg"
+          git rm -q --ignore-unmatch "videos/$NOME.mp4" "videos/$NOME.jpg" "videos/$NOME.txt" "videos/$NOME.json"
           grep -qx "$NOME" postados.txt 2>/dev/null || echo "$NOME" >> postados.txt
           python3 producao/scripts/gerar_site.py
           git config user.name "github-actions[bot]"

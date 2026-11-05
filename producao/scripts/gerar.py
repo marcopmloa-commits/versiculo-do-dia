@@ -33,7 +33,7 @@ def ref_falada(ref):
 
 def falada(t):
     """Ajustes só para a narração (o texto na tela fica igual ao do app)."""
-    return re.sub(r"\bd'?(Ele|Ela)\b", lambda m: "d" + m.group(1).lower(), t)
+    return re.sub(r"\b([dn])'?(Ele|Ela|Aquele)\b", lambda m: m.group(1) + m.group(2).lower(), t)
 
 def frases(t):
     return [f.strip() for f in re.split(r"(?<=[.!?…])\s+(?=[A-ZÁÉÍÓÚÂÊÔÃÕÇ“\"«—-])", t.strip()) if f.strip()]

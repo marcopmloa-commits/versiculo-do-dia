@@ -34,6 +34,7 @@ Aprendidas na revisão de 05/11/2026 do lote 015–024 (nota média ~7,4, veredi
 - **Leia a hashtag sem acento antes de usar.** `#forca` (força) vira "forca", de enforcamento → use `#forcaemcristo`. Cheque também `#graca`, `#paz` e outras.
 
 ## Vídeo
+- **Cores:** três paletas (azul, verde claro, rosa claro) revezando pelo número do vídeo; campo `"tema"` na entrada fixa uma. Arabescos discretos (floreio no topo, divisor, volutas, raminhos) sempre com o filtro `leve`; o estilo continua minimalista.
 - **Voz: só Antonio, com +10% de velocidade e tom -12 Hz (opção B, escolhida pelo dono).** A `pt-BR-ThalitaMultilingualNeural` às vezes lê trechos em espanhol. Se quiser voz feminina, use a `pt-BR-FranciscaNeural`, que só fala português (teste antes).
 - **Nada de esmaecer a partir do preto no começo:** o TikTok usa o 1º quadro como capa, e ela ficava escura. O 1º quadro precisa ser o arco nítido com o versículo.
 - Revisão: antes de publicar um lote escrito por nós, peça a um agente independente para revisar (texto bíblico, contexto, repetição, português, hashtags).

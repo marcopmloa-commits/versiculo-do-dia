@@ -150,17 +150,19 @@ def gerar(entrada, forcar=False):
     dv, iv = tts(v_trechos + [ref_txt], os.path.join(tmp, "v.wav"), voz)
     dr, ir = tts(r_trechos, os.path.join(tmp, "r.wav"), voz)
 
+    # cor do cartão: campo "tema" (azul/verde/rosa); se faltar, reveza pelo número do vídeo
+    tema = d.get("tema") or ["azul", "verde", "rosa"][(num - 1) % 3]
     INICIO, PAUSA, FIM = 0.5, 1.4, 3.2
     quadros, tempos = [], []
     for k, tx in enumerate(v_trechos):
-        quadros.append({"texto": tx, "ref": ref, "rotulo": "", "tamanho": 96 if len(tx.split()) > 12 else 130})
+        quadros.append({"tema": tema, "texto": tx, "ref": ref, "rotulo": "", "tamanho": 96 if len(tx.split()) > 12 else 130})
         tempos.append(0.0 if k == 0 else INICIO + iv[k] - 0.25)
     off_r = INICIO + dv + PAUSA
     for k, tx in enumerate(r_trechos):
-        quadros.append({"texto": tx, "ref": ref, "rotulo": "reflexão", "tamanho": 76})
+        quadros.append({"tema": tema, "texto": tx, "ref": ref, "rotulo": "reflexão", "tamanho": 76})
         tempos.append(off_r + ir[k] - 0.35)
     fim_voz = off_r + dr
-    quadros.append({"texto": d["versiculo"], "ref": ref, "rotulo": "", "tamanho": 96 if len(d["versiculo"].split()) > 12 else 130})
+    quadros.append({"tema": tema, "texto": d["versiculo"], "ref": ref, "rotulo": "", "tamanho": 96 if len(d["versiculo"].split()) > 12 else 130})
     tempos.append(fim_voz + 0.5)
     total = fim_voz + FIM
 

@@ -7,12 +7,14 @@
   @font-face { font-family: "Fraunces"; font-weight: 500; src: url("../fontes/fraunces-latin-ext-500.woff2") format("woff2"); unicode-range: U+0100-024F; }
   @font-face { font-family: "Fraunces"; font-weight: 600; src: url("../fontes/fraunces-latin-600.woff2") format("woff2"); }
   @font-face { font-family: "Fraunces"; font-weight: 600; src: url("../fontes/fraunces-latin-ext-600.woff2") format("woff2"); unicode-range: U+0100-024F; }
-  :root {
+  :root, body.azul {
     --fundo: #fbf9f4;      /* branco quente da página */
     --papel: #f6efe0;      /* creme do arco */
-    --azul: #5a86c5;       /* azul claro do texto */
-    --borda: #6f9bd6;      /* azul da moldura */
+    --azul: #5a86c5;       /* cor do texto */
+    --borda: #6f9bd6;      /* cor da moldura e dos arabescos */
   }
+  body.verde { --fundo: #f8faf4; --papel: #f2f1e2; --azul: #56876a; --borda: #84b294; }
+  body.rosa  { --fundo: #fcf8f6; --papel: #f8ece4; --azul: #b86577; --borda: #dd9aaa; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html, body { width: 1080px; height: 1920px; background: var(--fundo); overflow: hidden; }
   body { position: relative; font-family: "Fraunces", serif; color: var(--azul); }
@@ -29,18 +31,13 @@
     font-weight: 600; line-height: 1.32; width: 100%; text-wrap: balance;
     font-variation-settings: "SOFT" 100, "WONK" 0;
   }
+  #divisor { width: 440px; height: 52px; margin: 18px 0 10px; flex: none; }
+  #enfeites { position: absolute; inset: 0; }
   #ref { font-size: 52px; font-weight: 600; height: 90px; display: flex; align-items: flex-end; }
 </style>
 </head>
 <body>
-<svg id="grao" width="1080" height="1920">
-  <filter id="ruido"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3"/>
-    <feColorMatrix values="0 0 0 0 .55  0 0 0 0 .5  0 0 0 0 .42  0 0 0 .09 0"/></filter>
-  <rect width="1080" height="1920" filter="url(#ruido)"/>
-</svg>
-<svg id="arco" width="940" height="1640" viewBox="0 0 940 1640">
-  <defs>
-    <!-- moldura "carimbada": falhas e rachaduras finas como na impressão do adesivo -->
+<svg width="0" height="0" style="position:absolute"><defs>
     <filter id="gasto" x="-5%" y="-5%" width="110%" height="110%">
       <feTurbulence type="fractalNoise" baseFrequency=".055" numOctaves="3" seed="7" result="n"/>
       <feDisplacementMap in="SourceGraphic" in2="n" scale="3"/>
@@ -49,6 +46,43 @@
       <feColorMatrix in="m" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -3.2 2.1" result="mascara"/>
       <feComposite in="b" in2="mascara" operator="in"/>
     </filter>
+    <filter id="leve" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".055" numOctaves="3" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2"/>
+      <feComponentTransfer result="b"><feFuncA type="linear" slope="1"/></feComponentTransfer>
+      <feTurbulence type="fractalNoise" baseFrequency=".35" numOctaves="2" seed="11" result="m"/>
+      <feColorMatrix in="m" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.6 1.75" result="mascara"/>
+      <feComposite in="b" in2="mascara" operator="in"/>
+    </filter>
+</defs></svg>
+<svg id="grao" width="1080" height="1920">
+  <filter id="ruido"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3"/>
+    <feColorMatrix values="0 0 0 0 .55  0 0 0 0 .5  0 0 0 0 .42  0 0 0 .09 0"/></filter>
+  <rect width="1080" height="1920" filter="url(#ruido)"/>
+</svg>
+<svg id="enfeites" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+    <path id="folha" d="M0,0 C9,-11 27,-12 38,0 C27,11 9,11 0,0 Z"/>
+    <g id="ramo">
+      <path d="M58,440 C70,330 110,230 205,135" fill="none" stroke-width="3"/>
+      <use href="#folha" transform="translate(72,360) rotate(-60)"/>
+      <use href="#folha" transform="translate(72,360) rotate(-150) scale(.85)"/>
+      <use href="#folha" transform="translate(110,262) rotate(-40)"/>
+      <use href="#folha" transform="translate(110,262) rotate(-130) scale(.85)"/>
+      <use href="#folha" transform="translate(160,185) rotate(-25) scale(.9)"/>
+      <use href="#folha" transform="translate(160,185) rotate(-115) scale(.75)"/>
+      <circle cx="205" cy="135" r="5"/>
+    </g>
+  </defs>
+  <g filter="url(#leve)" fill="var(--borda)" stroke="var(--borda)" opacity=".8">
+    <use href="#ramo"/>
+    <use href="#ramo" transform="translate(1080,0) scale(-1,1)"/>
+  </g>
+</svg>
+<svg id="arco" width="940" height="1640" viewBox="0 0 940 1640">
+  <defs>
+    <!-- moldura "carimbada": falhas e rachaduras finas como na impressão do adesivo -->
+
     <filter id="papelgrao"><feTurbulence type="fractalNoise" baseFrequency=".6" numOctaves="3" seed="5"/>
       <feColorMatrix values="0 0 0 0 .62  0 0 0 0 .55  0 0 0 0 .42  0 0 0 .10 0"/></filter>
     <clipPath id="dentro"><path d="M0,1640 L0,470 A470,470 0 0 1 940,470 L940,1640 Z"/></clipPath>
@@ -59,15 +93,41 @@
     <path d="M10,1630 L10,470 A460,460 0 0 1 930,470 L930,1630 Z" stroke-width="10"/>
     <path d="M28,1612 L28,470 A442,442 0 0 1 912,470 L912,1612 Z" stroke-width="3"/>
   </g>
+  <!-- floreio no alto do arco -->
+  <g filter="url(#leve)" fill="none" stroke="var(--borda)" stroke-width="3.5" stroke-linecap="round">
+    <g id="meiofloreio">
+      <path d="M452,215 C420,215 400,190 370,196 C344,201 342,232 362,236 C377,239 382,222 371,217"/>
+      <path d="M370,196 C330,186 300,205 268,214"/>
+      <circle cx="262" cy="216" r="4" fill="var(--borda)"/>
+    </g>
+    <use href="#meiofloreio" transform="translate(940,0) scale(-1,1)"/>
+    <path d="M470,201 L482,215 L470,229 L458,215 Z" fill="var(--borda)"/>
+  </g>
+  <!-- volutas nos cantos de baixo -->
+  <g filter="url(#leve)" fill="none" stroke="var(--borda)" stroke-width="3.5" stroke-linecap="round">
+    <g id="voluta">
+      <path d="M52,1450 C52,1530 70,1586 150,1588"/>
+      <path d="M150,1588 C185,1589 196,1560 176,1550 C162,1543 150,1556 160,1565"/>
+      <path d="M52,1450 C50,1420 72,1408 84,1424 C92,1436 80,1446 72,1438"/>
+    </g>
+    <use href="#voluta" transform="translate(940,0) scale(-1,1)"/>
+  </g>
 </svg>
 <div id="conteudo">
   <div id="rotulo"></div>
   <div id="texto"></div>
+  <svg id="divisor" viewBox="0 0 380 44"><g filter="url(#leve)" fill="none" stroke="var(--borda)" stroke-width="3.5" stroke-linecap="round">
+    <path d="M20,22 L150,22 M230,22 L360,22"/>
+    <path d="M150,22 C162,22 166,10 177,12 C186,14 184,25 177,24"/>
+    <path d="M230,22 C218,22 214,10 203,12 C194,14 196,25 203,24"/>
+    <path d="M190,13 L198,22 L190,31 L182,22 Z" fill="var(--borda)"/>
+  </g></svg>
   <div id="ref"></div>
 </div>
 <script>
   // Desenha um quadro. Diminui a fonte até o texto caber.
   window.desenhar = async (c) => {
+    document.body.className = c.tema || "azul";
     document.getElementById("rotulo").textContent = c.rotulo || "";
     document.getElementById("ref").textContent = c.ref || "";
     const t = document.getElementById("texto");

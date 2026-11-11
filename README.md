@@ -36,3 +36,9 @@ No site, o botão "Já postei" cria a issue `postado: NNN-nome`. O workflow `.gi
 
 ## Perfil
 Nome: **Versículo Diário**. A foto de perfil é `perfil.png`, gerada a partir de `producao/arte/perfil.html`.
+
+## Formato "música" (estilo trap/lo-fi gospel)
+1. Eu escrevo a letra a partir do versículo; você gera a música no Suno e sobe o MP3 no Drive (pasta "suno", com link público).
+2. Crie `musicas/NNN-nome.json` (com `musica`, `referencia`, `letra`, `buscas` em inglês para os clipes do Pixabay, `legenda` e `hashtags`) e copie o MP3 para `musicas/`.
+3. `python3 producao/scripts/gerar_musica.py musicas/NNN-nome.json`: reconhece cada palavra cantada (faster-whisper), monta o fundo com clipes do Pixabay (requer `PIXABAY_KEY`), a palavra grande no ritmo, a frase embaixo, a marca e o áudio em -14 LUFS.
+- **Suno grátis = uso não comercial**, com crédito "feito com Suno" na legenda. Para monetizar, gere as músicas num plano pago.

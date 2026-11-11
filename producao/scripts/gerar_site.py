@@ -5,12 +5,14 @@ RAIZ = os.path.abspath(os.path.join(AQUI, "..", ".."))
 REPO = "marcopmloa-commits/versiculo-do-dia"
 DONO, REPO_CURTO = REPO.split("/")
 NOME = "Versículo Diário"
+ROT = {"app": ("app", "app"), "externa": ("ext", "externo"), "musica": ("mus", "música")}
 
 def gerar():
     itens = []
     for mp4 in sorted(glob.glob(os.path.join(RAIZ, "videos", "*.mp4"))):
         nome = os.path.splitext(os.path.basename(mp4))[0]
         ent = os.path.join(RAIZ, "entradas", nome + ".json")
+        if not os.path.exists(ent): ent = os.path.join(RAIZ, "musicas", nome + ".json")  # vídeos no formato música
         if not os.path.exists(ent): continue
         d = json.load(open(ent, encoding="utf-8"))
         leg = open(os.path.join(RAIZ, "videos", nome + ".txt"), encoding="utf-8").read().strip()
@@ -19,7 +21,7 @@ def gerar():
         num = int(re.match(r"\d+", nome).group()) if re.match(r"\d+", nome) else ""
         itens.append(f"""
 <article id="{nome}"><div class="n">{num}</div><div class="c">
- <h2>{html.escape(d['referencia'])} <span class="tag {'ext' if d.get('fonte') == 'externa' else 'app'}">{'externo' if d.get('fonte') == 'externa' else 'app'}</span></h2>
+ <h2>{html.escape(d['referencia'])} <span class="tag {ROT[d.get('fonte', 'app')][0]}">{ROT[d.get('fonte', 'app')][1]}</span></h2>
  <div class="meta">{s//60}:{s%60:02d}</div>
  <a class="btn dl" href="videos/{nome}.mp4" download="{nome}.mp4">⬇ Baixar vídeo</a>
  <pre>{html.escape(leg)}</pre>
@@ -60,6 +62,7 @@ def gerar():
   .tag {{ font-family: system-ui, sans-serif; font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
           padding:3px 8px; border-radius:20px; vertical-align:middle; }}
   .tag.app {{ background:#e3ecf8; color:var(--azul); }}
+  .tag.mus {{ background:#fbe3e8; color:#b86577; }}
   .tag.ext {{ background:var(--papel); color:#a08a5c; }}
   .vazio {{ text-align:center; margin-top:40px; }}
 </style>

@@ -14,6 +14,12 @@ RAIZ = os.path.abspath(os.path.join(AQUI, "..", ".."))
 W, H, FPS = 1080, 1920, 30
 CENA = 5.5          # segundos por clipe de fundo
 CACHE = os.path.join(RAIZ, "producao", "cache_clipes")
+# O TikTok estava rotulando como IA: o Pixabay tem clipes gerados por IA (ex.: 253345, "ai generated").
+# Usamos só vídeos antigos (id <= ID_MAX ≈ fim de 2023, antes dos geradores de vídeo) e recusamos etiquetas suspeitas.
+ID_MAX = 185000
+PROIBIDAS = ["ai generated", "ai-generated", "generative", "artificial intelligence", "midjourney", "stable diffusion",
+             "render", "3d", "animation", "animated", "cgi", "illustration", "cartoon", "digital art",
+             "cigarette", "smok", "phone", "smartphone", "mobile", "tobacco", "alcohol", "beer", "wine", "whisky", "drunk", "drug", "weapon", "gun"]
 
 
 def sh(*a, **k):
@@ -45,10 +51,13 @@ def clipes(buscas, n, usados=()):
     os.makedirs(CACHE, exist_ok=True)
     chave = os.environ["PIXABAY_KEY"]; achados = []
     for q in buscas:
-        url = "https://pixabay.com/api/videos/?" + urllib.parse.urlencode({"key": chave, "q": q, "per_page": 20, "safesearch": "true"})
+        url = "https://pixabay.com/api/videos/?" + urllib.parse.urlencode({"key": chave, "q": q, "per_page": 80, "safesearch": "true"})
         hits = json.load(urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"}), timeout=30))["hits"]
         for h in hits:
             if h["duration"] < CENA + 1 or h["id"] in usados or any(h["id"] == a[0] for a in achados): continue
+            tags = h["tags"].lower()
+            if h["id"] > ID_MAX: continue                       # só filmagens reais (enviadas até o fim de 2023)
+            if any(t in tags for t in PROIBIDAS): continue      # IA, animação, temas impróprios
             v = h["videos"].get("medium") or h["videos"]["large"]
             achados.append((h["id"], v["url"], q)); break
         if len(achados) >= n: break

@@ -1,4 +1,4 @@
-"""Vídeo no formato "música": fundo de clipes de paisagem + palavra cantada grande no centro + frase embaixo.
+"""Vídeo no formato "música": fundo de clipes de paisagem + palavra cantada grande no centro (sem frase embaixo).
 
 Uso: python3 producao/scripts/gerar_musica.py musicas/NNN-nome.json
 O JSON tem: {"musica": "caminho.mp3", "referencia": "João 15:13", "buscas": ["sunset silhouette", ...],
@@ -75,13 +75,10 @@ html,body{margin:0;width:1080px;height:1920px;background:transparent;overflow:hi
 #marca{position:absolute;left:0;right:0;top:1000px;text-align:center;opacity:.85}
 #marca svg{display:block;margin:0 auto 8px}
 #marca div{font-size:22px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;text-shadow:0 2px 8px rgba(0,0,0,.5)}
-#frase{position:absolute;left:90px;right:90px;top:1240px;text-align:center;font-size:44px;font-weight:500;line-height:1.3;
-  text-shadow:0 2px 10px rgba(0,0,0,.7)}
 </style></head><body>
 <div id="grande"><span id="g"></span></div>
 <div id="marca"><svg width="46" height="70" viewBox="0 0 46 70"><g fill="#fff"><rect x="19" y="0" width="8" height="70" rx="2"/><rect x="0" y="18" width="46" height="8" rx="2"/></g></svg>
 <div>Versículo Diário</div></div>
-<div id="frase"></div>
 <script>
 window.desenhar = async (c) => {
   await document.fonts.ready;
@@ -92,7 +89,6 @@ window.desenhar = async (c) => {
   g.style.opacity = c.entrada ? .55 : 1;
   g.style.display = "inline-block";
   g.style.transform = c.entrada ? "scale(1.18)" : "none";
-  document.getElementById("frase").textContent = c.frase || "";
 };
 </script></body></html>"""
 

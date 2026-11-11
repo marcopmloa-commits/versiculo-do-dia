@@ -125,6 +125,16 @@ def gerar(cfg_path):
     nome = os.path.splitext(os.path.basename(cfg_path))[0]
     mp3 = os.path.join(RAIZ, cfg["musica"]) if not os.path.isabs(cfg["musica"]) else cfg["musica"]
     tmp = tempfile.mkdtemp(prefix="musica-")
+    if cfg.get("trechos"):  # junta partes da música, ex.: [[0, 53.5], [134, 158]], com transição de 2 s
+        ins, filt = [], []
+        for i, (a, b) in enumerate(cfg["trechos"]):
+            ins += ["-ss", str(a), "-to", str(b), "-i", mp3]
+        cad = "[0:a]"
+        for i in range(1, len(cfg["trechos"])):
+            filt.append(f"{cad}[{i}:a]acrossfade=d=2:c1=tri:c2=tri[x{i}]"); cad = f"[x{i}]"
+        cortada = os.path.join(tmp, "musica.wav")
+        sh("ffmpeg", "-y", "-loglevel", "error", *ins, "-filter_complex", ";".join(filt), "-map", cad, cortada)
+        mp3 = cortada
     dur = float(sh("ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", mp3, capture_output=True, text=True).stdout)
     ref = cfg["referencia"]
 

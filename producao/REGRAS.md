@@ -38,3 +38,12 @@ Aprendidas na revisão de 05/11/2026 do lote 015–024 (nota média ~7,4, veredi
 - **Voz: só Antonio, com +10% de velocidade e tom -12 Hz (opção B, escolhida pelo dono).** A `pt-BR-ThalitaMultilingualNeural` às vezes lê trechos em espanhol. Se quiser voz feminina, use a `pt-BR-FranciscaNeural`, que só fala português (teste antes).
 - **Nada de esmaecer a partir do preto no começo:** o TikTok usa o 1º quadro como capa, e ela ficava escura. O 1º quadro precisa ser o arco nítido com o versículo.
 - Revisão: antes de publicar um lote escrito por nós, peça a um agente independente para revisar (texto bíblico, contexto, repetição, português, hashtags).
+
+## Formato música (aprovado pelo dono em 11/11/2026, vídeos 027 e 028)
+- Só a **palavra grande** que muda no ritmo do canto + cruz e "Versículo Diário"; **sem frase embaixo**.
+- Fundo: clipes do Pixabay ligados ao tema da letra (ex.: águia em "asas"), tom quente; confira o mosaico e troque clipes fora do clima (cidade, objetos aleatórios).
+- Áudio em -14 LUFS (o `gerar_musica.py` já faz).
+- **Tamanho ideal: ~45 s a 1min15.** O Suno costuma esticar letras com refrão repetido (a de "Asas" deu 2min40): use `"trechos"` para juntar partes (ex.: 1º verso + refrão + final) com transição de 2 s, cortando no fim de uma frase.
+- Letra: intro com a referência, verso em 1ª pessoa, refrão com o versículo, final curto; estilo "trap gospel, 86 bpm, emotional piano, soft 808, male vocals, light autotune, brazilian portuguese".
+- Legenda: versículo (Almeida IBB) + chamada para comentar + "🎵 Título (feito com Suno)" enquanto for o plano grátis.
+- Texto bíblico: se a bible-api.com estiver fora, use `raw.githubusercontent.com/thiagobodruk/biblia/master/json/aa.json` (mesma Almeida Revisada IBB).

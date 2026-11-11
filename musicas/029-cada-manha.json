@@ -1,0 +1,61 @@
+{
+ "musica": "musicas/029-cada-manha.mp3",
+ "trechos": [
+  [
+   7.0,
+   55.8
+  ],
+  [
+   123.2,
+   132.0
+  ]
+ ],
+ "referencia": "Lamentações 3:22-23",
+ "titulo": "Cada Manhã",
+ "letra": "Lamentações três, vinte e dois. Abri os olhos, o sol entrou no quarto. Ontem eu chorei, hoje eu tô de pé no asfalto. Errei de novo, achei que era o fim. Mas Tua misericórdia acordou antes de mim. Se renova cada manhã. Teu amor não tem fim. Grande é a Tua fidelidade. Cuidando de mim.",
+ "correcoes": {
+  "esfalto": "asfalto",
+  "virei": "Errei",
+  "abrir": "Abri",
+  "só": "o sol",
+  "regraza": "é graça"
+ },
+ "buscas": [
+  "sunrise window bedroom",
+  "morning sun rays",
+  "city sunrise timelapse",
+  "dew grass morning",
+  "coffee cup steam morning",
+  "man silhouette sunrise hill",
+  "sunrise sky clouds",
+  "morning mist field",
+  "sunrise ocean",
+  "birds flying morning sky"
+ ],
+ "legenda": "“A benignidade do Senhor jamais acaba, as suas misericórdias não têm fim; renovam-se cada manhã. Grande é a tua fidelidade.” — Lamentações 3:22-23 ☀️\n\nAcordou hoje? Comente: GRANDE É A TUA FIDELIDADE.\n🎵 Cada Manhã (feito com Suno)",
+ "hashtags": [
+  "#versiculododia",
+  "#musicagospel",
+  "#trapgospel",
+  "#fe",
+  "#bomdia"
+ ],
+ "fonte": "musica",
+ "substituir": [
+  [
+   46.0,
+   47.9,
+   "Cuidando de mim."
+  ],
+  [
+   47.9,
+   52.0,
+   "Cada manhã. Cada manhã."
+  ],
+  [
+   52.0,
+   56.0,
+   ""
+  ]
+ ]
+}

@@ -139,6 +139,17 @@ def gerar(cfg_path):
     ref = cfg["referencia"]
 
     ws = palavras(mp3, cfg.get("letra", ""))
+    # correções do reconhecimento (ex.: {"esfalto": "asfalto"}); mantém a pontuação original
+    cor = {k.lower(): v for k, v in cfg.get("correcoes", {}).items()}
+    def corrige(t):
+        m = re.match(r"^(.*?)([.,;:!?…]*)$", t); base, pont = m.group(1), m.group(2)
+        return cor.get(base.lower(), base) + pont
+    ws = [(a, b, corrige(t)) for a, b, t in ws]
+    # trechos que o reconhecimento errou: [[início, fim, "texto certo"], ...] (palavras distribuídas por igual)
+    for ini, fim, txt in cfg.get("substituir", []):
+        novas = txt.split(); passo = (fim - ini) / max(len(novas), 1)  # texto vazio = só apaga o trecho
+        ws = [w for w in ws if not (ini <= w[0] < fim)] + [(ini + i * passo, ini + (i + 1) * passo - 0.05, p) for i, p in enumerate(novas)]
+        ws.sort(key=lambda w: w[0])
     json.dump(ws, open(os.path.join(tmp, "palavras.json"), "w"), ensure_ascii=False)
     fr = frases(ws)
     frase_de = {}
@@ -189,7 +200,7 @@ def gerar(cfg_path):
     sh("ffmpeg", "-y", "-loglevel", "error", "-ss", "3", "-i", mp4, "-frames:v", "1", "-vf", "scale=540:-1", "-q:v", "4", os.path.join(pasta_v, nome + ".jpg"))
     tags = cfg.get("hashtags") or ["#versiculododia", "#musicagospel", "#trapgospel", "#fe", "#biblia"]
     open(os.path.join(pasta_v, nome + ".txt"), "w", encoding="utf-8").write(cfg.get("legenda", "").strip() + "\n\n" + " ".join(tags[:5]) + "\n")
-    json.dump({"duracao": round(dur, 1), "clipes": [f"pixabay:{v} ({q})" for v, _, q in fontes]}, open(os.path.join(pasta_v, nome + ".json"), "w"))
+    json.dump({"duracao": round(dur, 1), "letra_na_tela": " ".join(t for _, _, t in ws), "clipes": [f"pixabay:{v} ({q})" for v, _, q in fontes]}, open(os.path.join(pasta_v, nome + ".json"), "w"))
     print(f"ok: {mp4} ({dur:.1f}s, {len(ws)} palavras, {len(fontes)} clipes)")
 
 

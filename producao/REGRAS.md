@@ -47,3 +47,6 @@ Aprendidas na revisão de 05/11/2026 do lote 015–024 (nota média ~7,4, veredi
 - Letra: intro com a referência, verso em 1ª pessoa, refrão com o versículo, final curto; estilo "trap gospel, 86 bpm, emotional piano, soft 808, male vocals, light autotune, brazilian portuguese".
 - Legenda: versículo (Almeida IBB) + chamada para comentar + "🎵 Título (feito com Suno)" enquanto for o plano grátis.
 - Texto bíblico: se a bible-api.com estiver fora, use `raw.githubusercontent.com/thiagobodruk/biblia/master/json/aa.json` (mesma Almeida Revisada IBB).
+- **Confira a letra na tela** (`letra_na_tela` em `videos/NNN.json`) e quadros do final: o reconhecimento pode "inventar" um trecho com frases da dica (029: mostrou "fidelidade" onde cantava "Cada manhã"). Corrija com `"correcoes"` (palavra errada → certa) e `"substituir"` ([início, fim, "texto"]; texto vazio apaga, ex.: "oh oh oh").
+- O Suno **ignora `[End]`** e inventa estrofes; conte sempre com o corte por `"trechos"`. Comece direto na voz (pule a introdução instrumental).
+- Clipes: evite pessoas em close de corpo/pernas e cenas noturnas com carros; prefira paisagem, silhueta, objeto (xícara, Bíblia, janela).

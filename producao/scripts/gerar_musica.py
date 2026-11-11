@@ -19,7 +19,7 @@ CACHE = os.path.join(RAIZ, "producao", "cache_clipes")
 ID_MAX = 185000
 PROIBIDAS = ["ai generated", "ai-generated", "generative", "artificial intelligence", "midjourney", "stable diffusion",
              "render", "3d", "animation", "animated", "cgi", "illustration", "cartoon", "digital art",
-             "cigarette", "smok", "phone", "smartphone", "mobile", "tobacco", "alcohol", "beer", "wine", "whisky", "drunk", "drug", "weapon", "gun"]
+             "cigarette", "smok", "phone", "smartphone", "mobile", "headlight", "traffic", "car", "tobacco", "alcohol", "beer", "wine", "whisky", "drunk", "drug", "weapon", "gun"]
 
 
 def sh(*a, **k):

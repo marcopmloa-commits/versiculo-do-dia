@@ -133,7 +133,8 @@ def gerar(cfg_path):
         for i in range(1, len(cfg["trechos"])):
             filt.append(f"{cad}[{i}:a]acrossfade=d=2:c1=tri:c2=tri[x{i}]"); cad = f"[x{i}]"
         cortada = os.path.join(tmp, "musica.wav")
-        sh("ffmpeg", "-y", "-loglevel", "error", *ins, "-filter_complex", ";".join(filt), "-map", cad, cortada)
+        if filt: sh("ffmpeg", "-y", "-loglevel", "error", *ins, "-filter_complex", ";".join(filt), "-map", cad, cortada)
+        else: sh("ffmpeg", "-y", "-loglevel", "error", *ins, "-af", "afade=t=in:d=0.15", cortada)  # um trecho só
         mp3 = cortada
     dur = float(sh("ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", mp3, capture_output=True, text=True).stdout)
     ref = cfg["referencia"]
@@ -200,7 +201,7 @@ def gerar(cfg_path):
     sh("ffmpeg", "-y", "-loglevel", "error", "-ss", "3", "-i", mp4, "-frames:v", "1", "-vf", "scale=540:-1", "-q:v", "4", os.path.join(pasta_v, nome + ".jpg"))
     tags = cfg.get("hashtags") or ["#versiculododia", "#musicagospel", "#trapgospel", "#fe", "#biblia"]
     open(os.path.join(pasta_v, nome + ".txt"), "w", encoding="utf-8").write(cfg.get("legenda", "").strip() + "\n\n" + " ".join(tags[:5]) + "\n")
-    json.dump({"duracao": round(dur, 1), "letra_na_tela": " ".join(t for _, _, t in ws), "clipes": [f"pixabay:{v} ({q})" for v, _, q in fontes]}, open(os.path.join(pasta_v, nome + ".json"), "w"))
+    json.dump({"duracao": round(dur, 1), "letra_na_tela": " ".join(t for _, _, t in ws), "palavras": [[round(a, 2), round(b, 2), t] for a, b, t in ws], "clipes": [f"pixabay:{v} ({q})" for v, _, q in fontes]}, open(os.path.join(pasta_v, nome + ".json"), "w"))
     print(f"ok: {mp4} ({dur:.1f}s, {len(ws)} palavras, {len(fontes)} clipes)")
 
 

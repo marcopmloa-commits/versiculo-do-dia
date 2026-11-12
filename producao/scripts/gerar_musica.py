@@ -47,20 +47,24 @@ def frases(ws):
 
 
 # ---------- 2. clipes de fundo (Pixabay: uso comercial liberado, sem crédito obrigatório) ----------
-def clipes(buscas, n, usados=()):
+def clipes(buscas, n, cena=CENA):
+    """n clipes reais e diferentes, alternando as buscas (1º resultado de cada, depois o 2º de cada...)."""
     os.makedirs(CACHE, exist_ok=True)
-    chave = os.environ["PIXABAY_KEY"]; achados = []
+    chave = os.environ["PIXABAY_KEY"]; listas = []
     for q in buscas:
         url = "https://pixabay.com/api/videos/?" + urllib.parse.urlencode({"key": chave, "q": q, "per_page": 80, "safesearch": "true"})
         hits = json.load(urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"}), timeout=30))["hits"]
-        for h in hits:
-            if h["duration"] < CENA + 1 or h["id"] in usados or any(h["id"] == a[0] for a in achados): continue
-            tags = h["tags"].lower()
-            if h["id"] > ID_MAX: continue                       # só filmagens reais (enviadas até o fim de 2023)
-            if any(t in tags for t in PROIBIDAS): continue      # IA, animação, temas impróprios
-            v = h["videos"].get("medium") or h["videos"]["large"]
-            achados.append((h["id"], v["url"], q)); break
-        if len(achados) >= n: break
+        ok = [h for h in hits if h["duration"] >= cena + 1 and h["id"] <= ID_MAX            # só filmagens reais (até o fim de 2023)
+              and not any(t in h["tags"].lower() for t in PROIBIDAS)]                       # IA, animação, temas impróprios
+        listas.append((q, ok))
+    achados, vistos, rodada = [], set(), 0
+    while len(achados) < n and any(len(ok) > rodada for _, ok in listas):
+        for q, ok in listas:
+            if len(achados) >= n: break
+            if len(ok) > rodada and ok[rodada]["id"] not in vistos:
+                h = ok[rodada]; vistos.add(h["id"])
+                achados.append((h["id"], (h["videos"].get("medium") or h["videos"]["large"])["url"], q))
+        rodada += 1
     arquivos = []
     for vid, url, q in achados:
         f = os.path.join(CACHE, f"{vid}.mp4")
@@ -69,6 +73,19 @@ def clipes(buscas, n, usados=()):
             open(f, "wb").write(urllib.request.urlopen(req, timeout=120).read())
         arquivos.append((vid, f, q))
     return arquivos
+
+
+def compasso(audio_path):
+    """duração de 1 compasso (4 batidas), medida pelos graves da música"""
+    raw = sh("ffmpeg", "-loglevel", "error", "-i", audio_path, "-ac", "1", "-ar", "16000", "-f", "f32le", "-", capture_output=True).stdout
+    x = np.frombuffer(raw, np.float32); hop = 160
+    fr = np.array([np.abs(np.fft.rfft(x[i * hop:i * hop + 1024] * np.hanning(1024))) for i in range(len(x) // hop - 7)])
+    f = np.fft.rfftfreq(1024, 1 / 16000)
+    graves = fr[:, (f > 30) & (f < 150)].sum(1); fluxo = np.maximum(np.diff(graves), 0); fluxo -= fluxo.mean()
+    ac = np.correlate(fluxo, fluxo, "full")[len(fluxo) - 1:]; lags = np.arange(len(ac)) * hop / 16000
+    m = (lags > 0.45) & (lags < 1.0)   # batida entre 60 e 133 BPM (trap em half-time cai aqui)
+    batida = lags[m][np.argmax(ac[m])]
+    return 4 * batida
 
 
 # ---------- 3. camadas de texto (PNG transparentes desenhados no navegador) ----------
@@ -182,14 +199,17 @@ def gerar(cfg_path):
     mov = camada_texto(estados, tmp)
 
     # fundo: clipes de 5,5 s, recortados para 9:16, leve zoom, tom quente e escurecido para o texto
-    n = int(np.ceil(dur / CENA))
-    fontes = clipes(cfg["buscas"], n)
+    # troca de clipe no ritmo: 1 compasso (se o compasso for curto demais, 2)
+    cena = cfg.get("cena") or compasso(mp3)
+    if cena < 2.2: cena *= 2
+    n = int(np.ceil(dur / cena))
+    fontes = clipes(cfg["buscas"], n, cena)
     if not fontes: raise SystemExit("nenhum clipe encontrado")
     partes = []
     for k in range(n):
         vid, f, q = fontes[k % len(fontes)]
         out = os.path.join(tmp, f"c{k:02d}.mp4")
-        sh("ffmpeg", "-y", "-loglevel", "error", "-ss", "0.5", "-t", f"{CENA:.2f}", "-i", f, "-an",
+        sh("ffmpeg", "-y", "-loglevel", "error", "-ss", f"{0.5 + (k // len(fontes)) * (cena + 0.5):.2f}", "-t", f"{cena:.3f}", "-i", f, "-an",
            "-vf", f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
                   f"zoompan=z='1+0.0006*on':d=1:s={W}x{H}:fps={FPS},"
                   "eq=saturation=1.15:brightness=-0.06,colorbalance=rs=.05:bs=-.05,vignette=PI/4,format=yuv420p",

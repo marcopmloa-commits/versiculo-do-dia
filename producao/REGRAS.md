@@ -58,3 +58,8 @@ Aprendidas na revisão de 05/11/2026 do lote 015–024 (nota média ~7,4, veredi
 - **Letras que prendem:** começar pelo **refrão/gancho** (frase que fala com quem assiste: "Se você tá vendo isso…", "Três da manhã…"), temas de identificação (mãe que orou, choro escondido, livramento), refrão repetido no fim.
 - **Buscas com "mãe/bebê/filho" trazem animais** (canguru, macaco, pato): use termos com pessoas ("woman holding baby", "mother daughter hug") e o campo `"evitar"` (palavras de etiqueta ou ids do Pixabay, ex.: `["kangaroo","monkey","49038"]`). Para achar o id de um clipe ruim, veja a miniatura dos arquivos em `producao/cache_clipes/`.
 - Músicas baixadas pelo usesuno.com vieram em boa qualidade (192 kbps) e já começando na voz.
+
+## Capa / thumbnail (aprendido com as visualizações do perfil em 12/11/2026)
+- Capas com **frase inteira e nítida** ("ISAÍAS 40:31": 1.845 views; "BOA NOITE, SENHOR": 900) venceram as com palavra solta/borrada ("SE", "F…", "QUAN…": 0–132).
+- Por isso o `gerar_musica.py` abre com a **frase-gancho inteira** (campo `"capa"`, ou a 1ª frase cantada) em até 3 linhas, nítida, com escurecimento atrás, durante o tempo em que ela é cantada; depois segue palavra por palavra. O 1º quadro (e o .jpg do site) é essa capa.
+- A **1ª busca** de `"buscas"` vira o fundo da capa: escolha a imagem mais bonita e que combine (céu, luz, ou cena escura para temas de dor), sem objeto claro no meio do texto.

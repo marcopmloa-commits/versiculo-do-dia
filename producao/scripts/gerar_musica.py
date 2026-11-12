@@ -110,8 +110,19 @@ html,body{margin:0;width:1080px;height:1920px;background:transparent;overflow:hi
 window.desenhar = async (c) => {
   await document.fonts.ready;
   const g = document.getElementById("g"); g.textContent = c.grande || "";
-  let tam = c.tam || 150; g.style.fontSize = tam + "px";
-  while (g.offsetWidth > 960 && tam > 40) { tam -= 4; g.style.fontSize = tam + "px"; }
+  const box = document.getElementById("grande"), marca = document.getElementById("marca");
+  if (c.capa) {   // capa: frase-gancho inteira (é o 1º quadro, que o TikTok usa de thumbnail)
+    box.style.top = "560px"; box.style.height = "520px"; marca.style.top = "1110px";
+    box.style.background = "radial-gradient(ellipse 60%% 55%% at 50%% 50%%, rgba(0,0,0,.72), rgba(0,0,0,0) 80%%)";
+    g.style.whiteSpace = "normal"; g.style.maxWidth = "940px"; g.style.lineHeight = "1.12"; g.style.textAlign = "center";
+    let tam = 132; g.style.fontSize = tam + "px";
+    while ((g.offsetHeight > 500 || g.offsetWidth > 960) && tam > 50) { tam -= 4; g.style.fontSize = tam + "px"; }
+  } else {
+    box.style.top = "780px"; box.style.height = "200px"; marca.style.top = "1000px"; box.style.background = "none";
+    g.style.whiteSpace = "nowrap"; g.style.maxWidth = "none"; g.style.lineHeight = "normal";
+    let tam = c.tam || 150; g.style.fontSize = tam + "px";
+    while (g.offsetWidth > 960 && tam > 40) { tam -= 4; g.style.fontSize = tam + "px"; }
+  }
   g.style.filter = c.entrada ? "blur(6px)" : "none";
   g.style.opacity = c.entrada ? .55 : 1;
   g.style.display = "inline-block";
@@ -188,11 +199,22 @@ def gerar(cfg_path):
         for w in f: frase_de[w] = re.sub(r"[.,;:!?]+$", "", " ".join(x[2] for x in f))
 
     # estados do texto ao longo do tempo
-    eventos = [(0.0, {"grande": ref, "tam": 120, "frase": ""})]
+    # capa = 1ª frase cantada (ou "capa" da config), inteira e nítida desde o 1º quadro
+    capa_txt, k_fim = cfg.get("capa"), 0
+    if fr:
+        k_fim = len(fr[0])
+        if len(fr[0]) < 4 and len(fr) > 1: k_fim += len(fr[1])   # frase curta demais: junta a próxima
+        if not capa_txt: capa_txt = re.sub(r"[.;:!?…]+$", "", " ".join(x[2] for x in ws[:k_fim]))
+        else: k_fim = min(len(capa_txt.split()), len(ws))   # capa escolhida: pula as palavras que ela já mostra
+    fim_capa = max(ws[k_fim - 1][1] + 0.15, 1.5) if fr else 1.5
+    eventos = [(0.0, {"grande": capa_txt or ref, "capa": True, "frase": ""})]
     for i, w in enumerate(ws):
+        if i < k_fim: continue   # já está na capa
         a, b, txt = w
         prox = ws[i + 1][0] if i + 1 < len(ws) else dur
         palavra = re.sub(r"[.,;:!?…\"“”]+", "", txt)
+        a = max(a, fim_capa)
+        if a >= prox: continue
         eventos.append((a, {"grande": palavra, "frase": frase_de[w], "entrada": True}))
         eventos.append((min(a + 0.09, prox), {"grande": palavra, "frase": frase_de[w]}))
         if prox - b > 1.2:  # pausa longa: volta para a referência
@@ -231,7 +253,7 @@ def gerar(cfg_path):
        "-filter_complex", "[0:v][1:v]overlay=0:0:format=auto,format=yuv420p[v];[2:a]loudnorm=I=-14:TP=-1.5:LRA=11,afade=t=out:st=%.2f:d=1.5[a]" % (dur - 1.5),
        "-map", "[v]", "-map", "[a]", "-t", f"{dur:.2f}", "-c:v", "libx264", "-crf", "23", "-preset", "medium",
        "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", mp4)
-    sh("ffmpeg", "-y", "-loglevel", "error", "-ss", "3", "-i", mp4, "-frames:v", "1", "-vf", "scale=540:-1", "-q:v", "4", os.path.join(pasta_v, nome + ".jpg"))
+    sh("ffmpeg", "-y", "-loglevel", "error", "-ss", "0.3", "-i", mp4, "-frames:v", "1", "-vf", "scale=540:-1", "-q:v", "4", os.path.join(pasta_v, nome + ".jpg"))
     tags = cfg.get("hashtags") or ["#versiculododia", "#musicagospel", "#trapgospel", "#fe", "#biblia"]
     open(os.path.join(pasta_v, nome + ".txt"), "w", encoding="utf-8").write(cfg.get("legenda", "").strip() + "\n\n" + " ".join(tags[:5]) + "\n")
     json.dump({"duracao": round(dur, 1), "letra_na_tela": " ".join(t for _, _, t in ws), "palavras": [[round(a, 2), round(b, 2), t] for a, b, t in ws], "clipes": [f"pixabay:{v} ({q})" for v, _, q in fontes]}, open(os.path.join(pasta_v, nome + ".json"), "w"))

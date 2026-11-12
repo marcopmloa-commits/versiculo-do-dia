@@ -70,3 +70,5 @@ Aprendidas na revisão de 05/11/2026 do lote 015–024 (nota média ~7,4, veredi
   (variações: "melodic trap 130 bpm" para temas calmos; "lo-fi trap 120 bpm, guitar loop" para noite).
 - **Exclude Styles:** `choir, gospel choir, worship, orchestra, strings, ballad, acoustic, church, hymn`. Style Influence alto (~70–80%).
 - Marcações da letra: **[Hook]** e **[Rap Verse]** (em vez de [Refrão]/[Verso]).
+- **Conferir clipes com a folha de contato:** `python3 producao/scripts/folha_clipes.py NNN-nome saida.png` mostra a miniatura e o id de cada clipe. Ids reprovados para sempre vão em `VETADOS` (no `gerar_musica.py`); só para um vídeo, em `"evitar"`.
+- Downloads do usesuno.com às vezes vêm **quebrados** (ex.: "Paz de Deus" com 5 s / 119 KB): confira a duração antes de montar.

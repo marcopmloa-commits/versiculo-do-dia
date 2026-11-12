@@ -17,9 +17,11 @@ CACHE = os.path.join(RAIZ, "producao", "cache_clipes")
 # O TikTok estava rotulando como IA: o Pixabay tem clipes gerados por IA (ex.: 253345, "ai generated").
 # Usamos só vídeos antigos (id <= ID_MAX ≈ fim de 2023, antes dos geradores de vídeo) e recusamos etiquetas suspeitas.
 ID_MAX = 185000
+# clipes já vistos e reprovados (IA, 3D, desenho, fora do tema): nunca usar
+VETADOS = {"170300", "305", "153221", "253345", "49038", "34091", "3608", "138370", "153296", "101795", "23162", "38084"}
 PROIBIDAS = ["ai generated", "ai-generated", "generative", "artificial intelligence", "midjourney", "stable diffusion",
              "render", "3d", "animation", "animated", "cgi", "illustration", "cartoon", "digital art",
-             "cigarette", "smok", "phone", "smartphone", "mobile", "headlight", "traffic", "car", "tobacco", "alcohol", "beer", "wine", "whisky", "drunk", "drug", "weapon", "gun"]
+             "cigarette", "smok", "phone", "smartphone", "mobile", "headlight", "traffic", "car", "helicopter", "airplane", "military", "tobacco", "alcohol", "beer", "wine", "whisky", "drunk", "drug", "weapon", "gun"]
 
 
 def sh(*a, **k):
@@ -55,7 +57,7 @@ def clipes(buscas, n, cena=CENA, evitar=()):
         url = "https://pixabay.com/api/videos/?" + urllib.parse.urlencode({"key": chave, "q": q, "per_page": 80, "safesearch": "true"})
         hits = json.load(urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"}), timeout=30))["hits"]
         ok = [h for h in hits if h["duration"] >= cena + 1 and h["id"] <= ID_MAX            # só filmagens reais (até o fim de 2023)
-              and str(h["id"]) not in [str(e) for e in evitar]                                # ids vetados à mão
+              and str(h["id"]) not in VETADOS and str(h["id"]) not in [str(e) for e in evitar]  # ids vetados à mão
               and not any(t in h["tags"].lower() for t in list(PROIBIDAS) + [e for e in evitar if not str(e).isdigit()])]  # IA, animação, impróprios, + "evitar" do vídeo
         listas.append((q, ok))
     achados, vistos, rodada = [], set(), 0

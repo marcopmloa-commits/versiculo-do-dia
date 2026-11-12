@@ -77,3 +77,4 @@ Aprendidas na revisão de 05/11/2026 do lote 015–024 (nota média ~7,4, veredi
 - **Todo vídeo musical tem no mínimo 60 s.** Os 034–039 ficaram com 35–47 s porque (1) as letras tinham só 1 verso + refrão 2×, (2) cortei intro/final sem piso de duração e (3) os arquivos do usesuno.com vieram curtos (o de "Debaixo das Tuas Asas" terminou cortado no meio de uma palavra aos 60 s).
 - **Estrutura de letra:** [Hook] → [Rap Verse] → [Hook] → [Rap Verse 2] → [Bridge] curta → [Hook] final (≈ 1min20–1min40 de música; vídeo final 1min05–1min20).
 - Ao cortar: só tire o instrumental do começo; se o resultado ficar < 60 s, mantenha mais trechos com voz (não corte o final). Confira a duração do arquivo baixado antes de montar e avise o dono se vier curta ou cortada.
+- **Estrofes inventadas pelo Suno ficam** (o dono gostou, 13/11/2026). Só corte o instrumental do começo e o final sem voz. A letra na tela segue o que foi cantado (confira com o reconhecimento).

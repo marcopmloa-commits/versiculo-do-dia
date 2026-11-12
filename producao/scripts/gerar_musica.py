@@ -18,10 +18,10 @@ CACHE = os.path.join(RAIZ, "producao", "cache_clipes")
 # Usamos só vídeos antigos (id <= ID_MAX ≈ fim de 2023, antes dos geradores de vídeo) e recusamos etiquetas suspeitas.
 ID_MAX = 185000
 # clipes já vistos e reprovados (IA, 3D, desenho, fora do tema): nunca usar
-VETADOS = {"170300", "305", "153221", "253345", "49038", "34091", "3608", "138370", "153296", "101795", "23162", "38084"}
+VETADOS = {"184538", "47407", "170300", "305", "153221", "253345", "49038", "34091", "3608", "138370", "153296", "101795", "23162", "38084"}
 PROIBIDAS = ["ai generated", "ai-generated", "generative", "artificial intelligence", "midjourney", "stable diffusion",
              "render", "3d", "animation", "animated", "cgi", "illustration", "cartoon", "digital art",
-             "cigarette", "smok", "phone", "smartphone", "mobile", "headlight", "traffic", "car", "helicopter", "airplane", "military", "tobacco", "alcohol", "beer", "wine", "whisky", "drunk", "drug", "weapon", "gun"]
+             "cigarette", "smok", "phone", "smartphone", "mobile", "headlight", "traffic", "car", "helicopter", "airplane", "military", "yoga", "meditat", "zen", "buddha", "bikini", "swimsuit", "underwater", "sexy", "lingerie", "beach girl", "tobacco", "alcohol", "beer", "wine", "whisky", "drunk", "drug", "weapon", "gun"]
 
 
 def sh(*a, **k):

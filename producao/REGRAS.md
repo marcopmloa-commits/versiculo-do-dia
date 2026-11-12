@@ -63,3 +63,10 @@ Aprendidas na revisão de 05/11/2026 do lote 015–024 (nota média ~7,4, veredi
 - Capas com **frase inteira e nítida** ("ISAÍAS 40:31": 1.845 views; "BOA NOITE, SENHOR": 900) venceram as com palavra solta/borrada ("SE", "F…", "QUAN…": 0–132).
 - Por isso o `gerar_musica.py` abre com a **frase-gancho inteira** (campo `"capa"`, ou a 1ª frase cantada) em até 3 linhas, nítida, com escurecimento atrás, durante o tempo em que ela é cantada; depois segue palavra por palavra. O 1º quadro (e o .jpg do site) é essa capa.
 - A **1ª busca** de `"buscas"` vira o fundo da capa: escolha a imagem mais bonita e que combine (céu, luz, ou cena escura para temas de dor), sem objeto claro no meio do texto.
+
+## Estilo no Suno: TRAP de verdade (o dono reclamou que estava "parecendo coral", 12/11/2026)
+- **Não usar** no Style: gospel, worship, emotional, uplifting, strings, choir, piano ballad (puxam para louvor/coral).
+- **Base:** `trap, 140 bpm, hard 808 bass, rolling hi-hats, snappy snare, dark melodic piano loop, male melodic rap, autotune, brazilian portuguese, christian lyrics, no choir`
+  (variações: "melodic trap 130 bpm" para temas calmos; "lo-fi trap 120 bpm, guitar loop" para noite).
+- **Exclude Styles:** `choir, gospel choir, worship, orchestra, strings, ballad, acoustic, church, hymn`. Style Influence alto (~70–80%).
+- Marcações da letra: **[Hook]** e **[Rap Verse]** (em vez de [Refrão]/[Verso]).

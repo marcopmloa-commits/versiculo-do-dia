@@ -78,3 +78,10 @@ Aprendidas na revisão de 05/11/2026 do lote 015–024 (nota média ~7,4, veredi
 - **Estrutura de letra:** [Hook] → [Rap Verse] → [Hook] → [Rap Verse 2] → [Bridge] curta → [Hook] final (≈ 1min20–1min40 de música; vídeo final 1min05–1min20).
 - Ao cortar: só tire o instrumental do começo; se o resultado ficar < 60 s, mantenha mais trechos com voz (não corte o final). Confira a duração do arquivo baixado antes de montar e avise o dono se vier curta ou cortada.
 - **Estrofes inventadas pelo Suno ficam** (o dono gostou, 13/11/2026). Só corte o instrumental do começo e o final sem voz. A letra na tela segue o que foi cantado (confira com o reconhecimento).
+
+## Visual dos clipes: estilo dos perfis grandes de trap gospel (pedido do dono, 13/11/2026)
+- Referência: céu **laranja/vermelho saturado** sobre cidade, rodovia, ponte; **revoada de pássaros** no pôr do sol; **silhueta solitária** à noite (capuz, sentado no escuro, estrada vazia); café sendo servido no nascer do sol; pessoa na janela.
+- O `gerar_musica.py` aplica a cor `GRADE` (saturação alta, sombras frias, luz laranja, contraste) em todos os clipes.
+- Buscas boas: "birds flock sunset", "highway sunset traffic", "orange sky city skyline", "red sky clouds dramatic", "sunset sun red horizon", "bridge sunset", "city sunset timelapse", "man silhouette hoodie night", "man sitting alone dark", "lonely man road night", "coffee pouring sunrise", "woman window looking".
+- **A 1ª busca é a capa:** use a mais impactante (céu em chamas). Evite céu azul de dia, campo verde, lago claro (fogem do estilo).
+- Carros/trânsito agora são permitidos (rodovias no pôr do sol fazem parte do estilo).

@@ -17,11 +17,15 @@ CACHE = os.path.join(RAIZ, "producao", "cache_clipes")
 # O TikTok estava rotulando como IA: o Pixabay tem clipes gerados por IA (ex.: 253345, "ai generated").
 # Usamos só vídeos antigos (id <= ID_MAX ≈ fim de 2023, antes dos geradores de vídeo) e recusamos etiquetas suspeitas.
 ID_MAX = 185000
+# visual estilo "trap gospel" (referência do dono): céu laranja/vermelho saturado, sombras frias, contraste alto
+GRADE = ("eq=contrast=1.18:saturation=1.55:brightness=-0.04:gamma=0.95,"
+         "colorbalance=rs=-.06:gs=-.01:bs=.07:rm=.05:bm=-.06:rh=.10:gh=.02:bh=-.10,"
+         "curves=preset=increase_contrast,vignette=PI/3.6")
 # clipes já vistos e reprovados (IA, 3D, desenho, fora do tema): nunca usar
-VETADOS = {"184538", "47407", "170300", "305", "153221", "253345", "49038", "34091", "3608", "138370", "153296", "101795", "23162", "38084"}
+VETADOS = {"23678", "46637", "180667", "140230", "184538", "47407", "170300", "305", "153221", "253345", "49038", "34091", "3608", "138370", "153296", "101795", "23162", "38084"}
 PROIBIDAS = ["ai generated", "ai-generated", "generative", "artificial intelligence", "midjourney", "stable diffusion",
              "render", "3d", "animation", "animated", "cgi", "illustration", "cartoon", "digital art",
-             "cigarette", "smok", "phone", "smartphone", "mobile", "headlight", "traffic", "car", "helicopter", "airplane", "military", "yoga", "meditat", "zen", "buddha", "bikini", "swimsuit", "underwater", "sexy", "lingerie", "beach girl", "tobacco", "alcohol", "beer", "wine", "whisky", "drunk", "drug", "weapon", "gun"]
+             "cigarette", "smok", "phone", "smartphone", "mobile", "helicopter", "airplane", "military", "yoga", "meditat", "zen", "buddha", "bikini", "swimsuit", "underwater", "sexy", "lingerie", "beach girl", "tobacco", "alcohol", "beer", "wine", "whisky", "drunk", "drug", "weapon", "gun"]
 
 
 def sh(*a, **k):
@@ -240,7 +244,7 @@ def gerar(cfg_path):
         sh("ffmpeg", "-y", "-loglevel", "error", "-ss", f"{0.5 + (k // len(fontes)) * (cena + 0.5):.2f}", "-t", f"{cena:.3f}", "-i", f, "-an",
            "-vf", f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
                   f"zoompan=z='1+0.0006*on':d=1:s={W}x{H}:fps={FPS},"
-                  "eq=saturation=1.15:brightness=-0.06,colorbalance=rs=.05:bs=-.05,vignette=PI/4,format=yuv420p",
+                  f"{GRADE},format=yuv420p",
            "-r", str(FPS), out)
         partes.append(out)
     lista = os.path.join(tmp, "fundo.txt")

@@ -47,7 +47,7 @@ def frases(ws):
 
 
 # ---------- 2. clipes de fundo (Pixabay: uso comercial liberado, sem crédito obrigatório) ----------
-def clipes(buscas, n, cena=CENA):
+def clipes(buscas, n, cena=CENA, evitar=()):
     """n clipes reais e diferentes, alternando as buscas (1º resultado de cada, depois o 2º de cada...)."""
     os.makedirs(CACHE, exist_ok=True)
     chave = os.environ["PIXABAY_KEY"]; listas = []
@@ -55,7 +55,8 @@ def clipes(buscas, n, cena=CENA):
         url = "https://pixabay.com/api/videos/?" + urllib.parse.urlencode({"key": chave, "q": q, "per_page": 80, "safesearch": "true"})
         hits = json.load(urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"}), timeout=30))["hits"]
         ok = [h for h in hits if h["duration"] >= cena + 1 and h["id"] <= ID_MAX            # só filmagens reais (até o fim de 2023)
-              and not any(t in h["tags"].lower() for t in PROIBIDAS)]                       # IA, animação, temas impróprios
+              and str(h["id"]) not in [str(e) for e in evitar]                                # ids vetados à mão
+              and not any(t in h["tags"].lower() for t in list(PROIBIDAS) + [e for e in evitar if not str(e).isdigit()])]  # IA, animação, impróprios, + "evitar" do vídeo
         listas.append((q, ok))
     achados, vistos, rodada = [], set(), 0
     while len(achados) < n and any(len(ok) > rodada for _, ok in listas):
@@ -174,9 +175,12 @@ def gerar(cfg_path):
     ws = [(a, b, corrige(t)) for a, b, t in ws]
     # trechos que o reconhecimento errou: [[início, fim, "texto certo"], ...] (palavras distribuídas por igual)
     for ini, fim, txt in cfg.get("substituir", []):
-        novas = txt.split(); passo = (fim - ini) / max(len(novas), 1)  # texto vazio = só apaga o trecho
-        ws = [w for w in ws if not (ini <= w[0] < fim)] + [(ini + i * passo, ini + (i + 1) * passo - 0.05, p) for i, p in enumerate(novas)]
-        ws.sort(key=lambda w: w[0])
+        if isinstance(txt, list):  # tempos marcados à mão: [[t, "texto"], ...]
+            novas = [(t, (txt[i + 1][0] if i + 1 < len(txt) else fim) - 0.05, p) for i, (t, p) in enumerate(txt)]
+        else:
+            ps = txt.split(); passo = (fim - ini) / max(len(ps), 1)  # texto vazio = só apaga o trecho
+            novas = [(ini + i * passo, ini + (i + 1) * passo - 0.05, p) for i, p in enumerate(ps)]
+        ws = sorted([w for w in ws if not (ini <= w[0] < fim)] + novas, key=lambda w: w[0])
     json.dump(ws, open(os.path.join(tmp, "palavras.json"), "w"), ensure_ascii=False)
     fr = frases(ws)
     frase_de = {}
@@ -203,7 +207,7 @@ def gerar(cfg_path):
     cena = cfg.get("cena") or compasso(mp3)
     if cena < 2.2: cena *= 2
     n = int(np.ceil(dur / cena))
-    fontes = clipes(cfg["buscas"], n, cena)
+    fontes = clipes(cfg["buscas"], n, cena, cfg.get("evitar", []))
     if not fontes: raise SystemExit("nenhum clipe encontrado")
     partes = []
     for k in range(n):

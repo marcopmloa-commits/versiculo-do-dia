@@ -1,0 +1,91 @@
+{
+ "musica": "musicas/035-oracao-da-minha-mae.mp3",
+ "trechos": [
+  [
+   0.0,
+   49.3
+  ],
+  [
+   58.6,
+   71.2
+  ]
+ ],
+ "referencia": "Oração de mãe",
+ "titulo": "Oração da Minha Mãe",
+ "letra": "Foi a oração da minha mãe que me guardou quando eu fugi. De joelho ela pediu, e o céu respondeu por mim. Eu saía de noite sem olhar pra trás. Ela ficava acordada sem dormir em paz. Eu não entendia aquela luz acesa. Era fé de mãe vencendo a minha tristeza. Obrigado, Deus, pela mulher que orou por mim.",
+ "correcoes": {
+  "fuzi": "fugi",
+  "joelha": "joelho",
+  "pedi": "pediu",
+  "saia": "saía",
+  "entendi": "entendia"
+ },
+ "buscas": [
+  "mother daughter hug",
+  "old woman praying",
+  "woman holding baby",
+  "grandmother hands",
+  "elderly woman smiling",
+  "family hug sunset",
+  "woman praying hands",
+  "candle window night",
+  "mother son walking park",
+  "mom kissing baby",
+  "bible reading hands",
+  "sunrise house window",
+  "woman looking window",
+  "family walking field sunset"
+ ],
+ "legenda": "Quantas vezes a oração da sua mãe te guardou sem você saber? 🙏❤️\n\nMarca a sua mãe ou comente OBRIGADO, MÃE.\n🎵 Oração da Minha Mãe (feito com Suno)",
+ "hashtags": [
+  "#oracaodemae",
+  "#musicagospel",
+  "#mae",
+  "#fe",
+  "#gratidao"
+ ],
+ "fonte": "musica",
+ "substituir": [
+  [
+   48.5,
+   60.0,
+   [
+    [
+     49.0,
+     "E o céu"
+    ],
+    [
+     52.5,
+     "respondeu"
+    ],
+    [
+     56.0,
+     "por mim."
+    ]
+   ]
+  ]
+ ],
+ "evitar": [
+  "kangaroo",
+  "monkey",
+  "ape",
+  "animal",
+  "wildlife",
+  "duck",
+  "bird",
+  "dog",
+  "cat",
+  "zoo",
+  "christmas",
+  "xmas",
+  "halloween",
+  "169589",
+  "177733",
+  "statue",
+  "sculpture",
+  "advent",
+  "decoration",
+  "49038",
+  "34091"
+ ]
+}

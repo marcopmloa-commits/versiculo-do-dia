@@ -17,11 +17,9 @@ CACHE = os.path.join(RAIZ, "producao", "cache_clipes")
 # O TikTok estava rotulando como IA: o Pixabay tem clipes gerados por IA (ex.: 253345, "ai generated").
 # Usamos só vídeos antigos (id <= ID_MAX ≈ fim de 2023, antes dos geradores de vídeo) e recusamos etiquetas suspeitas.
 ID_MAX = 185000
-FILTRO_COR = True   # só cenas quentes (laranja/vermelho) ou noturnas escuras
+FILTRO_COR = False   # só cenas quentes (laranja/vermelho) ou noturnas escuras
 # visual estilo "trap gospel" (referência do dono): céu laranja/vermelho saturado, sombras frias, contraste alto
-GRADE = ("eq=contrast=1.18:saturation=1.55:brightness=-0.04:gamma=0.95,"
-         "colorbalance=rs=-.06:gs=-.01:bs=.07:rm=.05:bm=-.06:rh=.10:gh=.02:bh=-.10,"
-         "curves=preset=increase_contrast,vignette=PI/3.6")
+GRADE = "eq=contrast=1.06:saturation=1.08:brightness=-0.03,vignette=PI/5"   # natural: parece filmagem real
 # clipes já vistos e reprovados (IA, 3D, desenho, fora do tema): nunca usar
 # palavras proibidas inteiras (como substring dariam falso positivo: "bar" em "barn", "gin" em "imagine")
 PROIBIDAS_PALAVRA = {"bar", "pub", "club", "party", "toast", "cheers", "rum", "gin", "pint", "joint", "lighter", "beverage", "booze"}
@@ -246,8 +244,9 @@ def gerar(cfg_path):
 
     # fundo: clipes de 5,5 s, recortados para 9:16, leve zoom, tom quente e escurecido para o texto
     # troca de clipe no ritmo: 1 compasso (se o compasso for curto demais, 2)
-    cena = cfg.get("cena") or compasso(mp3)
-    if cena < 2.2: cena *= 2
+    # cenas longas (pedido do dono): ~6–8 s, alinhadas a um número inteiro de compassos
+    c = compasso(mp3)
+    cena = cfg.get("cena") or c * max(1, round(7.0 / c))
     n = int(np.ceil(dur / cena))
     fontes = clipes(cfg["buscas"], n, cena, cfg.get("evitar", []))
     if cfg.get("capa_clipe"):   # clipe escolhido para a capa (1º quadro)

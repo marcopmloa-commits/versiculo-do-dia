@@ -122,7 +122,7 @@ html,body{margin:0;width:1080px;height:1920px;background:transparent;overflow:hi
 </style></head><body>
 <div id="grande"><span id="g"></span></div>
 <div id="marca"><svg width="46" height="70" viewBox="0 0 46 70"><g fill="#fff"><rect x="19" y="0" width="8" height="70" rx="2"/><rect x="0" y="18" width="46" height="8" rx="2"/></g></svg>
-<div>Versículo Diário</div></div>
+<div>Ainda de Pé</div></div>
 <script>
 window.desenhar = async (c) => {
   await document.fonts.ready;

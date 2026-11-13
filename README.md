@@ -35,7 +35,7 @@ No site, o botão "Já postei" cria a issue `postado: NNN-nome`. O workflow `.gi
 - **Sem chave (padrão):** o botão só esconde o vídeo neste celular (`localStorage`), sem login. O arquivo continua no repositório até alguém limpar.
 
 ## Perfil
-Nome: **Ainda de Pé** (antes "Versículo Diário"). A foto de perfil é `perfil.png` (monograma "A" dourado com cruz, `producao/arte/perfil-opcoes/b.html`).
+Nome: **Versículo Diário**. A foto de perfil é `perfil.png`, gerada a partir de `producao/arte/perfil.html`.
 
 ## Formato "música" (estilo trap/lo-fi gospel)
 1. Eu escrevo a letra a partir do versículo; você gera a música no Suno e sobe o MP3 no Drive (pasta "suno", com link público).

@@ -4,7 +4,7 @@ AQUI = os.path.dirname(os.path.abspath(__file__))
 RAIZ = os.path.abspath(os.path.join(AQUI, "..", ".."))
 REPO = "marcopmloa-commits/versiculo-do-dia"
 DONO, REPO_CURTO = REPO.split("/")
-NOME = "Ainda de Pé"
+NOME = "Versículo Diário"
 ROT = {"app": ("app", "app"), "externa": ("ext", "externo"), "musica": ("mus", "música")}
 
 def gerar():

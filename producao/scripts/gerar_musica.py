@@ -249,6 +249,23 @@ def gerar(cfg_path):
     cena = cfg.get("cena") or c * max(1, round(7.0 / c))
     n = int(np.ceil(dur / cena))
     fontes = clipes(cfg["buscas"], n, cena, cfg.get("evitar", []))
+    # capa nunca repete (pedido do dono): o 1º clipe não pode ter sido capa de outro vídeo
+    reg = os.path.join(RAIZ, "producao", "capas_usadas.txt")
+    usadas = {}
+    for l in open(reg, encoding="utf-8") if os.path.exists(reg) else []:
+        p = l.split()
+        if p and not p[0].startswith("#"): usadas[p[0]] = set(p[1:])
+    num = nome[:3]
+    livre = lambda i: not (usadas.get(str(i), set()) - {num})
+    if cfg.get("capa_clipe") and not livre(cfg["capa_clipe"]):
+        raise SystemExit(f'capa_clipe {cfg["capa_clipe"]} já foi capa de {usadas[str(cfg["capa_clipe"])]}')
+    if not cfg.get("capa_clipe"):
+        k = next((i for i, x in enumerate(fontes) if livre(x[0])), None)
+        if k is None:
+            extra = [x for x in clipes(cfg["buscas"], n + 12, cena, cfg.get("evitar", [])) if livre(x[0])]
+            if not extra: raise SystemExit("nenhum clipe livre para a capa")
+            fontes = [extra[0]] + [x for x in fontes if x[0] != extra[0][0]][:n - 1]
+        elif k: fontes.insert(0, fontes.pop(k))
     if cfg.get("capa_clipe"):   # clipe escolhido para a capa (1º quadro)
         f = os.path.join(CACHE, f'{cfg["capa_clipe"]}.mp4')
         if os.path.exists(f): fontes = [(int(cfg["capa_clipe"]), f, "capa")] + [x for x in fontes if str(x[0]) != str(cfg["capa_clipe"])][:n - 1]
@@ -279,7 +296,13 @@ def gerar(cfg_path):
     tags = cfg.get("hashtags") or ["#versiculododia", "#musicagospel", "#trapgospel", "#fe", "#biblia"]
     open(os.path.join(pasta_v, nome + ".txt"), "w", encoding="utf-8").write(cfg.get("legenda", "").strip() + "\n\n" + " ".join(tags[:5]) + "\n")
     json.dump({"duracao": round(dur, 1), "letra_na_tela": " ".join(t for _, _, t in ws), "palavras": [[round(a, 2), round(b, 2), t] for a, b, t in ws], "clipes": [f"pixabay:{v} ({q})" for v, _, q in fontes]}, open(os.path.join(pasta_v, nome + ".json"), "w"))
-    print(f"ok: {mp4} ({dur:.1f}s, {len(ws)} palavras, {len(fontes)} clipes)")
+    # registra a capa deste vídeo
+    cid = str(fontes[0][0]); usadas = {k: v - {num} for k, v in usadas.items()}; usadas = {k: v for k, v in usadas.items() if v}
+    usadas.setdefault(cid, set()).add(num)
+    with open(reg, "w", encoding="utf-8") as f:
+        f.write("# id do clipe Pixabay usado como CAPA (1º quadro) -> vídeo(s). Nunca repetir uma capa.\n")
+        for k, v in sorted(usadas.items(), key=lambda x: min(x[1])): f.write(f"{k} {' '.join(sorted(v))}\n")
+    print(f"ok: {mp4} ({dur:.1f}s, {len(ws)} palavras, {len(fontes)} clipes, capa {cid})")
 
 
 if __name__ == "__main__":

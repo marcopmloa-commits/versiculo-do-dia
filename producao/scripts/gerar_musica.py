@@ -54,7 +54,7 @@ def frases(ws):
 
 
 # ---------- 2. clipes de fundo (Pixabay: uso comercial liberado, sem crédito obrigatório) ----------
-def clipes(buscas, n, cena=CENA, evitar=()):
+def clipes(buscas, n, cena=CENA, evitar=(), ja_usados=frozenset()):
     """n clipes reais e diferentes, alternando as buscas (1º resultado de cada, depois o 2º de cada...)."""
     os.makedirs(CACHE, exist_ok=True)
     chave = os.environ["PIXABAY_KEY"]; listas = []
@@ -79,17 +79,22 @@ def clipes(buscas, n, cena=CENA, evitar=()):
         if len(raw) < 64 * 64 * 3: return False
         px = np.frombuffer(raw, np.uint8).reshape(-1, 3).astype(float); r, g, b = px.mean(0); lum = px.mean()
         return lum < 55 or r > b + 8
-    arquivos, vistos, rodada = [], set(), 0
-    while len(arquivos) < n and any(len(ok) > rodada for _, ok in listas):
-        for q, ok in listas:
-            if len(arquivos) >= n: break
-            if len(ok) > rodada and ok[rodada]["id"] not in vistos:
-                h = ok[rodada]; vistos.add(h["id"])
-                try: f = baixa(h["id"], (h["videos"].get("medium") or h["videos"]["large"])["url"])
-                except Exception: continue
-                if FILTRO_COR and not no_estilo(f): continue
-                arquivos.append((h["id"], f, q))
-        rodada += 1
+    # 1ª passada: só clipes que nunca apareceram em outro vídeo; 2ª passada (se faltar): libera os já usados
+    arquivos, vistos = [], set()
+    for permite_usados in (False, True):
+        rodada = 0
+        while len(arquivos) < n and any(len(ok) > rodada for _, ok in listas):
+            for q, ok in listas:
+                if len(arquivos) >= n: break
+                if len(ok) > rodada and ok[rodada]["id"] not in vistos:
+                    h = ok[rodada]
+                    if not permite_usados and str(h["id"]) in ja_usados: continue
+                    vistos.add(h["id"])
+                    try: f = baixa(h["id"], (h["videos"].get("medium") or h["videos"]["large"])["url"])
+                    except Exception: continue
+                    if FILTRO_COR and not no_estilo(f): continue
+                    arquivos.append((h["id"], f, q))
+            rodada += 1
     return arquivos
 
 
@@ -248,7 +253,13 @@ def gerar(cfg_path):
     c = compasso(mp3)
     cena = cfg.get("cena") or c * max(1, round(7.0 / c))
     n = int(np.ceil(dur / cena))
-    fontes = clipes(cfg["buscas"], n, cena, cfg.get("evitar", []))
+    reg_cl = os.path.join(RAIZ, "producao", "clipes_usados.txt")
+    usos = {}
+    for l in open(reg_cl, encoding="utf-8") if os.path.exists(reg_cl) else []:
+        p = l.split()
+        if p and not p[0].startswith("#"): usos[p[0]] = set(p[1:])
+    outros = {k for k, v in usos.items() if v - {nome[:3]}}   # usados em OUTROS vídeos
+    fontes = clipes(cfg["buscas"], n, cena, cfg.get("evitar", []), outros)
     # capa nunca repete (pedido do dono): o 1º clipe não pode ter sido capa de outro vídeo
     reg = os.path.join(RAIZ, "producao", "capas_usadas.txt")
     usadas = {}
@@ -262,7 +273,7 @@ def gerar(cfg_path):
     if not cfg.get("capa_clipe"):
         k = next((i for i, x in enumerate(fontes) if livre(x[0])), None)
         if k is None:
-            extra = [x for x in clipes(cfg["buscas"], n + 12, cena, cfg.get("evitar", [])) if livre(x[0])]
+            extra = [x for x in clipes(cfg["buscas"], n + 12, cena, cfg.get("evitar", []), outros) if livre(x[0])]
             if not extra: raise SystemExit("nenhum clipe livre para a capa")
             fontes = [extra[0]] + [x for x in fontes if x[0] != extra[0][0]][:n - 1]
         elif k: fontes.insert(0, fontes.pop(k))
@@ -296,6 +307,14 @@ def gerar(cfg_path):
     tags = cfg.get("hashtags") or ["#versiculododia", "#musicagospel", "#trapgospel", "#fe", "#biblia"]
     open(os.path.join(pasta_v, nome + ".txt"), "w", encoding="utf-8").write(cfg.get("legenda", "").strip() + "\n\n" + " ".join(tags[:5]) + "\n")
     json.dump({"duracao": round(dur, 1), "letra_na_tela": " ".join(t for _, _, t in ws), "palavras": [[round(a, 2), round(b, 2), t] for a, b, t in ws], "clipes": [f"pixabay:{v} ({q})" for v, _, q in fontes]}, open(os.path.join(pasta_v, nome + ".json"), "w"))
+    # registra os clipes deste vídeo (evita repetir nos próximos)
+    usos = {k: v - {nome[:3]} for k, v in usos.items()}
+    for x in fontes: usos.setdefault(str(x[0]), set()).add(nome[:3])
+    with open(reg_cl, "w", encoding="utf-8") as f:
+        f.write("# id do clipe Pixabay -> vídeos em que apareceu. O gerador evita repetir clipes entre vídeos.\n")
+        for k, v in sorted(((k, v) for k, v in usos.items() if v), key=lambda x: (min(x[1]), x[0])): f.write(f"{k} {' '.join(sorted(v))}\n")
+    repetidos = [str(x[0]) for x in fontes if str(x[0]) in outros]
+    if repetidos: print("aviso: clipes já usados em outros vídeos (faltaram inéditos):", ", ".join(repetidos))
     # registra a capa deste vídeo
     cid = str(fontes[0][0]); usadas = {k: v - {num} for k, v in usadas.items()}; usadas = {k: v for k, v in usadas.items() if v}
     usadas.setdefault(cid, set()).add(num)

@@ -17,15 +17,18 @@ CACHE = os.path.join(RAIZ, "producao", "cache_clipes")
 # O TikTok estava rotulando como IA: o Pixabay tem clipes gerados por IA (ex.: 253345, "ai generated").
 # Usamos só vídeos antigos (id <= ID_MAX ≈ fim de 2023, antes dos geradores de vídeo) e recusamos etiquetas suspeitas.
 ID_MAX = 185000
+FILTRO_COR = True   # só cenas quentes (laranja/vermelho) ou noturnas escuras
 # visual estilo "trap gospel" (referência do dono): céu laranja/vermelho saturado, sombras frias, contraste alto
 GRADE = ("eq=contrast=1.18:saturation=1.55:brightness=-0.04:gamma=0.95,"
          "colorbalance=rs=-.06:gs=-.01:bs=.07:rm=.05:bm=-.06:rh=.10:gh=.02:bh=-.10,"
          "curves=preset=increase_contrast,vignette=PI/3.6")
 # clipes já vistos e reprovados (IA, 3D, desenho, fora do tema): nunca usar
-VETADOS = {"23678", "46637", "180667", "140230", "184538", "47407", "170300", "305", "153221", "253345", "49038", "34091", "3608", "138370", "153296", "101795", "23162", "38084"}
+# palavras proibidas inteiras (como substring dariam falso positivo: "bar" em "barn", "gin" em "imagine")
+PROIBIDAS_PALAVRA = {"bar", "pub", "club", "party", "toast", "cheers", "rum", "gin", "pint", "joint", "lighter", "beverage", "booze"}
+VETADOS = {"130513", "24105", "26793", "1844", "24603", "22544", "135320", "9151", "9153", "23258", "5278", "136458", "57470", "179333", "76621", "39183", "152798", "2266", "1700", "132846", "156466", "15909", "","107558", "144761", "3627", "380", "846", "23678", "46637", "180667", "140230", "184538", "47407", "170300", "305", "153221", "253345", "49038", "34091", "3608", "138370", "153296", "101795", "23162", "38084"}
 PROIBIDAS = ["ai generated", "ai-generated", "generative", "artificial intelligence", "midjourney", "stable diffusion",
              "render", "3d", "animation", "animated", "cgi", "illustration", "cartoon", "digital art",
-             "cigarette", "smok", "phone", "smartphone", "mobile", "helicopter", "airplane", "military", "yoga", "meditat", "zen", "buddha", "bikini", "swimsuit", "underwater", "sexy", "lingerie", "beach girl", "tobacco", "alcohol", "beer", "wine", "whisky", "drunk", "drug", "weapon", "gun"]
+             "cigarette", "smok", "phone", "smartphone", "mobile", "helicopter", "airplane", "military", "yoga", "meditat", "zen", "buddha", "bikini", "swimsuit", "underwater", "sexy", "lingerie", "beach girl", "tobacco", "alcohol", "beer", "wine", "whisky", "drunk", "cigar", "vape", "vaping", "hookah", "shisha", "joint", "marijuana", "cannabis", "ashtray", "lighter", "nightclub", "neon", "shopping", "market", "hospital", "medical", "abstract", "technology", "digital", "cyber", "futuristic", "particles", "cocktail", "vodka", "liquor", "champagne", "whiskey", "tequila", "brewery", "drug", "weapon", "gun"]
 
 
 def sh(*a, **k):
@@ -62,23 +65,33 @@ def clipes(buscas, n, cena=CENA, evitar=()):
         hits = json.load(urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"}), timeout=30))["hits"]
         ok = [h for h in hits if h["duration"] >= cena + 1 and h["id"] <= ID_MAX            # só filmagens reais (até o fim de 2023)
               and str(h["id"]) not in VETADOS and str(h["id"]) not in [str(e) for e in evitar]  # ids vetados à mão
-              and not any(t in h["tags"].lower() for t in list(PROIBIDAS) + [e for e in evitar if not str(e).isdigit()])]  # IA, animação, impróprios, + "evitar" do vídeo
+              and not any(t in h["tags"].lower() for t in list(PROIBIDAS) + [e for e in evitar if not str(e).isdigit()])
+              and not (set(re.findall(r"[a-z]+", h["tags"].lower())) & PROIBIDAS_PALAVRA)]  # IA, animação, impróprios, + "evitar" do vídeo
         listas.append((q, ok))
-    achados, vistos, rodada = [], set(), 0
-    while len(achados) < n and any(len(ok) > rodada for _, ok in listas):
-        for q, ok in listas:
-            if len(achados) >= n: break
-            if len(ok) > rodada and ok[rodada]["id"] not in vistos:
-                h = ok[rodada]; vistos.add(h["id"])
-                achados.append((h["id"], (h["videos"].get("medium") or h["videos"]["large"])["url"], q))
-        rodada += 1
-    arquivos = []
-    for vid, url, q in achados:
+    def baixa(vid, url):
         f = os.path.join(CACHE, f"{vid}.mp4")
         if not os.path.exists(f):
             req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})  # o CDN recusa pedidos sem User-Agent
             open(f, "wb").write(urllib.request.urlopen(req, timeout=120).read())
-        arquivos.append((vid, f, q))
+        return f
+    def no_estilo(f):
+        """recusa cenas claras e azuladas (céu azul de dia, lago, branco): o estilo é laranja/vermelho ou noite escura"""
+        raw = subprocess.run(["ffmpeg", "-loglevel", "error", "-ss", "1.5", "-i", f, "-frames:v", "1", "-vf", "scale=64:64",
+                              "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], capture_output=True).stdout
+        if len(raw) < 64 * 64 * 3: return False
+        px = np.frombuffer(raw, np.uint8).reshape(-1, 3).astype(float); r, g, b = px.mean(0); lum = px.mean()
+        return lum < 55 or r > b + 8
+    arquivos, vistos, rodada = [], set(), 0
+    while len(arquivos) < n and any(len(ok) > rodada for _, ok in listas):
+        for q, ok in listas:
+            if len(arquivos) >= n: break
+            if len(ok) > rodada and ok[rodada]["id"] not in vistos:
+                h = ok[rodada]; vistos.add(h["id"])
+                try: f = baixa(h["id"], (h["videos"].get("medium") or h["videos"]["large"])["url"])
+                except Exception: continue
+                if FILTRO_COR and not no_estilo(f): continue
+                arquivos.append((h["id"], f, q))
+        rodada += 1
     return arquivos
 
 
@@ -191,6 +204,7 @@ def gerar(cfg_path):
         return cor.get(base.lower(), base) + pont
     ws = [(a, b, corrige(t)) for a, b, t in ws]
     # trechos que o reconhecimento errou: [[início, fim, "texto certo"], ...] (palavras distribuídas por igual)
+    if cfg.get("so_letra"): ws = []   # letra inteira vem de "substituir" (tempos das frases); ignora o reconhecimento
     for ini, fim, txt in cfg.get("substituir", []):
         if isinstance(txt, list):  # tempos marcados à mão: [[t, "texto"], ...]
             novas = [(t, (txt[i + 1][0] if i + 1 < len(txt) else fim) - 0.05, p) for i, (t, p) in enumerate(txt)]
@@ -236,6 +250,9 @@ def gerar(cfg_path):
     if cena < 2.2: cena *= 2
     n = int(np.ceil(dur / cena))
     fontes = clipes(cfg["buscas"], n, cena, cfg.get("evitar", []))
+    if cfg.get("capa_clipe"):   # clipe escolhido para a capa (1º quadro)
+        f = os.path.join(CACHE, f'{cfg["capa_clipe"]}.mp4')
+        if os.path.exists(f): fontes = [(int(cfg["capa_clipe"]), f, "capa")] + [x for x in fontes if str(x[0]) != str(cfg["capa_clipe"])][:n - 1]
     if not fontes: raise SystemExit("nenhum clipe encontrado")
     partes = []
     for k in range(n):

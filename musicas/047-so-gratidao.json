@@ -1,0 +1,54 @@
+{
+ "musica": "musicas/047-so-gratidao.mp3",
+ "trechos": [
+  [
+   1.9,
+   103.4
+  ]
+ ],
+ "referencia": "Só gratidão",
+ "titulo": "Só Gratidão",
+ "capa": "No fim do dia, só gratidão",
+ "correcoes": {
+  "Pelo meus": "Pelos meus",
+  "disse,": "diz:",
+  "te": "Te"
+ },
+ "substituir": [
+  [
+   62.56,
+   64.9,
+   "Pelos meus filhos dormindo no quarto ao lado."
+  ],
+  [
+   82.88,
+   85.0,
+   "E diz: obrigado."
+  ]
+ ],
+ "buscas": [
+  "evening sunset window",
+  "rain window cozy",
+  "child sleeping bed",
+  "lamp night room",
+  "friends hugging",
+  "phone call smiling woman",
+  "night sky stars",
+  "candle table evening",
+  "dusk city calm",
+  "woman closing eyes breathing",
+  "house roof night",
+  "couple sitting porch evening",
+  "moon clouds",
+  "tea cup evening"
+ ],
+ "legenda": "O dia acabou. E você ainda tá aqui. 🌙🙏\nNo fim do dia, só gratidão.\n\nAntes de dormir, comente: OBRIGADO.\n🎵 Só Gratidão (feito com Suno)",
+ "hashtags": [
+  "#gratidao",
+  "#boanoite",
+  "#musicagospel",
+  "#fe",
+  "#aindadepe"
+ ],
+ "fonte": "musica"
+}

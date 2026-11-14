@@ -1,0 +1,60 @@
+{
+ "musica": "musicas/045-obrigado-senhor.mp3",
+ "trechos": [
+  [
+   1.2,
+   130.2
+  ]
+ ],
+ "referencia": "Obrigado, Senhor",
+ "titulo": "Obrigado, Senhor",
+ "capa": "Antes de pedir, eu vim agradecer",
+ "correcoes": {
+  "Pro": "Pelo",
+  "grave": "graça",
+  "você": "Você"
+ },
+ "substituir": [
+  [
+   0.32,
+   6.2,
+   "Hoje eu não vim pedir nada. Hoje eu vim só agradecer."
+  ],
+  [
+   44.32,
+   47.44,
+   "E você tá aí, com fôlego, com vida."
+  ],
+  [
+   84.18,
+   90.98,
+   "Pelo que deu certo e pelo que não deu, até o não que eu ouvi foi o Senhor que escolheu."
+  ]
+ ],
+ "buscas": [
+  "man praying hands closed eyes",
+  "sunrise field grass",
+  "bread table hands",
+  "woman raising hands sunlight",
+  "family dinner table",
+  "old woman smiling window",
+  "man looking sunrise",
+  "children running field",
+  "hands breaking bread",
+  "person walking wheat field",
+  "father carrying child",
+  "sun rays through trees",
+  "woman praying kneeling",
+  "grandparents grandchildren"
+ ],
+ "legenda": "Hoje eu não vim pedir nada. Hoje eu vim só agradecer. 🙏\n\nLevanta a mão aí onde você está e comenta: OBRIGADO, SENHOR.\n🎵 Obrigado, Senhor (feito com Suno)",
+ "hashtags": [
+  "#gratidao",
+  "#obrigadosenhor",
+  "#musicagospel",
+  "#fe",
+  "#aindadepe"
+ ],
+ "fonte": "musica",
+ "capa_clipe": "171085"
+}

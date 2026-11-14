@@ -23,10 +23,10 @@ GRADE = "eq=contrast=1.06:saturation=1.08:brightness=-0.03,vignette=PI/5"   # na
 # clipes já vistos e reprovados (IA, 3D, desenho, fora do tema): nunca usar
 # palavras proibidas inteiras (como substring dariam falso positivo: "bar" em "barn", "gin" em "imagine")
 PROIBIDAS_PALAVRA = {"bar", "pub", "club", "party", "toast", "cheers", "rum", "gin", "pint", "joint", "lighter", "beverage", "booze"}
-VETADOS = {"10685", "22761", "8812", "15401", "925", "24333", "16111", "84973", "116828", "140029", "21943", "140803", "50294", "11283", "14869", "181314", "19706", "47551", "85338", "130513", "24105", "26793", "1844", "24603", "22544", "135320", "9151", "9153", "23258", "5278", "136458", "57470", "179333", "76621", "39183", "152798", "2266", "1700", "132846", "156466", "15909", "","107558", "144761", "3627", "380", "846", "23678", "46637", "180667", "140230", "184538", "47407", "170300", "305", "153221", "253345", "49038", "34091", "3608", "138370", "153296", "101795", "23162", "38084"}
+VETADOS = {"107581", "135138", "148538", "35693", "176207", "76888", "26771", "22070", "76124", "151053", "3171", "20466", "20467", "2678", "21782", "1405", "2689", "55002", "8389", "148525", "10685", "22761", "8812", "15401", "925", "24333", "16111", "84973", "116828", "140029", "21943", "140803", "50294", "11283", "14869", "181314", "19706", "47551", "85338", "130513", "24105", "26793", "1844", "24603", "22544", "135320", "9151", "9153", "23258", "5278", "136458", "57470", "179333", "76621", "39183", "152798", "2266", "1700", "132846", "156466", "15909", "","107558", "144761", "3627", "380", "846", "23678", "46637", "180667", "140230", "184538", "47407", "170300", "305", "153221", "253345", "49038", "34091", "3608", "138370", "153296", "101795", "23162", "38084"}
 PROIBIDAS = ["ai generated", "ai-generated", "generative", "artificial intelligence", "midjourney", "stable diffusion",
              "render", "3d", "animation", "animated", "cgi", "illustration", "cartoon", "digital art",
-             "cigarette", "smok", "phone", "smartphone", "mobile", "helicopter", "airplane", "military", "yoga", "meditat", "zen", "buddha", "bikini", "swimsuit", "underwater", "sexy", "lingerie", "beach girl", "tobacco", "alcohol", "beer", "wine", "whisky", "drunk", "cigar", "vape", "vaping", "hookah", "shisha", "joint", "marijuana", "cannabis", "ashtray", "lighter", "nightclub", "kangaroo", "selfie", "zoo", "lemur", "primate", "monkey", "dog", "puppy", "chicken", "hen", "rooster", "farm animal", "cattle", "cow", "pig", "neon", "shopping", "market", "hospital", "medical", "abstract", "technology", "digital", "cyber", "futuristic", "particles", "cocktail", "vodka", "liquor", "champagne", "whiskey", "tequila", "brewery", "drug", "weapon", "gun"]
+             "cigarette", "smok", "phone", "smartphone", "mobile", "helicopter", "airplane", "military", "yoga", "meditat", "zen", "buddha", "bikini", "swimsuit", "underwater", "sexy", "lingerie", "beach girl", "tobacco", "alcohol", "beer", "wine", "whisky", "drunk", "cigar", "vape", "vaping", "hookah", "shisha", "joint", "marijuana", "cannabis", "ashtray", "lighter", "nightclub", "kangaroo", "selfie", "zoo", "lemur", "primate", "monkey", "dog", "puppy", "tornado", "hurricane", "disaster", "fantasy", "mushroom", "toy", "sheep", "lamb", "cat", "kitten", "pelican", "portrait", "insect", "mantis", "bug", "scared", "fear", "horror", "chicken", "hen", "rooster", "farm animal", "cattle", "cow", "pig", "neon", "shopping", "market", "hospital", "medical", "abstract", "technology", "digital", "cyber", "futuristic", "particles", "cocktail", "vodka", "liquor", "champagne", "whiskey", "tequila", "brewery", "drug", "weapon", "gun"]
 
 
 def sh(*a, **k):
@@ -80,6 +80,13 @@ def clipes(buscas, n, cena=CENA, evitar=(), ja_usados=frozenset()):
         px = np.frombuffer(raw, np.uint8).reshape(-1, 3).astype(float); r, g, b = px.mean(0); lum = px.mean()
         return lum < 55 or r > b + 8
     # 1ª passada: só clipes que nunca apareceram em outro vídeo; 2ª passada (se faltar): libera os já usados
+    def vazio(f):
+        """recusa cena quase lisa (preto, branco, cinza): não prende a atenção"""
+        raw = subprocess.run(["ffmpeg", "-loglevel", "error", "-ss", "2", "-i", f, "-frames:v", "1", "-vf", "scale=64:64,format=gray",
+                              "-f", "rawvideo", "-"], capture_output=True).stdout
+        if len(raw) < 64 * 64: return True
+        px = np.frombuffer(raw, np.uint8).astype(float)
+        return px.std() < 22 or px.mean() < 18
     arquivos, vistos = [], set()
     for permite_usados in (False, True):
         rodada = 0
@@ -93,6 +100,7 @@ def clipes(buscas, n, cena=CENA, evitar=(), ja_usados=frozenset()):
                     try: f = baixa(h["id"], (h["videos"].get("medium") or h["videos"]["large"])["url"])
                     except Exception: continue
                     if FILTRO_COR and not no_estilo(f): continue
+                    if vazio(f): continue
                     arquivos.append((h["id"], f, q))
             rodada += 1
     return arquivos

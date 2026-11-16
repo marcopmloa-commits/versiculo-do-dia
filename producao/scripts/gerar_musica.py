@@ -137,6 +137,7 @@ html,body{margin:0;width:1080px;height:1920px;background:transparent;overflow:hi
 <div id="marca"><svg width="46" height="70" viewBox="0 0 46 70"><g fill="#fff"><rect x="19" y="0" width="8" height="70" rx="2"/><rect x="0" y="18" width="46" height="8" rx="2"/></g></svg>
 <div>Ainda de Pé</div></div>
 <script>
+const ESCALA = 0.76, TAM_CAPA = 104;   // texto ~25%% menor (pedido do dono, 16/11)
 window.desenhar = async (c) => {
   await document.fonts.ready;
   const g = document.getElementById("g"); g.textContent = c.grande || "";
@@ -145,12 +146,12 @@ window.desenhar = async (c) => {
     box.style.top = "560px"; box.style.height = "520px"; marca.style.top = "1110px";
     box.style.background = "radial-gradient(ellipse 60%% 55%% at 50%% 50%%, rgba(0,0,0,.72), rgba(0,0,0,0) 80%%)";
     g.style.whiteSpace = "normal"; g.style.maxWidth = "940px"; g.style.lineHeight = "1.12"; g.style.textAlign = "center";
-    let tam = 132; g.style.fontSize = tam + "px";
+    let tam = TAM_CAPA; g.style.fontSize = tam + "px";
     while ((g.offsetHeight > 500 || g.offsetWidth > 960) && tam > 50) { tam -= 4; g.style.fontSize = tam + "px"; }
   } else {
     box.style.top = "780px"; box.style.height = "200px"; marca.style.top = "1000px"; box.style.background = "none";
     g.style.whiteSpace = "nowrap"; g.style.maxWidth = "none"; g.style.lineHeight = "normal";
-    let tam = c.tam || 150; g.style.fontSize = tam + "px";
+    let tam = Math.round((c.tam || 150) * ESCALA); g.style.fontSize = tam + "px";
     while (g.offsetWidth > 960 && tam > 40) { tam -= 4; g.style.fontSize = tam + "px"; }
   }
   g.style.filter = c.entrada ? "blur(6px)" : "none";

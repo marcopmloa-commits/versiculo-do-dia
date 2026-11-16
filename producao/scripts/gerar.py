@@ -203,6 +203,7 @@ def gerar(entrada, forcar=False):
                     os.path.join(pasta_v, nome + ".jpg")], check=True)
     json.dump({"duracao": round(total, 1)}, open(os.path.join(pasta_v, nome + ".json"), "w"))
     print(f"ok: {mp4} ({total:.1f}s, {n} quadros)")
+    import shutil; shutil.rmtree(tmp, ignore_errors=True)
     return mp4
 
 if __name__ == "__main__":

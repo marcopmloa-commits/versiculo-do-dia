@@ -1,0 +1,48 @@
+{
+ "musica": "musicas/049-ainda-ha-esperanca.mp3",
+ "trechos": [
+  [
+   1.6,
+   104.0
+  ]
+ ],
+ "referencia": "Ainda há esperança",
+ "titulo": "Ainda Há Esperança",
+ "capa": "Se você pensou em desistir, escuta isso",
+ "substituir": [
+  [
+   32.54,
+   34.96,
+   "Você não chegou até aqui por acaso."
+  ]
+ ],
+ "buscas": [
+  "sunrise city",
+  "man alone",
+  "lonely night",
+  "man praying",
+  "ocean waves",
+  "man walking",
+  "light rays",
+  "sunrise mountains",
+  "man hill",
+  "morning window",
+  "road sunrise",
+  "hope sky"
+ ],
+ "legenda": "Se você pensou em desistir essa semana… escuta isso. 🙏\n\nComente AINDA HÁ ESPERANÇA se essa palavra é pra você.\n🎵 Ainda Há Esperança",
+ "hashtags": [
+  "#naodesista",
+  "#esperanca",
+  "#motivacao",
+  "#fe",
+  "#aindadepe"
+ ],
+ "fonte": "musica",
+ "evitar": [
+  "drawing",
+  "illustration",
+  "cartoon",
+  "animation"
+ ]
+}

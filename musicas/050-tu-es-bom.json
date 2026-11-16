@@ -1,0 +1,60 @@
+{
+ "musica": "musicas/050-tu-es-bom.mp3",
+ "trechos": [
+  [
+   9.3,
+   99.0
+  ],
+  [
+   110.1,
+   126.2
+  ]
+ ],
+ "referencia": "Tu és bom",
+ "titulo": "Tu És Bom",
+ "capa": "Mesmo quando eu não entendo, Tu és bom",
+ "correcoes": {
+  "moro": "mora",
+  "tu": "Tu",
+  "teu": "Teu",
+  "te": "Te",
+  "porquê": "por quê",
+  "ver": "ver"
+ },
+ "substituir": [
+  [
+   53.44,
+   61.7,
+   "Hoje eu olho pra trás e consigo enxergar, cada passo tinha a Tua mão a me guiar"
+  ]
+ ],
+ "buscas": [
+  "morning coffee",
+  "sunny window",
+  "woman smiling",
+  "flower field",
+  "country road",
+  "mother daughter",
+  "woman window",
+  "beach sunset",
+  "woman praying",
+  "golden field",
+  "picnic family",
+  "sunflowers"
+ ],
+ "legenda": "Mesmo quando eu não entendo, Tu és bom. 🤍\n\nComente TU ÉS BOM se você também é grata.\n🎵 Tu És Bom",
+ "hashtags": [
+  "#tuesbom",
+  "#gratidao",
+  "#musicagospel",
+  "#fe",
+  "#aindadepe"
+ ],
+ "fonte": "musica",
+ "evitar": [
+  "drawing",
+  "illustration",
+  "cartoon",
+  "animation"
+ ]
+}

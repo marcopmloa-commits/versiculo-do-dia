@@ -1,0 +1,75 @@
+{
+ "musica": "musicas/051-hoje-tem-vitoria.mp3",
+ "trechos": [
+  [
+   11.7,
+   75.0
+  ]
+ ],
+ "referencia": "Hoje tem vitória",
+ "titulo": "Hoje Tem Vitória",
+ "capa": "Hoje tem vitória",
+ "correcoes": {
+  "jorei": "chorei",
+  "chamou": "chama",
+  "porra": "pouca",
+  "senhor": "Senhor",
+  "teu": "Teu"
+ },
+ "substituir": [
+  [
+   0.24,
+   4.3,
+   "Hoje tem vitória, hoje tem vitória, Deus tá escrevendo a minha história"
+  ],
+  [
+   21.98,
+   26.43,
+   "Não foi na força, não foi no braço, foi Deus guiando cada passo"
+  ],
+  [
+   26.86,
+   30.94,
+   "Hoje tem vitória, hoje tem vitória, Deus tá escrevendo a minha história"
+  ],
+  [
+   40.6,
+   42.94,
+   "Gratidão no peito, louvor na boca"
+  ],
+  [
+   42.94,
+   45.64,
+   "A alegria do Senhor nunca é pouca"
+  ]
+ ],
+ "buscas": [
+  "family hug outdoors",
+  "children running field",
+  "father son hug",
+  "friends laughing outdoors",
+  "man arms raised mountain",
+  "woman jumping beach",
+  "people clapping hands",
+  "family playing park",
+  "grandmother hugging grandchild",
+  "couple dancing sunset",
+  "kids celebrating",
+  "woman smiling sunlight"
+ ],
+ "legenda": "Ontem eu chorei, hoje eu tô sorrindo. 🙌\nHoje tem vitória!\n\nComente HOJE TEM VITÓRIA e recebe!\n🎵 Hoje Tem Vitória",
+ "hashtags": [
+  "#hojetemvitoria",
+  "#musicagospel",
+  "#alegria",
+  "#fe",
+  "#aindadepe"
+ ],
+ "fonte": "musica",
+ "evitar": [
+  "drawing",
+  "illustration",
+  "cartoon",
+  "animation"
+ ]
+}

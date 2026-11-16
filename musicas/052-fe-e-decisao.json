@@ -1,0 +1,52 @@
+{
+ "musica": "musicas/052-fe-e-decisao.mp3",
+ "trechos": [
+  [
+   0.4,
+   66.4
+  ]
+ ],
+ "referencia": "Fé não é sorte",
+ "titulo": "Fé é Decisão",
+ "capa": "Fé não é sorte, fé é decisão",
+ "correcoes": {
+  "rei": "Rei",
+  "ele": "Ele"
+ },
+ "substituir": [
+  [
+   12.38,
+   16.6,
+   "Cresci vendo o certo perder pro errado, vi amigo de infância virar passado"
+  ]
+ ],
+ "buscas": [
+  "city night",
+  "man praying",
+  "man walking night",
+  "street night",
+  "skyline night",
+  "rain night",
+  "man rooftop",
+  "subway",
+  "hood man",
+  "night road",
+  "mother praying",
+  "urban night"
+ ],
+ "legenda": "Sorte acaba. Fé permanece. 🙏\nQuem confia em Deus não tem plano B.\n\nComente FÉ É DECISÃO se você tá firme.\n🎵 Fé é Decisão",
+ "hashtags": [
+  "#feedecisao",
+  "#trapgospel",
+  "#musicagospel",
+  "#fe",
+  "#aindadepe"
+ ],
+ "fonte": "musica",
+ "evitar": [
+  "drawing",
+  "illustration",
+  "cartoon",
+  "animation"
+ ]
+}

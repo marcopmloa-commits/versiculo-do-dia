@@ -1,0 +1,129 @@
+{
+ "musica": "musicas/056-ninguem-ve-deus-ve.mp3",
+ "trechos": [
+  [
+   0.0,
+   14.4
+  ],
+  [
+   19.5,
+   62.2
+  ]
+ ],
+ "referencia": "Ainda de Pé",
+ "titulo": "056-ninguem-ve-deus-ve",
+ "capa": "Ninguém vê o que eu carrego, mas Deus vê",
+ "so_letra": true,
+ "substituir": [
+  [
+   0.0,
+   3.2,
+   "Ninguém vê o que eu carrego, mas Deus vê"
+  ],
+  [
+   3.2,
+   7.04,
+   "Ninguém sabe o que eu passo, mas Ele sabe por quê"
+  ],
+  [
+   7.4,
+   10.6,
+   "Sorriso no rosto e a guerra aqui dentro"
+  ],
+  [
+   10.6,
+   13.86,
+   "Mas o Senhor me sustenta a todo momento"
+  ],
+  [
+   13.3,
+   16.3,
+   "Mas quando eu fecho os olhos e falo com o Pai"
+  ],
+  [
+   16.3,
+   20.4,
+   "O peso diminui e a paz vem, a paz não sai"
+  ],
+  [
+   20.4,
+   23.5,
+   "Ninguém vê o que eu carrego, mas Deus vê"
+  ],
+  [
+   23.5,
+   27.42,
+   "Ninguém sabe o que eu passo, mas Ele sabe por quê"
+  ],
+  [
+   27.94,
+   31.1,
+   "Sorriso no rosto e a guerra aqui dentro"
+  ],
+  [
+   31.1,
+   34.24,
+   "Mas o Senhor me sustenta a todo momento"
+  ],
+  [
+   34.24,
+   37.7,
+   "Se você também tá forte pra todo mundo"
+  ],
+  [
+   37.7,
+   41.16,
+   "E por dentro tá cansado, tá no fundo"
+  ],
+  [
+   41.16,
+   44.5,
+   "Deus não te pede pra fingir que tá tudo bem"
+  ],
+  [
+   44.5,
+   47.76,
+   "Ele te pede pra vir, Ele te sustém"
+  ],
+  [
+   48.6,
+   51.3,
+   "Ninguém vê o que eu carrego, mas Deus vê"
+  ],
+  [
+   51.3,
+   54.78,
+   "Ninguém sabe o que eu passo, mas Ele sabe por quê"
+  ]
+ ],
+ "buscas": [
+  "man sitting car",
+  "man alone night",
+  "woman tired window",
+  "man walking city night",
+  "man praying",
+  "rain window",
+  "city night",
+  "man looking sky",
+  "woman sad",
+  "sunrise city",
+  "light window",
+  "man hill"
+ ],
+ "legenda": "Ninguém vê o que você carrega… mas Deus vê. 🙏\n\nComente DEUS VÊ se você tá forte pra todo mundo e cansado por dentro.\n🎵 Ninguém Vê, Deus Vê",
+ "hashtags": [
+  "#deusve",
+  "#trapgospel",
+  "#musicagospel",
+  "#fe",
+  "#aindadepe"
+ ],
+ "evitar": [
+  "cartoon",
+  "animation",
+  "illustration",
+  "bikini",
+  "beach girl"
+ ],
+ "fonte": "musica"
+}

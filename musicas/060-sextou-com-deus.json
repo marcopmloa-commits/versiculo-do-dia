@@ -1,0 +1,135 @@
+{
+ "musica": "musicas/060-sextou-com-deus.mp3",
+ "trechos": [
+  [
+   0.8,
+   66.0
+  ]
+ ],
+ "referencia": "Ainda de Pé",
+ "titulo": "060-sextou-com-deus",
+ "capa": "Sextou com Deus",
+ "so_letra": true,
+ "substituir": [
+  [
+   0.22,
+   4.2,
+   "Sextou com Deus, sextou com fé"
+  ],
+  [
+   4.2,
+   8.6,
+   "A semana foi dura, mas eu tô de pé"
+  ],
+  [
+   8.6,
+   13.56,
+   "Sextou com Deus, levanta a mão"
+  ],
+  [
+   13.56,
+   18.12,
+   "Quem me trouxe até aqui merece gratidão"
+  ],
+  [
+   19.26,
+   21.5,
+   "Segunda chorei, terça lutei"
+  ],
+  [
+   21.5,
+   23.84,
+   "Quarta orei, quinta vi o que eu não sei"
+  ],
+  [
+   23.84,
+   26.1,
+   "Sexta chegou e eu vim celebrar"
+  ],
+  [
+   26.1,
+   28.38,
+   "O Deus que nunca deixou de me cuidar"
+  ],
+  [
+   28.38,
+   32.2,
+   "Sextou com Deus, sextou com fé"
+  ],
+  [
+   32.2,
+   36.4,
+   "A semana foi dura, mas eu tô de pé"
+  ],
+  [
+   36.4,
+   41.8,
+   "Sextou com Deus, levanta a mão"
+  ],
+  [
+   41.8,
+   46.0,
+   "Quem me trouxe até aqui merece gratidão"
+  ],
+  [
+   47.06,
+   49.3,
+   "Fim de semana com a família reunida"
+  ],
+  [
+   49.3,
+   51.64,
+   "Mesa simples, mas cheia de vida"
+  ],
+  [
+   51.64,
+   53.8,
+   "Não preciso de festa pra ser feliz"
+  ],
+  [
+   53.8,
+   56.1,
+   "Deus em casa é tudo que eu sempre quis"
+  ],
+  [
+   56.1,
+   60.0,
+   "Sextou com Deus, sextou com fé"
+  ],
+  [
+   60.0,
+   64.56,
+   "A semana foi dura, mas eu tô de pé"
+  ]
+ ],
+ "buscas": [
+  "friends laughing",
+  "family dinner",
+  "people dancing",
+  "celebration",
+  "friends hug",
+  "family park",
+  "city sunset",
+  "people clapping",
+  "family sofa",
+  "children playing",
+  "party friends",
+  "happy woman"
+ ],
+ "legenda": "Sextou com Deus! 🙌\nA semana foi dura, mas eu tô de pé.\n\nComente SEXTOU COM DEUS!\n🎵 Sextou Com Deus",
+ "hashtags": [
+  "#sextou",
+  "#sextafeira",
+  "#musicagospel",
+  "#fe",
+  "#aindadepe"
+ ],
+ "evitar": [
+  "cartoon",
+  "animation",
+  "illustration",
+  "bikini",
+  "beach girl"
+ ],
+ "fonte": "musica"
+}

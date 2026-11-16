@@ -1,0 +1,105 @@
+{
+ "musica": "musicas/057-antes-do-sono.mp3",
+ "trechos": [
+  [
+   0.6,
+   60.0
+  ]
+ ],
+ "referencia": "Ainda de Pé",
+ "titulo": "057-antes-do-sono",
+ "capa": "Antes do sono, Pai, eu quero Te falar",
+ "so_letra": true,
+ "substituir": [
+  [
+   0.2,
+   3.7,
+   "Antes do sono, Pai, eu quero Te falar"
+  ],
+  [
+   3.7,
+   7.3,
+   "Obrigado pelo dia, por me guardar"
+  ],
+  [
+   7.3,
+   11.2,
+   "O que eu não resolvi fica em Tuas mãos"
+  ],
+  [
+   11.2,
+   15.04,
+   "Dorme comigo a paz, Senhor, no coração"
+  ],
+  [
+   17.0,
+   21.0,
+   "O celular desligado, a casa em silêncio"
+  ],
+  [
+   21.0,
+   24.94,
+   "Eu lembro do que passou e do que eu penso"
+  ],
+  [
+   24.94,
+   29.38,
+   "Perdoa o que eu errei, me ensina a melhorar"
+  ],
+  [
+   29.38,
+   33.0,
+   "Amanhã é Teu também, me ajuda a confiar"
+  ],
+  [
+   34.1,
+   37.7,
+   "Antes do sono, Pai, eu quero Te falar"
+  ],
+  [
+   37.7,
+   41.4,
+   "Obrigado pelo dia, por me guardar"
+  ],
+  [
+   41.9,
+   45.4,
+   "O que eu não resolvi fica em Tuas mãos"
+  ],
+  [
+   45.4,
+   48.78,
+   "Dorme comigo a paz, Senhor, no coração"
+  ]
+ ],
+ "buscas": [
+  "night window",
+  "bed lamp",
+  "city night",
+  "rain night",
+  "candle night",
+  "moon sky",
+  "house night",
+  "night street",
+  "sleeping child",
+  "stars sky",
+  "night lake",
+  "bedroom dark"
+ ],
+ "legenda": "Antes do sono, fala com o Pai. 🌙🙏\n\nComente BOA NOITE, PAI.\n🎵 Antes do Sono",
+ "hashtags": [
+  "#boanoite",
+  "#oracaodanoite",
+  "#musicagospel",
+  "#fe",
+  "#aindadepe"
+ ],
+ "evitar": [
+  "cartoon",
+  "animation",
+  "illustration",
+  "bikini",
+  "beach girl"
+ ],
+ "fonte": "musica"
+}

@@ -50,3 +50,6 @@
 050-tu-es-bom
 051-hoje-tem-vitoria
 052-fe-e-decisao
+053-quarta-18-de-novembro
+054-quinta-19-de-novembro
+055-sexta-20-de-novembro

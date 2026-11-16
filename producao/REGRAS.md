@@ -98,5 +98,5 @@ Aprendidas na revisão de 05/11/2026 do lote 015–024 (nota média ~7,4, veredi
 ## Banco de clipes: Coverr (principal desde 16/11/2026) + Pixabay (reserva)
 - Chave do Coverr salva no ambiente (host api.coverr.co, injetada pelo proxy). `GET /videos?query=…&urls=true`; o gerador só aceita clipes **não-IA**, com duração suficiente e cujo título/etiquetas tenham **2 palavras da busca**; ids ficam como `cv-XXXX` (cache `producao/cache_clipes/cv-XXXX.mp4`).
 - O Pixabay entra no fim de cada busca, só se faltar clipe.
-- **Crédito obrigatório:** quando o vídeo usa Coverr, a legenda ganha "🎥 Vídeos: Coverr" (feito automaticamente).
+- **Sem crédito do Coverr na legenda** (pedido do dono, 16/11/2026).
 - Buscas em inglês, curtas e concretas, com 2 palavras ("man praying", "family hug", "woman walking beach"). Limite grátis: 50 buscas/hora.

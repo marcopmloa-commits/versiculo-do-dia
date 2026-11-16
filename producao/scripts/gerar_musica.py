@@ -343,7 +343,7 @@ def gerar(cfg_path):
        "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", mp4)
     sh("ffmpeg", "-y", "-loglevel", "error", "-ss", "0.3", "-i", mp4, "-frames:v", "1", "-vf", "scale=540:-1", "-q:v", "4", os.path.join(pasta_v, nome + ".jpg"))
     tags = cfg.get("hashtags") or ["#versiculododia", "#musicagospel", "#trapgospel", "#fe", "#biblia"]
-    credito = "\n🎥 Vídeos: Coverr" if any(str(v).startswith("cv-") for v, _, _ in fontes) else ""
+    credito = ""   # sem crédito na legenda (pedido do dono, 16/11)
     open(os.path.join(pasta_v, nome + ".txt"), "w", encoding="utf-8").write(cfg.get("legenda", "").strip() + credito + "\n\n" + " ".join(tags[:5]) + "\n")
     json.dump({"duracao": round(dur, 1), "letra_na_tela": " ".join(t for _, _, t in ws), "palavras": [[round(a, 2), round(b, 2), t] for a, b, t in ws], "clipes": [f"{'coverr' if str(v).startswith('cv-') else 'pixabay'}:{v} ({q})" for v, _, q in fontes]}, open(os.path.join(pasta_v, nome + ".json"), "w"))
     # registra os clipes deste vídeo (evita repetir nos próximos)

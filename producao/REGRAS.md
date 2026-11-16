@@ -100,3 +100,9 @@ Aprendidas na revisão de 05/11/2026 do lote 015–024 (nota média ~7,4, veredi
 - O Pixabay entra no fim de cada busca, só se faltar clipe.
 - **Sem crédito do Coverr na legenda** (pedido do dono, 16/11/2026).
 - Buscas em inglês, curtas e concretas, com 2 palavras ("man praying", "family hug", "woman walking beach"). Limite grátis: 50 buscas/hora.
+
+## Estilo de referência: @trapgospel07 (794 mil seguidores) — pedido do dono, 16/11/2026
+- **Oração do dia com o dia da semana como gancho** ("Hoje é quarta-feira, 18 de novembro"): as capas "TERÇA", "QUINTA", "SEGUNDA" deles têm 500–750 mil views. Uma por dia, postada no próprio dia.
+- Filmagem real com **cor quente de cinema** (`GRADE`), letras espaçadas (.24em), **cruz dourada** com brilho + nome do perfil.
+- Trap gospel, voz masculina, oração em 1ª pessoa (agradecer, proteção, família, trabalho).
+- Coverr também tem moda/praia: **sempre conferir a folha de contato** (ex.: cv-saDe0TN6BS vetado).

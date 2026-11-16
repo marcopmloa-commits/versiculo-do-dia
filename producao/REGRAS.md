@@ -106,3 +106,4 @@ Aprendidas na revisão de 05/11/2026 do lote 015–024 (nota média ~7,4, veredi
 - Filmagem real com **cor quente de cinema** (`GRADE`), letras espaçadas (.24em), **cruz dourada** com brilho + nome do perfil.
 - Trap gospel, voz masculina, oração em 1ª pessoa (agradecer, proteção, família, trabalho).
 - Coverr também tem moda/praia: **sempre conferir a folha de contato** (ex.: cv-saDe0TN6BS vetado).
+- **Letras: não falar de pagar contas/boletos** ("paguei as contas", "cada boleto pago" etc.) — pedido do dono, 17/11/2026. Na letra já gravada de "Ninguém Vê, Deus Vê" (056), a frase sai da tela.

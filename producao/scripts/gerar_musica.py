@@ -54,6 +54,30 @@ def frases(ws):
 
 
 # ---------- 2. clipes de fundo (Pixabay: uso comercial liberado, sem crédito obrigatório) ----------
+def coverr(q, cena, evitar=()):
+    """busca no Coverr e devolve no mesmo formato dos hits do Pixabay (id 'cv-...')"""
+    url = "https://api.coverr.co/videos?" + urllib.parse.urlencode({"query": q, "page_size": 40, "urls": "true"})
+    try:
+        hits = json.load(urllib.request.urlopen(urllib.request.Request(url, headers={"Authorization": "Bearer proxy-injected",
+                                                                                     "User-Agent": "Mozilla/5.0"}), timeout=30)).get("hits", [])
+    except Exception:
+        return []
+    palavras = {w for w in re.findall(r"[a-z]+", q.lower()) if len(w) > 2}
+    out = []
+    for h in hits:
+        texto = (h.get("title", "") + " " + " ".join(h.get("tags") or []) + " " + (h.get("description") or "")).lower()
+        if h.get("is_ai_generated") or float(h.get("duration") or 0) < cena + 1: continue
+        acertos = palavras & set(re.findall(r"[a-z]+", texto))
+        if len(acertos) < min(2, len(palavras)): continue                       # o clipe tem que ter a ver com a busca (2 palavras)
+        if any(t in texto for t in list(PROIBIDAS) + [e for e in evitar if not str(e).isdigit()]): continue
+        if set(re.findall(r"[a-z]+", texto)) & PROIBIDAS_PALAVRA: continue
+        cid = "cv-" + h["id"]
+        if cid in VETADOS or cid in [str(e) for e in evitar]: continue
+        u = (h.get("urls") or {}).get("mp4_download") or (h.get("urls") or {}).get("mp4")
+        if u: out.append({"id": cid, "url_direta": u, "duration": h.get("duration"), "tags": texto})
+    return out
+
+
 def clipes(buscas, n, cena=CENA, evitar=(), ja_usados=frozenset()):
     """n clipes reais e diferentes, alternando as buscas (1º resultado de cada, depois o 2º de cada...)."""
     os.makedirs(CACHE, exist_ok=True)
@@ -69,6 +93,8 @@ def clipes(buscas, n, cena=CENA, evitar=(), ja_usados=frozenset()):
               and not any(t in h["tags"].lower() for t in list(PROIBIDAS) + [e for e in evitar if not str(e).isdigit()])
               and not (set(re.findall(r"[a-z]+", h["tags"].lower())) & PROIBIDAS_PALAVRA)]  # IA, animação, impróprios, + "evitar" do vídeo
         listas.append((q, ok))
+    # Coverr (banco principal desde 16/11): filmagens reais curadas; Pixabay vira reserva no fim de cada lista
+    listas = [(q, coverr(q, cena, evitar) + ok) for q, ok in listas]
     def baixa(vid, url):
         f = os.path.join(CACHE, f"{vid}.mp4")
         if not os.path.exists(f):
@@ -100,7 +126,7 @@ def clipes(buscas, n, cena=CENA, evitar=(), ja_usados=frozenset()):
                     h = ok[rodada]
                     if not permite_usados and str(h["id"]) in ja_usados: continue
                     vistos.add(h["id"])
-                    try: f = baixa(h["id"], (h["videos"].get("medium") or h["videos"]["large"])["url"])
+                    try: f = baixa(h["id"], h.get("url_direta") or (h["videos"].get("medium") or h["videos"]["large"])["url"])
                     except Exception: continue
                     if FILTRO_COR and not no_estilo(f): continue
                     if vazio(f): continue
@@ -291,7 +317,7 @@ def gerar(cfg_path):
         elif k: fontes.insert(0, fontes.pop(k))
     if cfg.get("capa_clipe"):   # clipe escolhido para a capa (1º quadro)
         f = os.path.join(CACHE, f'{cfg["capa_clipe"]}.mp4')
-        if os.path.exists(f): fontes = [(int(cfg["capa_clipe"]), f, "capa")] + [x for x in fontes if str(x[0]) != str(cfg["capa_clipe"])][:n - 1]
+        if os.path.exists(f): fontes = [(str(cfg["capa_clipe"]), f, "capa")] + [x for x in fontes if str(x[0]) != str(cfg["capa_clipe"])][:n - 1]
     if not fontes: raise SystemExit("nenhum clipe encontrado")
     partes = []
     for k in range(n):
@@ -317,8 +343,9 @@ def gerar(cfg_path):
        "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", mp4)
     sh("ffmpeg", "-y", "-loglevel", "error", "-ss", "0.3", "-i", mp4, "-frames:v", "1", "-vf", "scale=540:-1", "-q:v", "4", os.path.join(pasta_v, nome + ".jpg"))
     tags = cfg.get("hashtags") or ["#versiculododia", "#musicagospel", "#trapgospel", "#fe", "#biblia"]
-    open(os.path.join(pasta_v, nome + ".txt"), "w", encoding="utf-8").write(cfg.get("legenda", "").strip() + "\n\n" + " ".join(tags[:5]) + "\n")
-    json.dump({"duracao": round(dur, 1), "letra_na_tela": " ".join(t for _, _, t in ws), "palavras": [[round(a, 2), round(b, 2), t] for a, b, t in ws], "clipes": [f"pixabay:{v} ({q})" for v, _, q in fontes]}, open(os.path.join(pasta_v, nome + ".json"), "w"))
+    credito = "\n🎥 Vídeos: Coverr" if any(str(v).startswith("cv-") for v, _, _ in fontes) else ""
+    open(os.path.join(pasta_v, nome + ".txt"), "w", encoding="utf-8").write(cfg.get("legenda", "").strip() + credito + "\n\n" + " ".join(tags[:5]) + "\n")
+    json.dump({"duracao": round(dur, 1), "letra_na_tela": " ".join(t for _, _, t in ws), "palavras": [[round(a, 2), round(b, 2), t] for a, b, t in ws], "clipes": [f"{'coverr' if str(v).startswith('cv-') else 'pixabay'}:{v} ({q})" for v, _, q in fontes]}, open(os.path.join(pasta_v, nome + ".json"), "w"))
     # registra os clipes deste vídeo (evita repetir nos próximos)
     usos = {k: v - {nome[:3]} for k, v in usos.items()}
     for x in fontes: usos.setdefault(str(x[0]), set()).add(nome[:3])

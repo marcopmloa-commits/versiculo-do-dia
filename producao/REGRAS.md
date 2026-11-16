@@ -94,3 +94,9 @@ Aprendidas na revisão de 05/11/2026 do lote 015–024 (nota média ~7,4, veredi
 - Buscas de "treino/academia" trazem close de corpo: prefira corrida em grupo, boxe com saco, futebol, escada na cidade; use `"evitar"`.
 - **Texto na tela ~25% menor** (pedido do dono, 16/11/2026): palavra grande × 0,76 e frase de capa 104 px (`ESCALA` e `TAM_CAPA` no `gerar_musica.py`).
 - **Antes de agendar/publicar pelo Zernio, conferir o que já está no perfil** (`GET /v1/analytics?platform=tiktok` lista os vídeos da conta, inclusive os postados à mão) e pular legendas que já existem. Em 16/11 o "Obrigado, Senhor" saiu duplicado e o "Do Lodo Na Rocha" foi cancelado a tempo: tinham sido postados à mão sem marcar "Já postei".
+
+## Banco de clipes: Coverr (principal desde 16/11/2026) + Pixabay (reserva)
+- Chave do Coverr salva no ambiente (host api.coverr.co, injetada pelo proxy). `GET /videos?query=…&urls=true`; o gerador só aceita clipes **não-IA**, com duração suficiente e cujo título/etiquetas tenham **2 palavras da busca**; ids ficam como `cv-XXXX` (cache `producao/cache_clipes/cv-XXXX.mp4`).
+- O Pixabay entra no fim de cada busca, só se faltar clipe.
+- **Crédito obrigatório:** quando o vídeo usa Coverr, a legenda ganha "🎥 Vídeos: Coverr" (feito automaticamente).
+- Buscas em inglês, curtas e concretas, com 2 palavras ("man praying", "family hug", "woman walking beach"). Limite grátis: 50 buscas/hora.

@@ -1,0 +1,75 @@
+{
+ "musica": "musicas/048-hoje-e-16-de-novembro.mp3",
+ "trechos": [
+  [
+   1.4,
+   145.6
+  ]
+ ],
+ "referencia": "Boa semana",
+ "titulo": "Hoje É 16 de Novembro",
+ "capa": "Hoje é 16 de novembro",
+ "correcoes": {
+  "luar": "ar",
+  "por": "por"
+ },
+ "substituir": [
+  [
+   15.22,
+   16.62,
+   "Obrigado porque eu acordei."
+  ],
+  [
+   32.08,
+   33.14,
+   "Eu vi. Você viu."
+  ],
+  [
+   120.96,
+   122.86,
+   "Eu não tô sozinho."
+  ],
+  [
+   126.36,
+   128.1,
+   "Põe a mão no peito agora."
+  ]
+ ],
+ "buscas": [
+  "rush hour traffic city morning",
+  "crowd walking city street",
+  "people walking busy crosswalk",
+  "man running city sunrise",
+  "construction worker",
+  "people jogging park group",
+  "boxer training punching bag",
+  "busy subway station people",
+  "office workers walking",
+  "man running stairs city",
+  "highway traffic timelapse",
+  "factory workers",
+  "people commuting train",
+  "soccer training field",
+  "city morning timelapse",
+  "worker welding"
+ ],
+ "legenda": "Hoje é segunda, 16 de novembro 🙏\nUma semana nova é uma página nova.\n\nComente BOA SEMANA, SENHOR e receba essa palavra.\n🎵 Hoje É 16 de Novembro",
+ "hashtags": [
+  "#16denovembro",
+  "#segundafeira",
+  "#motivacao",
+  "#fe",
+  "#aindadepe"
+ ],
+ "fonte": "musica",
+ "capa_clipe": "173335",
+ "evitar": [
+  "fitness model",
+  "bikini",
+  "body",
+  "butt",
+  "sexy",
+  "leggings",
+  "workout woman"
+ ]
+}

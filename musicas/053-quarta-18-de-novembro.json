@@ -1,0 +1,144 @@
+{
+ "musica": "musicas/053-quarta-18-de-novembro.mp3",
+ "trechos": [
+  [
+   1.4,
+   8.6
+  ],
+  [
+   10.9,
+   74.8
+  ]
+ ],
+ "referencia": "Ainda de Pé",
+ "titulo": "053-quarta-18-de-novembro",
+ "capa": "Hoje é quarta-feira, 18 de novembro",
+ "so_letra": true,
+ "substituir": [
+  [
+   0.24,
+   5.42,
+   "Hoje é quarta, hoje é quarta-feira, 18 de novembro"
+  ],
+  [
+   7.24,
+   10.1,
+   "Hoje é quarta-feira, eu vim Te agradecer"
+  ],
+  [
+   10.1,
+   13.56,
+   "Pela noite que passou e por eu ver o sol nascer"
+  ],
+  [
+   13.56,
+   16.7,
+   "Guarda a minha casa, guarda quem eu amo"
+  ],
+  [
+   16.7,
+   20.46,
+   "Meio da semana, Pai, e eu ainda tô de pé, eu tô firmando"
+  ],
+  [
+   21.04,
+   24.16,
+   "Segunda foi pesada, terça eu quase caí"
+  ],
+  [
+   24.16,
+   27.64,
+   "Mas a Tua mão, Senhor, nunca saiu daqui"
+  ],
+  [
+   27.64,
+   31.12,
+   "O que eu não consigo, eu entrego pra Você"
+  ],
+  [
+   31.12,
+   34.68,
+   "O que for da Tua vontade, deixa acontecer"
+  ],
+  [
+   34.68,
+   37.66,
+   "Hoje é quarta-feira, eu vim Te agradecer"
+  ],
+  [
+   37.66,
+   41.16,
+   "Pela noite que passou e por eu ver o sol nascer"
+  ],
+  [
+   41.16,
+   44.56,
+   "Guarda a minha casa, guarda quem eu amo"
+  ],
+  [
+   44.56,
+   48.56,
+   "Meio da semana, Pai, e eu ainda tô de pé, eu tô firmando"
+  ],
+  [
+   48.56,
+   51.74,
+   "Abençoa o meu trabalho e o pão da minha mesa"
+  ],
+  [
+   52.36,
+   55.22,
+   "Tira do meu peito toda essa tristeza"
+  ],
+  [
+   55.22,
+   58.52,
+   "Quem tá ouvindo agora e não aguenta mais"
+  ],
+  [
+   58.52,
+   62.4,
+   "Senhor, derrama sobre ele a Tua paz"
+  ],
+  [
+   62.4,
+   65.28,
+   "Hoje é quarta-feira, eu vim Te agradecer"
+  ],
+  [
+   65.28,
+   68.82,
+   "Pela noite que passou e por eu ver o sol nascer"
+  ]
+ ],
+ "buscas": [
+  "sunrise city",
+  "morning coffee",
+  "family breakfast",
+  "people walking street",
+  "woman window",
+  "man walking city",
+  "sunlight trees",
+  "city morning",
+  "house morning",
+  "worker morning",
+  "road sunrise",
+  "father hug"
+ ],
+ "legenda": "Hoje é quarta-feira, 18 de novembro 🙏\nMeio da semana e eu ainda tô de pé.\n\nComente AMÉM e receba essa oração.\n🎵 Quarta-feira de Agradecimento",
+ "hashtags": [
+  "#18denovembro",
+  "#quartafeira",
+  "#oracaododia",
+  "#fe",
+  "#aindadepe"
+ ],
+ "evitar": [
+  "cartoon",
+  "animation",
+  "illustration",
+  "bikini",
+  "beach girl"
+ ],
+ "fonte": "musica"
+}

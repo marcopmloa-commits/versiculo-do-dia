@@ -1,0 +1,47 @@
+{
+ "musica": "musicas/069-deus-nao-esqueceu.mp3",
+ "trechos": "PREENCHER quando o áudio chegar",
+ "referencia": "Ainda de Pé",
+ "titulo": "069-deus-nao-esqueceu",
+ "capa": "Deus não esqueceu de você",
+ "so_letra": true,
+ "substituir": [],
+ "buscas": [
+  "man sitting alone sunset",
+  "woman window rain",
+  "man walking night city",
+  "sunset clouds",
+  "man looking sky",
+  "lonely road sunset",
+  "woman praying",
+  "city lights night",
+  "man hill sunset",
+  "sunrise breaking clouds",
+  "hands praying light",
+  "golden hour"
+ ],
+ "legenda": "Deus não esqueceu de você. 🙏\nO que tá demorando não foi esquecido.\n\nComente ELE NÃO ESQUECEU.\n🎵 Deus Não Esqueceu",
+ "hashtags": [
+  "#deusnaoesqueceu",
+  "#trapgospel",
+  "#musicagospel",
+  "#fe",
+  "#aindadepe"
+ ],
+ "evitar": [
+  "cartoon",
+  "animation",
+  "illustration",
+  "bikini",
+  "beach girl",
+  "uno",
+  "halloween",
+  "pumpkin",
+  "pregnant",
+  "video game",
+  "gaming",
+  "keyboard"
+ ],
+ "fonte": "musica",
+ "pendente": "aguardando áudio do Suno"
+}

@@ -1,0 +1,47 @@
+{
+ "musica": "musicas/070-oracao-pela-familia.mp3",
+ "trechos": "PREENCHER quando o áudio chegar",
+ "referencia": "Ainda de Pé",
+ "titulo": "070-oracao-pela-familia",
+ "capa": "Senhor, guarda a minha família",
+ "so_letra": true,
+ "substituir": [],
+ "buscas": [
+  "family dinner warm",
+  "mother child hug",
+  "father son sunset",
+  "family walking sunset",
+  "grandmother smiling",
+  "family home evening",
+  "children playing sunset",
+  "couple holding hands",
+  "family hug",
+  "house night lights",
+  "family sofa",
+  "old couple"
+ ],
+ "legenda": "Senhor, guarda a minha família. 🙏❤️\n\nMarca a sua família e comente GUARDA, SENHOR.\n🎵 Oração Pela Família",
+ "hashtags": [
+  "#familia",
+  "#oracao",
+  "#musicagospel",
+  "#fe",
+  "#aindadepe"
+ ],
+ "evitar": [
+  "cartoon",
+  "animation",
+  "illustration",
+  "bikini",
+  "beach girl",
+  "uno",
+  "halloween",
+  "pumpkin",
+  "pregnant",
+  "video game",
+  "gaming",
+  "keyboard"
+ ],
+ "fonte": "musica",
+ "pendente": "aguardando áudio do Suno"
+}

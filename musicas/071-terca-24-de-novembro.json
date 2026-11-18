@@ -1,0 +1,47 @@
+{
+ "musica": "musicas/071-terca-24-de-novembro.mp3",
+ "trechos": "PREENCHER quando o áudio chegar",
+ "referencia": "Ainda de Pé",
+ "titulo": "071-terca-24-de-novembro",
+ "capa": "Hoje é terça-feira, 24 de novembro",
+ "so_letra": true,
+ "substituir": [],
+ "buscas": [
+  "sunrise mountains golden",
+  "man walking sunrise",
+  "coffee window morning",
+  "city sunrise",
+  "woman sunrise",
+  "road sunrise",
+  "people commuting",
+  "sunlight trees",
+  "man stretching sunrise",
+  "family breakfast",
+  "sunrise ocean",
+  "morning sky"
+ ],
+ "legenda": "Hoje é terça-feira, 24 de novembro 🙏\nMais um dia de graça.\n\nComente AMÉM.\n🎵 Hoje é Terça",
+ "hashtags": [
+  "#24denovembro",
+  "#tercafeira",
+  "#oracaododia",
+  "#fe",
+  "#aindadepe"
+ ],
+ "evitar": [
+  "cartoon",
+  "animation",
+  "illustration",
+  "bikini",
+  "beach girl",
+  "uno",
+  "halloween",
+  "pumpkin",
+  "pregnant",
+  "video game",
+  "gaming",
+  "keyboard"
+ ],
+ "fonte": "musica",
+ "pendente": "aguardando áudio do Suno"
+}

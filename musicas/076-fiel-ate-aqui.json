@@ -1,0 +1,47 @@
+{
+ "musica": "musicas/076-fiel-ate-aqui.mp3",
+ "trechos": "PREENCHER quando o áudio chegar",
+ "referencia": "Ainda de Pé",
+ "titulo": "076-fiel-ate-aqui",
+ "capa": "Até aqui o Senhor me ajudou",
+ "so_letra": true,
+ "substituir": [],
+ "buscas": [
+  "man walking road sunset",
+  "looking back road",
+  "old man smiling",
+  "sunset horizon",
+  "man hill sunset",
+  "city night",
+  "man praying sunset",
+  "footsteps sand",
+  "mountain sunset",
+  "man standing alone",
+  "sunrise",
+  "night sky stars"
+ ],
+ "legenda": "Até aqui o Senhor me ajudou. 🙏\nEle foi fiel em cada passo.\n\nComente FIEL ATÉ AQUI.\n🎵 Fiel Até Aqui",
+ "hashtags": [
+  "#fielateaqui",
+  "#trapgospel",
+  "#musicagospel",
+  "#fe",
+  "#aindadepe"
+ ],
+ "evitar": [
+  "cartoon",
+  "animation",
+  "illustration",
+  "bikini",
+  "beach girl",
+  "uno",
+  "halloween",
+  "pumpkin",
+  "pregnant",
+  "video game",
+  "gaming",
+  "keyboard"
+ ],
+ "fonte": "musica",
+ "pendente": "aguardando áudio do Suno"
+}

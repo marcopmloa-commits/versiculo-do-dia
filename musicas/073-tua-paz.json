@@ -1,0 +1,47 @@
+{
+ "musica": "musicas/073-tua-paz.mp3",
+ "trechos": "PREENCHER quando o áudio chegar",
+ "referencia": "Ainda de Pé",
+ "titulo": "073-tua-paz",
+ "capa": "Quando a ansiedade vem, Tua paz me alcança",
+ "so_letra": true,
+ "substituir": [],
+ "buscas": [
+  "calm lake sunset",
+  "woman breathing sunset",
+  "rain window night",
+  "ocean waves sunset",
+  "woman praying",
+  "clouds sunset",
+  "man sitting calm",
+  "candle dark",
+  "night sky",
+  "sunrise mist",
+  "forest light",
+  "sea calm"
+ ],
+ "legenda": "Quando a ansiedade vem, a paz de Deus me alcança. 🙏\n\nComente PAZ, SENHOR.\n🎵 Tua Paz",
+ "hashtags": [
+  "#ansiedade",
+  "#pazdedeus",
+  "#musicagospel",
+  "#fe",
+  "#aindadepe"
+ ],
+ "evitar": [
+  "cartoon",
+  "animation",
+  "illustration",
+  "bikini",
+  "beach girl",
+  "uno",
+  "halloween",
+  "pumpkin",
+  "pregnant",
+  "video game",
+  "gaming",
+  "keyboard"
+ ],
+ "fonte": "musica",
+ "pendente": "aguardando áudio do Suno"
+}

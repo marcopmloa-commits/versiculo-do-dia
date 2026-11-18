@@ -1,0 +1,47 @@
+{
+ "musica": "musicas/075-ele-cuida-de-mim.mp3",
+ "trechos": "PREENCHER quando o áudio chegar",
+ "referencia": "Ainda de Pé",
+ "titulo": "075-ele-cuida-de-mim",
+ "capa": "Ele cuida de mim",
+ "so_letra": true,
+ "substituir": [],
+ "buscas": [
+  "birds flying sunset",
+  "flowers field sunset",
+  "man walking field",
+  "sunset clouds",
+  "woman walking sunset",
+  "father carrying child",
+  "hands holding",
+  "golden field",
+  "man looking sky",
+  "sunrise trees",
+  "family sunset",
+  "river sunset"
+ ],
+ "legenda": "Se Ele cuida dos pássaros, cuida de você também. 🙏\n\nComente ELE CUIDA DE MIM.\n🎵 Ele Cuida de Mim",
+ "hashtags": [
+  "#elecuidademim",
+  "#trapgospel",
+  "#musicagospel",
+  "#fe",
+  "#aindadepe"
+ ],
+ "evitar": [
+  "cartoon",
+  "animation",
+  "illustration",
+  "bikini",
+  "beach girl",
+  "uno",
+  "halloween",
+  "pumpkin",
+  "pregnant",
+  "video game",
+  "gaming",
+  "keyboard"
+ ],
+ "fonte": "musica",
+ "pendente": "aguardando áudio do Suno"
+}

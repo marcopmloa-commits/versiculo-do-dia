@@ -1,0 +1,47 @@
+{
+ "musica": "musicas/072-o-melhor-ainda-vem.mp3",
+ "trechos": "PREENCHER quando o áudio chegar",
+ "referencia": "Ainda de Pé",
+ "titulo": "072-o-melhor-ainda-vem",
+ "capa": "O melhor ainda vem",
+ "so_letra": true,
+ "substituir": [],
+ "buscas": [
+  "man running sunset",
+  "man arms open sunset",
+  "city sunset skyline",
+  "road sunset",
+  "man standing mountain",
+  "sunrise clouds",
+  "man walking city sunset",
+  "stairs climbing",
+  "golden hour field",
+  "man smiling sunset",
+  "birds flying sunset",
+  "horizon sunset"
+ ],
+ "legenda": "O melhor ainda vem. 🙌\nNão desiste no meio do caminho.\n\nComente O MELHOR AINDA VEM.\n🎵 O Melhor Ainda Vem",
+ "hashtags": [
+  "#omelhoraindavem",
+  "#trapgospel",
+  "#musicagospel",
+  "#fe",
+  "#aindadepe"
+ ],
+ "evitar": [
+  "cartoon",
+  "animation",
+  "illustration",
+  "bikini",
+  "beach girl",
+  "uno",
+  "halloween",
+  "pumpkin",
+  "pregnant",
+  "video game",
+  "gaming",
+  "keyboard"
+ ],
+ "fonte": "musica",
+ "pendente": "aguardando áudio do Suno"
+}

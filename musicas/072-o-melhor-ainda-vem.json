@@ -1,11 +1,112 @@
 {
  "musica": "musicas/072-o-melhor-ainda-vem.mp3",
- "trechos": "PREENCHER quando o áudio chegar",
+ "trechos": [
+  [
+   0.0,
+   68.8
+  ]
+ ],
  "referencia": "Ainda de Pé",
  "titulo": "072-o-melhor-ainda-vem",
  "capa": "O melhor ainda vem",
  "so_letra": true,
- "substituir": [],
+ "substituir": [
+  [
+   0.0,
+   8.88,
+   "O melhor ainda vem, o melhor ainda vem"
+  ],
+  [
+   8.88,
+   15.2,
+   "O melhor ainda vem"
+  ],
+  [
+   15.2,
+   18.68,
+   "Quem começou a obra vai terminar também"
+  ],
+  [
+   18.68,
+   21.76,
+   "Não desiste no meio, não para no caminho"
+  ],
+  [
+   21.76,
+   25.32,
+   "O melhor ainda vem e você não tá sozinho"
+  ],
+  [
+   25.72,
+   28.56,
+   "Já vi porta fechar, já vi plano cair"
+  ],
+  [
+   28.98,
+   31.82,
+   "Já vi gente sumir quando eu mais precisei de alguém aqui"
+  ],
+  [
+   31.82,
+   35.28,
+   "Mas cada queda me ensinou a levantar"
+  ],
+  [
+   35.28,
+   38.34,
+   "E cada não que eu ouvi me ensinou a esperar"
+  ],
+  [
+   38.34,
+   41.9,
+   "O melhor ainda vem, o melhor ainda vem"
+  ],
+  [
+   41.9,
+   45.2,
+   "Quem começou a obra vai terminar também"
+  ],
+  [
+   45.2,
+   48.24,
+   "Não desiste no meio, não para no caminho"
+  ],
+  [
+   48.24,
+   51.82,
+   "O melhor ainda vem e você não tá sozinho"
+  ],
+  [
+   51.82,
+   54.66,
+   "O vinho bom ficou pro fim da festa"
+  ],
+  [
+   54.66,
+   56.36,
+   "O milagre chega quando nada mais resta"
+  ],
+  [
+   56.36,
+   58.6,
+   "Então segura firme, que a virada tá chegando"
+  ],
+  [
+   58.6,
+   61.68,
+   "Deus tá no controle mesmo quando eu não tô vendo"
+  ],
+  [
+   61.68,
+   65.12,
+   "O melhor ainda vem, o melhor ainda vem"
+  ],
+  [
+   66.3,
+   68.5,
+   "E você não tá sozinho"
+  ]
+ ],
  "buscas": [
   "man running sunset",
   "man arms open sunset",
@@ -42,6 +143,5 @@
   "gaming",
   "keyboard"
  ],
- "fonte": "musica",
- "pendente": "aguardando áudio do Suno"
+ "fonte": "musica"
 }

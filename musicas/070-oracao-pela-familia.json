@@ -1,11 +1,107 @@
 {
  "musica": "musicas/070-oracao-pela-familia.mp3",
- "trechos": "PREENCHER quando o áudio chegar",
+ "trechos": [
+  [
+   0.0,
+   66.2
+  ]
+ ],
  "referencia": "Ainda de Pé",
  "titulo": "070-oracao-pela-familia",
  "capa": "Senhor, guarda a minha família",
  "so_letra": true,
- "substituir": [],
+ "substituir": [
+  [
+   0.0,
+   3.4,
+   "Senhor, guarda a minha família"
+  ],
+  [
+   3.4,
+   7.04,
+   "Cada um que dorme nessa casa à noite"
+  ],
+  [
+   7.04,
+   10.6,
+   "Põe Teus anjos na porta, na janela, na esquina"
+  ],
+  [
+   10.6,
+   14.52,
+   "Ninguém toca no que é Teu, ninguém nos tira"
+  ],
+  [
+   14.52,
+   18.32,
+   "Meu filho na escola, minha mãe na oração"
+  ],
+  [
+   18.32,
+   22.04,
+   "Meu pai no trabalho, meu irmão na contramão"
+  ],
+  [
+   22.04,
+   25.74,
+   "Traz de volta quem saiu, cura quem tá ferido"
+  ],
+  [
+   25.74,
+   29.42,
+   "Une o que tá separado, Senhor, é o meu pedido"
+  ],
+  [
+   29.42,
+   32.74,
+   "Senhor, guarda a minha família"
+  ],
+  [
+   32.74,
+   36.36,
+   "Cada um que dorme nessa casa à noite"
+  ],
+  [
+   36.36,
+   39.88,
+   "Põe Teus anjos na porta, na janela, na esquina"
+  ],
+  [
+   39.88,
+   43.82,
+   "Ninguém toca no que é Teu, ninguém nos tira"
+  ],
+  [
+   44.45,
+   47.44,
+   "Pode faltar muita coisa, mas não falta amor"
+  ],
+  [
+   48.13,
+   50.7,
+   "Pode ser casa pequena, mas tem o Senhor"
+  ],
+  [
+   51.37,
+   55.12,
+   "Eu e a minha casa, a gente escolheu"
+  ],
+  [
+   55.12,
+   58.4,
+   "Servir ao Deus que nunca esqueceu"
+  ],
+  [
+   59.12,
+   62.04,
+   "Senhor, guarda a minha família"
+  ],
+  [
+   62.04,
+   65.84,
+   "Ninguém toca no que é Teu, ninguém nos tira"
+  ]
+ ],
  "buscas": [
   "family dinner warm",
   "mother child hug",
@@ -42,6 +138,5 @@
   "gaming",
   "keyboard"
  ],
- "fonte": "musica",
- "pendente": "aguardando áudio do Suno"
+ "fonte": "musica"
 }

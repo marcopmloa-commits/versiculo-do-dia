@@ -1,11 +1,107 @@
 {
  "musica": "musicas/069-deus-nao-esqueceu.mp3",
- "trechos": "PREENCHER quando o áudio chegar",
+ "trechos": [
+  [
+   13.7,
+   139.2
+  ]
+ ],
  "referencia": "Ainda de Pé",
  "titulo": "069-deus-nao-esqueceu",
  "capa": "Deus não esqueceu de você",
  "so_letra": true,
- "substituir": [],
+ "substituir": [
+  [
+   0.26,
+   4.9,
+   "Deus não esqueceu de você"
+  ],
+  [
+   5.58,
+   11.24,
+   "O que tá demorando não deixou de acontecer"
+  ],
+  [
+   14.0,
+   19.62,
+   "Ele viu cada lágrima, ouviu cada oração"
+  ],
+  [
+   20.24,
+   25.8,
+   "Tá escrevendo a resposta com a própria mão"
+  ],
+  [
+   28.64,
+   34.22,
+   "Você orou tanto que até cansou de pedir"
+  ],
+  [
+   35.22,
+   41.6,
+   "Achou que o céu fechou, que ninguém tava ali"
+  ],
+  [
+   42.22,
+   48.68,
+   "Mas o silêncio de Deus não é ausência, irmão"
+  ],
+  [
+   49.22,
+   54.8,
+   "É o tempo da semente debaixo do chão"
+  ],
+  [
+   56.5,
+   60.98,
+   "Deus não esqueceu de você"
+  ],
+  [
+   62.3,
+   67.96,
+   "O que tá demorando não deixou de acontecer"
+  ],
+  [
+   70.48,
+   76.6,
+   "Ele viu cada lágrima, ouviu cada oração"
+  ],
+  [
+   77.6,
+   82.74,
+   "Tá escrevendo a resposta com a própria mão"
+  ],
+  [
+   86.48,
+   93.34,
+   "José esperou na prisão, Abraão esperou no deserto"
+  ],
+  [
+   93.34,
+   98.72,
+   "Ana chorou no templo e o milagre veio certo"
+  ],
+  [
+   99.6,
+   105.48,
+   "Se Ele fez com eles, Ele faz com você"
+  ],
+  [
+   106.72,
+   113.22,
+   "No tempo certo, você vai ver"
+  ],
+  [
+   113.22,
+   117.76,
+   "Deus não esqueceu de você"
+  ],
+  [
+   119.48,
+   125.04,
+   "Tá escrevendo a resposta com a própria mão"
+  ]
+ ],
  "buscas": [
   "man sitting alone sunset",
   "woman window rain",
@@ -42,6 +138,5 @@
   "gaming",
   "keyboard"
  ],
- "fonte": "musica",
- "pendente": "aguardando áudio do Suno"
+ "fonte": "musica"
 }

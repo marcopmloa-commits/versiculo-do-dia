@@ -1,11 +1,117 @@
 {
  "musica": "musicas/076-fiel-ate-aqui.mp3",
- "trechos": "PREENCHER quando o áudio chegar",
+ "trechos": [
+  [
+   11.9,
+   117.7
+  ]
+ ],
  "referencia": "Ainda de Pé",
  "titulo": "076-fiel-ate-aqui",
  "capa": "Até aqui o Senhor me ajudou",
  "so_letra": true,
- "substituir": [],
+ "substituir": [
+  [
+   0.2,
+   5.7,
+   "Até aqui o Senhor me ajudou"
+  ],
+  [
+   5.7,
+   11.2,
+   "Cada passo que eu dei, foi Ele que guiou"
+  ],
+  [
+   13.12,
+   18.8,
+   "Olho pra trás e vejo a Tua mão"
+  ],
+  [
+   18.8,
+   24.46,
+   "Fiel até aqui, fiel no meu coração"
+  ],
+  [
+   27.46,
+   30.6,
+   "Lembro da noite que eu achei que era o fim"
+  ],
+  [
+   30.6,
+   33.78,
+   "Lembro do hospital, Senhor, Tu tava ali"
+  ],
+  [
+   33.78,
+   37.1,
+   "Lembro da porta que fechou e eu chorei"
+  ],
+  [
+   37.1,
+   40.52,
+   "Hoje eu entendo o caminho que eu trilhei"
+  ],
+  [
+   40.52,
+   46.1,
+   "Até aqui o Senhor me ajudou"
+  ],
+  [
+   46.1,
+   51.72,
+   "Cada passo que eu dei, foi Ele que guiou"
+  ],
+  [
+   53.4,
+   59.1,
+   "Olho pra trás e vejo a Tua mão"
+  ],
+  [
+   59.1,
+   64.88,
+   "Fiel até aqui, fiel no meu coração"
+  ],
+  [
+   70.52,
+   74.3,
+   "Se Ele foi fiel até aqui…"
+  ],
+  [
+   74.3,
+   78.1,
+   "Ele não vai te largar agora."
+  ],
+  [
+   80.46,
+   84.1,
+   "O que Ele fez ontem, Ele faz amanhã"
+  ],
+  [
+   84.1,
+   87.84,
+   "Cada promessa Dele nunca foi vã"
+  ],
+  [
+   87.84,
+   91.0,
+   "Então eu sigo em frente, sem medo de cair"
+  ],
+  [
+   91.0,
+   94.54,
+   "Quem me trouxe até aqui vai me levar até o fim"
+  ],
+  [
+   94.54,
+   98.86,
+   "Até aqui o Senhor me ajudou"
+  ],
+  [
+   100.52,
+   105.52,
+   "Fiel até aqui, fiel no meu coração"
+  ]
+ ],
  "buscas": [
   "man walking road sunset",
   "looking back road",
@@ -42,6 +148,5 @@
   "gaming",
   "keyboard"
  ],
- "fonte": "musica",
- "pendente": "aguardando áudio do Suno"
+ "fonte": "musica"
 }

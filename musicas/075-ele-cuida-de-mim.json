@@ -1,11 +1,111 @@
 {
  "musica": "musicas/075-ele-cuida-de-mim.mp3",
- "trechos": "PREENCHER quando o áudio chegar",
+ "trechos": [
+  [
+   0.0,
+   15.9
+  ],
+  [
+   19.2,
+   70.3
+  ]
+ ],
  "referencia": "Ainda de Pé",
  "titulo": "075-ele-cuida-de-mim",
  "capa": "Ele cuida de mim",
  "so_letra": true,
- "substituir": [],
+ "substituir": [
+  [
+   0.0,
+   3.44,
+   "Se Ele cuida dos pássaros, cuida de mim"
+  ],
+  [
+   3.96,
+   7.12,
+   "Se Ele veste os lírios, não vai me deixar assim"
+  ],
+  [
+   7.12,
+   10.46,
+   "Eu não vou me preocupar com o que vou comer"
+  ],
+  [
+   10.76,
+   13.88,
+   "Meu Pai sabe do que eu preciso antes de eu dizer"
+  ],
+  [
+   15.96,
+   19.0,
+   "Olhei pro céu e vi os pássaros voando"
+  ],
+  [
+   19.0,
+   22.6,
+   "Ninguém planta pra eles, e eles tão cantando"
+  ],
+  [
+   22.6,
+   26.08,
+   "Se o Pai cuida deles, por que eu vou temer"
+  ],
+  [
+   26.08,
+   29.22,
+   "Eu valho muito mais, Ele vai me sustentar"
+  ],
+  [
+   29.88,
+   33.18,
+   "Se Ele cuida dos pássaros, cuida de mim"
+  ],
+  [
+   33.18,
+   36.86,
+   "Se Ele veste os lírios, não vai me deixar assim"
+  ],
+  [
+   36.86,
+   40.24,
+   "Eu não vou me preocupar com o que vou comer"
+  ],
+  [
+   40.24,
+   43.66,
+   "Meu Pai sabe do que eu preciso antes de eu dizer"
+  ],
+  [
+   43.66,
+   47.24,
+   "Busco primeiro o Reino, o resto vem depois"
+  ],
+  [
+   47.24,
+   50.9,
+   "O que Ele tem pra mim é melhor que o que eu propus"
+  ],
+  [
+   50.9,
+   54.38,
+   "Hoje eu descanso nessa promessa sem fim"
+  ],
+  [
+   54.38,
+   57.8,
+   "Se Ele cuida dos pássaros, cuida de mim"
+  ],
+  [
+   57.8,
+   61.48,
+   "Se Ele cuida dos pássaros, cuida de mim"
+  ],
+  [
+   61.48,
+   64.7,
+   "Meu Pai sabe do que eu preciso antes de eu dizer"
+  ]
+ ],
  "buscas": [
   "birds flying sunset",
   "flowers field sunset",
@@ -42,6 +142,5 @@
   "gaming",
   "keyboard"
  ],
- "fonte": "musica",
- "pendente": "aguardando áudio do Suno"
+ "fonte": "musica"
 }

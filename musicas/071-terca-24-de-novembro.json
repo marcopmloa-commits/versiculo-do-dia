@@ -1,11 +1,102 @@
 {
  "musica": "musicas/071-terca-24-de-novembro.mp3",
- "trechos": "PREENCHER quando o áudio chegar",
+ "trechos": [
+  [
+   4.8,
+   78.6
+  ]
+ ],
  "referencia": "Ainda de Pé",
  "titulo": "071-terca-24-de-novembro",
  "capa": "Hoje é terça-feira, 24 de novembro",
  "so_letra": true,
- "substituir": [],
+ "substituir": [
+  [
+   0.26,
+   5.5,
+   "Hoje é terça-feira, 24 de novembro"
+  ],
+  [
+   7.14,
+   14.24,
+   "Hoje é terça-feira e eu agradeço, Pai, pelo ar que entra e pela dor que sai"
+  ],
+  [
+   14.24,
+   17.78,
+   "Mais um dia de graça que eu não mereci"
+  ],
+  [
+   17.78,
+   21.56,
+   "Obrigado, Senhor, por eu estar aqui"
+  ],
+  [
+   22.26,
+   25.36,
+   "Acordei e a primeira palavra foi Teu nome"
+  ],
+  [
+   25.36,
+   28.82,
+   "Antes do celular, antes da fome"
+  ],
+  [
+   28.82,
+   31.74,
+   "Quero que o meu dia comece em Ti"
+  ],
+  [
+   31.74,
+   35.12,
+   "E termine em Ti, do jeito que eu pedi"
+  ],
+  [
+   35.12,
+   42.08,
+   "Hoje é terça-feira e eu agradeço, Pai, pelo ar que entra e pela dor que sai"
+  ],
+  [
+   42.08,
+   45.64,
+   "Mais um dia de graça que eu não mereci"
+  ],
+  [
+   45.64,
+   49.16,
+   "Obrigado, Senhor, por eu estar aqui"
+  ],
+  [
+   49.16,
+   52.72,
+   "Quem tá no hospital, Senhor, visita agora"
+  ],
+  [
+   52.72,
+   56.2,
+   "Quem perdeu alguém, consola nessa hora"
+  ],
+  [
+   56.2,
+   60.0,
+   "Quem tá sem esperança, acende uma luz"
+  ],
+  [
+   60.0,
+   62.78,
+   "Que todos que ouvirem encontrem Jesus"
+  ],
+  [
+   62.78,
+   66.52,
+   "Hoje é terça-feira e eu agradeço, Pai"
+  ],
+  [
+   70.22,
+   73.44,
+   "Obrigado, Senhor, por eu estar aqui"
+  ]
+ ],
  "buscas": [
   "sunrise mountains golden",
   "man walking sunrise",
@@ -42,6 +133,5 @@
   "gaming",
   "keyboard"
  ],
- "fonte": "musica",
- "pendente": "aguardando áudio do Suno"
+ "fonte": "musica"
 }

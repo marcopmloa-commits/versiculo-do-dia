@@ -1,11 +1,112 @@
 {
  "musica": "musicas/068-segunda-23-de-novembro.mp3",
- "trechos": "PREENCHER quando o áudio chegar",
+ "trechos": [
+  [
+   2.7,
+   80.6
+  ]
+ ],
  "referencia": "Ainda de Pé",
  "titulo": "068-segunda-23-de-novembro",
  "capa": "Hoje é segunda-feira, 23 de novembro",
  "so_letra": true,
- "substituir": [],
+ "substituir": [
+  [
+   0.26,
+   6.84,
+   "Hoje é segunda-feira, 23 de novembro"
+  ],
+  [
+   8.7,
+   12.38,
+   "Hoje é segunda e eu levanto com fé"
+  ],
+  [
+   12.38,
+   16.26,
+   "O Senhor vai na frente, eu sigo de pé"
+  ],
+  [
+   16.26,
+   19.42,
+   "Antes do mundo acordar eu vim Te falar"
+  ],
+  [
+   19.42,
+   24.22,
+   "Essa semana é Tua, pode governar"
+  ],
+  [
+   24.22,
+   28.38,
+   "O fim de semana passou, eu descansei"
+  ],
+  [
+   28.38,
+   32.4,
+   "Agora é recomeço, e eu sei que eu não sei"
+  ],
+  [
+   32.4,
+   35.96,
+   "O que vem pela frente, mas eu sei quem vem comigo"
+  ],
+  [
+   35.96,
+   40.12,
+   "Meu Deus, meu Pai, meu melhor amigo"
+  ],
+  [
+   40.12,
+   43.12,
+   "Hoje é segunda e eu levanto com fé"
+  ],
+  [
+   43.12,
+   46.98,
+   "O Senhor vai na frente, eu sigo de pé"
+  ],
+  [
+   46.98,
+   50.1,
+   "Antes do mundo acordar eu vim Te falar"
+  ],
+  [
+   50.1,
+   54.1,
+   "Essa semana é Tua, pode governar"
+  ],
+  [
+   54.92,
+   58.52,
+   "Abençoa o meu trabalho, abençoa a minha casa"
+  ],
+  [
+   58.52,
+   62.38,
+   "Quem tá saindo agora, cobre com a Tua asa"
+  ],
+  [
+   62.38,
+   66.12,
+   "Que ninguém volte ferido, que ninguém fique pra trás"
+  ],
+  [
+   66.12,
+   69.92,
+   "Segunda-feira com Deus é segunda-feira em paz"
+  ],
+  [
+   69.92,
+   73.76,
+   "Hoje é segunda e eu levanto com fé"
+  ],
+  [
+   73.76,
+   77.48,
+   "Essa semana é Tua, pode governar"
+  ]
+ ],
  "buscas": [
   "sunrise city golden",
   "man walking sunrise",
@@ -42,6 +143,5 @@
   "gaming",
   "keyboard"
  ],
- "fonte": "musica",
- "pendente": "aguardando áudio do Suno"
+ "fonte": "musica"
 }

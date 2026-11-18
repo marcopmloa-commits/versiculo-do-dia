@@ -1,11 +1,116 @@
 {
  "musica": "musicas/074-quarta-25-de-novembro.mp3",
- "trechos": "PREENCHER quando o áudio chegar",
+ "trechos": [
+  [
+   1.1,
+   7.8
+  ],
+  [
+   11.8,
+   76.5
+  ]
+ ],
  "referencia": "Ainda de Pé",
  "titulo": "074-quarta-25-de-novembro",
  "capa": "Hoje é quarta-feira, 25 de novembro",
  "so_letra": true,
- "substituir": [],
+ "substituir": [
+  [
+   0.22,
+   4.68,
+   "Hoje é quarta-feira, 25 de novembro"
+  ],
+  [
+   6.78,
+   9.72,
+   "Hoje é quarta-feira, metade do caminho"
+  ],
+  [
+   9.72,
+   13.48,
+   "Obrigado, Senhor, por eu não estar sozinho"
+  ],
+  [
+   13.48,
+   16.88,
+   "O que começou na segunda Tu vai completar"
+  ],
+  [
+   16.88,
+   20.44,
+   "Meio da semana, e eu continuo a Te louvar"
+  ],
+  [
+   20.44,
+   23.26,
+   "Tô cansado, eu confesso, mas não vou parar"
+  ],
+  [
+   23.26,
+   27.14,
+   "Quem me trouxe até quarta me leva até sábado"
+  ],
+  [
+   27.14,
+   30.46,
+   "Renova minhas forças como renova a manhã"
+  ],
+  [
+   31.06,
+   34.64,
+   "Minha esperança tá em Ti, e não é vã"
+  ],
+  [
+   34.64,
+   37.54,
+   "Hoje é quarta-feira, metade do caminho"
+  ],
+  [
+   37.54,
+   41.34,
+   "Obrigado, Senhor, por eu não estar sozinho"
+  ],
+  [
+   41.34,
+   44.74,
+   "O que começou na segunda Tu vai completar"
+  ],
+  [
+   44.74,
+   48.18,
+   "Meio da semana, e eu continuo a Te louvar"
+  ],
+  [
+   48.18,
+   51.6,
+   "Abençoa quem tá ouvindo essa oração agora"
+  ],
+  [
+   51.6,
+   55.16,
+   "Quem tá passando aperto, Senhor, não demora"
+  ],
+  [
+   55.16,
+   58.5,
+   "Que o resto da semana seja de vitória"
+  ],
+  [
+   58.5,
+   61.96,
+   "E que tudo que eu fizer seja pra Tua glória"
+  ],
+  [
+   61.96,
+   65.46,
+   "Hoje é quarta-feira, metade do caminho"
+  ],
+  [
+   65.46,
+   69.04,
+   "Meio da semana, e eu continuo a Te louvar"
+  ]
+ ],
  "buscas": [
   "sunrise city golden",
   "morning coffee",
@@ -42,6 +147,5 @@
   "gaming",
   "keyboard"
  ],
- "fonte": "musica",
- "pendente": "aguardando áudio do Suno"
+ "fonte": "musica"
 }

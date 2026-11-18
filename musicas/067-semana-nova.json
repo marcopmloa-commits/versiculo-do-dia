@@ -1,0 +1,148 @@
+{
+ "musica": "musicas/067-semana-nova.mp3",
+ "trechos": [
+  [
+   0.9,
+   6.0
+  ],
+  [
+   11.1,
+   75.0
+  ]
+ ],
+ "referencia": "Ainda de Pé",
+ "titulo": "067-semana-nova",
+ "capa": "Semana nova, fé renovada",
+ "so_letra": true,
+ "substituir": [
+  [
+   0.18,
+   3.2,
+   "Semana nova, semana nova"
+  ],
+  [
+   5.06,
+   8.14,
+   "Semana nova, fé renovada"
+  ],
+  [
+   8.14,
+   11.6,
+   "O que passou, passou, eu não volto pra nada"
+  ],
+  [
+   11.6,
+   14.52,
+   "Deus vai na frente, abrindo o caminho"
+  ],
+  [
+   14.52,
+   18.32,
+   "Amanhã eu levanto, e não tô sozinho"
+  ],
+  [
+   18.32,
+   21.78,
+   "Deixa no domingo o peso que eu carreguei"
+  ],
+  [
+   21.78,
+   25.1,
+   "As palavras que eu ouvi, o medo que eu passei"
+  ],
+  [
+   25.1,
+   28.44,
+   "Segunda é página em branco, e eu vou escrever"
+  ],
+  [
+   28.44,
+   32.0,
+   "Com a caneta do Pai, eu vou vencer"
+  ],
+  [
+   32.0,
+   35.6,
+   "Semana nova, fé renovada"
+  ],
+  [
+   35.6,
+   38.8,
+   "O que passou, passou, eu não volto pra nada"
+  ],
+  [
+   38.8,
+   41.98,
+   "Deus vai na frente, abrindo o caminho"
+  ],
+  [
+   41.98,
+   45.3,
+   "Amanhã eu levanto, e não tô sozinho"
+  ],
+  [
+   45.3,
+   48.58,
+   "Pro trabalho, pra escola, pra luta do dia"
+  ],
+  [
+   48.58,
+   50.4,
+   "Eu levo no peito a Tua alegria"
+  ],
+  [
+   50.4,
+   52.12,
+   "Se a pressão vier, eu lembro de onde eu vim"
+  ],
+  [
+   52.12,
+   56.0,
+   "Quem me trouxe até aqui não vai desistir de mim"
+  ],
+  [
+   56.0,
+   59.54,
+   "Semana nova, fé renovada"
+  ],
+  [
+   59.54,
+   66.5,
+   "Amanhã eu levanto, e não tô sozinho"
+  ]
+ ],
+ "buscas": [
+  "sunrise city",
+  "man running",
+  "people walking city",
+  "city morning",
+  "man walking",
+  "office",
+  "school",
+  "traffic",
+  "man smiling",
+  "road",
+  "morning",
+  "sunrise"
+ ],
+ "legenda": "Semana nova, fé renovada. 🙌\nO que passou, passou.\n\nComente SEMANA NOVA e recebe!\n🎵 Semana Nova",
+ "hashtags": [
+  "#semananova",
+  "#motivacao",
+  "#musicagospel",
+  "#fe",
+  "#aindadepe"
+ ],
+ "evitar": [
+  "cartoon",
+  "animation",
+  "illustration",
+  "bikini",
+  "beach girl",
+  "uno",
+  "halloween",
+  "pumpkin",
+  "pregnant"
+ ],
+ "fonte": "musica"
+}

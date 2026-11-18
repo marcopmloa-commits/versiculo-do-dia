@@ -1,0 +1,104 @@
+{
+ "musica": "musicas/064-meu-pai-meu-heroi.mp3",
+ "trechos": [
+  [
+   1.1,
+   91.0
+  ]
+ ],
+ "referencia": "Ainda de Pé",
+ "titulo": "064-meu-pai-meu-heroi",
+ "capa": "Obrigado, Deus, pelo pai que eu tive",
+ "so_letra": true,
+ "substituir": [
+  [
+   0.26,
+   5.98,
+   "Obrigado, Deus, pelo pai que eu tive, pelo homem que lutou pra que eu vivesse livre"
+  ],
+  [
+   7.42,
+   14.32,
+   "Mãos calejadas, coração gigante, meu pai, meu herói, meu exemplo constante"
+  ],
+  [
+   18.02,
+   25.02,
+   "Saía antes do sol, voltava depois da lua, cansado, mas sorria quando eu corria na rua"
+  ],
+  [
+   26.16,
+   35.2,
+   "Não falava muito, mas eu via no olhar, tudo que ele fazia era pra gente prosperar"
+  ],
+  [
+   38.28,
+   44.66,
+   "Obrigado, Deus, pelo pai que eu tive, pelo homem que lutou pra que eu vivesse livre"
+  ],
+  [
+   46.24,
+   54.02,
+   "Mãos calejadas, coração gigante, meu pai, meu herói, meu exemplo constante"
+  ],
+  [
+   56.94,
+   62.48,
+   "E pra quem não teve pai, escuta o que eu vou dizer: tem um Pai que nunca vai te esquecer"
+  ],
+  [
+   64.78,
+   68.06,
+   "Ele te viu crescer, Ele te viu chorar"
+  ],
+  [
+   69.78,
+   72.94,
+   "E é Ele quem hoje vai te abraçar"
+  ],
+  [
+   76.34,
+   82.66,
+   "Obrigado, Deus, pelo pai que eu tive, meu pai"
+  ],
+  [
+   85.02,
+   89.52,
+   "Meu herói, meu exemplo constante"
+  ]
+ ],
+ "buscas": [
+  "father son",
+  "father daughter",
+  "dad",
+  "old man",
+  "worker",
+  "man working",
+  "father hug",
+  "grandfather",
+  "man walking",
+  "hands",
+  "father child",
+  "family"
+ ],
+ "legenda": "Obrigado, Deus, pelo pai que eu tive. ❤️\nMarca o seu pai ou comente MEU HERÓI.\n🎵 Meu Pai, Meu Herói",
+ "hashtags": [
+  "#pai",
+  "#meuheroi",
+  "#musicagospel",
+  "#fe",
+  "#aindadepe"
+ ],
+ "evitar": [
+  "cartoon",
+  "animation",
+  "illustration",
+  "bikini",
+  "beach girl",
+  "uno",
+  "halloween",
+  "pumpkin",
+  "pregnant"
+ ],
+ "fonte": "musica"
+}

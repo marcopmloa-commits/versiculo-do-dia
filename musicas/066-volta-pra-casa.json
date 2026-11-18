@@ -1,0 +1,173 @@
+{
+ "musica": "musicas/066-volta-pra-casa.mp3",
+ "trechos": [
+  [
+   1.5,
+   10.3
+  ],
+  [
+   11.0,
+   121.0
+  ]
+ ],
+ "referencia": "Ainda de Pé",
+ "titulo": "066-volta-pra-casa",
+ "capa": "Se você se afastou de Deus, essa é pra você",
+ "so_letra": true,
+ "substituir": [
+  [
+   0.28,
+   7.0,
+   "Se você se afastou de Deus, essa é pra você."
+  ],
+  [
+   8.8,
+   12.92,
+   "Volta pra casa, o Pai tá te esperando"
+  ],
+  [
+   14.52,
+   17.2,
+   "A porta tá aberta, Ele tá te chamando"
+  ],
+  [
+   19.26,
+   22.82,
+   "Não importa onde você foi, nem o que você fez"
+  ],
+  [
+   23.62,
+   25.82,
+   "O abraço do Pai é maior"
+  ],
+  [
+   27.62,
+   29.04,
+   "Volta outra vez"
+  ],
+  [
+   32.4,
+   34.56,
+   "Você acha que Ele cansou de você?"
+  ],
+  [
+   35.08,
+   36.34,
+   "Que errou demais?"
+  ],
+  [
+   37.5,
+   38.58,
+   "Que não tem mais jeito?"
+  ],
+  [
+   40.3,
+   42.3,
+   "Mas o Pai da história do filho pródigo"
+  ],
+  [
+   42.82,
+   45.3,
+   "não esperou o filho chegar na porta."
+  ],
+  [
+   47.08,
+   48.32,
+   "Ele correu."
+  ],
+  [
+   51.22,
+   55.64,
+   "Volta pra casa, o Pai tá te esperando"
+  ],
+  [
+   57.28,
+   60.06,
+   "A porta tá aberta, Ele tá te chamando"
+  ],
+  [
+   61.7,
+   65.24,
+   "Não importa onde você foi, nem o que você fez"
+  ],
+  [
+   66.7,
+   69.76,
+   "O abraço do Pai é maior"
+  ],
+  [
+   71.58,
+   72.9,
+   "Volta outra vez"
+  ],
+  [
+   74.66,
+   78.98,
+   "Eu também fugi, eu também me perdi"
+  ],
+  [
+   81.06,
+   83.72,
+   "Procurei no mundo o que só encontrei aqui"
+  ],
+  [
+   86.3,
+   90.18,
+   "Hoje eu tô em casa, e a mesa tá posta"
+  ],
+  [
+   91.38,
+   96.26,
+   "O Pai não pediu explicação, só me deu resposta"
+  ],
+  [
+   99.32,
+   104.58,
+   "Volta pra casa, o Pai tá te esperando"
+  ],
+  [
+   107.78,
+   113.06,
+   "O abraço do Pai é maior"
+  ],
+  [
+   115.02,
+   116.32,
+   "Volta outra vez"
+  ]
+ ],
+ "buscas": [
+  "man walking home",
+  "door opening",
+  "father hug",
+  "man alone",
+  "road walking",
+  "house",
+  "man sitting",
+  "dinner table",
+  "rain",
+  "son",
+  "home",
+  "hug"
+ ],
+ "legenda": "Se você se afastou de Deus… essa é pra você. 🙏\nO Pai tá te esperando.\n\nComente EU VOLTEI.\n🎵 Volta Pra Casa",
+ "hashtags": [
+  "#voltapracasa",
+  "#filhoprodigo",
+  "#musicagospel",
+  "#fe",
+  "#aindadepe"
+ ],
+ "evitar": [
+  "cartoon",
+  "animation",
+  "illustration",
+  "bikini",
+  "beach girl",
+  "uno",
+  "halloween",
+  "pumpkin",
+  "pregnant"
+ ],
+ "fonte": "musica"
+}

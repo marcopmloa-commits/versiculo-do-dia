@@ -1,0 +1,48 @@
+{
+ "musica": "musicas/079-vem-descansar.mp3",
+ "trechos": "PREENCHER quando o áudio chegar",
+ "referencia": "Ainda de Pé",
+ "titulo": "079-vem-descansar",
+ "capa": "Vem descansar",
+ "so_letra": true,
+ "substituir": [],
+ "buscas": [
+  "window rain night",
+  "city lights night",
+  "candle light dark",
+  "night sky stars",
+  "man sitting alone night",
+  "sunset clouds",
+  "woman window rain",
+  "rain night street",
+  "moon night sky",
+  "calm lake sunset",
+  "bedroom lamp night",
+  "sunset horizon"
+ ],
+ "legenda": "“Vinde a mim, todos os que estais cansados e sobrecarregados, e eu vos aliviarei.” Mateus 11:28 🌙🙏\nSolta esse peso. Boa noite.\n\nEscreve AMÉM.\n🎵 Vem Descansar",
+ "hashtags": [
+  "#boanoite",
+  "#mateus1128",
+  "#trapgospel",
+  "#fe",
+  "#aindadepe"
+ ],
+ "evitar": [
+  "cartoon",
+  "animation",
+  "illustration",
+  "bikini",
+  "beach girl",
+  "uno",
+  "halloween",
+  "pumpkin",
+  "pregnant",
+  "video game",
+  "gaming",
+  "keyboard"
+ ],
+ "fonte": "musica",
+ "pendente": "aguardando áudio do Suno",
+ "versao_curta": "cortar em ~40 s"
+}

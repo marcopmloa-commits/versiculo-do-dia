@@ -1,0 +1,48 @@
+{
+ "musica": "musicas/084-tudo-posso.mp3",
+ "trechos": "PREENCHER quando o áudio chegar",
+ "referencia": "Ainda de Pé",
+ "titulo": "084-tudo-posso",
+ "capa": "Tudo posso Naquele que me fortalece",
+ "so_letra": true,
+ "substituir": [],
+ "buscas": [
+  "man running sunrise",
+  "man climbing mountain",
+  "boxer training",
+  "man arms raised sunset",
+  "man running stairs",
+  "man hill sunset",
+  "athlete training night",
+  "sunrise mountains",
+  "city night",
+  "man running road",
+  "red sunset sky",
+  "man standing alone"
+ ],
+ "legenda": "“Tudo posso naquele que me fortalece.” Filipenses 4:13 💪🙏\nNão é a minha força, é a Dele em mim.\n\nComenta TUDO POSSO.\n🎵 Tudo Posso",
+ "hashtags": [
+  "#filipenses413",
+  "#tudoposso",
+  "#trapgospel",
+  "#fe",
+  "#aindadepe"
+ ],
+ "evitar": [
+  "cartoon",
+  "animation",
+  "illustration",
+  "bikini",
+  "beach girl",
+  "uno",
+  "halloween",
+  "pumpkin",
+  "pregnant",
+  "video game",
+  "gaming",
+  "keyboard"
+ ],
+ "fonte": "musica",
+ "pendente": "aguardando áudio do Suno",
+ "versao_curta": "cortar em ~40 s"
+}

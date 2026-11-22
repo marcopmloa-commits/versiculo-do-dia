@@ -1,0 +1,47 @@
+{
+ "musica": "musicas/082-refugio.mp3",
+ "trechos": "PREENCHER quando o áudio chegar",
+ "referencia": "Ainda de Pé",
+ "titulo": "082-refugio",
+ "capa": "Deus é o nosso refúgio e fortaleza",
+ "so_letra": true,
+ "substituir": [],
+ "buscas": [
+  "stormy sea waves",
+  "lightning storm sky",
+  "man standing storm",
+  "dark clouds sunset",
+  "mountain sunset",
+  "lighthouse sunset",
+  "man praying sunset",
+  "city night",
+  "red sunset sky",
+  "man hill sunset",
+  "waves rocks sunset",
+  "night sky stars"
+ ],
+ "legenda": "“Deus é o nosso refúgio e fortaleza, socorro bem presente na angústia.” Salmos 46:1 🙏\nAinda que a terra trema, eu não vou temer.\n\nComenta MEU REFÚGIO.\n🎵 Refúgio",
+ "hashtags": [
+  "#salmo46",
+  "#trapgospel",
+  "#musicagospel",
+  "#fe",
+  "#aindadepe"
+ ],
+ "evitar": [
+  "cartoon",
+  "animation",
+  "illustration",
+  "bikini",
+  "beach girl",
+  "uno",
+  "halloween",
+  "pumpkin",
+  "pregnant",
+  "video game",
+  "gaming",
+  "keyboard"
+ ],
+ "fonte": "musica",
+ "pendente": "aguardando áudio do Suno"
+}

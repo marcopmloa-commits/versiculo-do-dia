@@ -183,7 +183,7 @@ window.desenhar = async (c) => {
   vs.style.display = "none"; box.style.display = "flex"; marca.style.display = c.sem_marca ? "none" : "block";
   if (c.versos !== undefined) {   // modo minimalista: 2 versos por vez, sem palavra grande
     box.style.display = "none"; vs.style.display = c.versos ? "flex" : "none";
-    vs.innerHTML = ""; const linhas = (c.versos || "").split("\n").map(t => { const d = document.createElement("div"); d.textContent = t; d.style.whiteSpace = "nowrap"; d.style.display = "inline-block"; vs.appendChild(d); return d; });
+    vs.innerHTML = ""; const linhas = (c.versos || "").split(String.fromCharCode(10)).map(t => { const d = document.createElement("div"); d.textContent = t; d.style.whiteSpace = "nowrap"; d.style.display = "inline-block"; vs.appendChild(d); return d; });
     vs.style.flexDirection = "column";
     let tam = c.capa ? 70 : 58; vs.style.fontSize = tam + "px";   // cada verso numa linha só
     while (linhas.some(d => d.offsetWidth > 940) && tam > 34) { tam -= 2; vs.style.fontSize = tam + "px"; }

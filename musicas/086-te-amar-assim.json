@@ -1,0 +1,115 @@
+{
+ "musica": "musicas/086-te-amar-assim.mp3",
+ "trechos": [
+  [
+   2.3,
+   126.5
+  ]
+ ],
+ "referencia": "Ainda de Pé",
+ "titulo": "086-te-amar-assim",
+ "versos": [
+  [
+   0.0,
+   6.8,
+   "Eu quero Te amar assim\ndo jeito que Tu me amou primeiro"
+  ],
+  [
+   7.68,
+   13.0,
+   "Sem medida, sem fim\nTe dar meu coração inteiro"
+  ],
+  [
+   14.2,
+   20.0,
+   "Eu quero Te amar assim\nmesmo quando eu não mereço"
+  ],
+  [
+   20.84,
+   27.0,
+   "Tu me amou antes de mim\ne esse amor não tem preço"
+  ],
+  [
+   33.3,
+   37.0,
+   "Eu era pó,\nTu me deu nome"
+  ],
+  [
+   41.39,
+   44.0,
+   "Eu era noite,\nTu foi manhã"
+  ],
+  [
+   47.41,
+   50.5,
+   "Me encontrou perdido\nem meio à fome"
+  ],
+  [
+   50.78,
+   54.5,
+   "E me sentou à Tua mesa,\nà Tua mão"
+  ],
+  [
+   54.76,
+   60.4,
+   "E hoje eu só quero retribuir\num pouquinho do que eu recebi"
+  ],
+  [
+   61.84,
+   68.0,
+   "Eu quero Te amar assim\ndo jeito que Tu me amou primeiro"
+  ],
+  [
+   68.78,
+   74.3,
+   "Sem medida, sem fim\nTe dar meu coração inteiro"
+  ],
+  [
+   79.9,
+   86.4,
+   "Não tenho ouro pra Te oferecer\nsó tenho a vida que Tu me deu"
+  ],
+  [
+   86.54,
+   93.6,
+   "Toma ela, Senhor, pode fazer\nde mim o que for da vontade de Deus"
+  ],
+  [
+   94.06,
+   100.0,
+   "Ensina, Senhor,\nensina a amar como Tu amas"
+  ],
+  [
+   100.3,
+   107.0,
+   "Ensina, Senhor,\na ver no outro a Tua chama"
+  ],
+  [
+   109.1,
+   115.0,
+   "Eu quero Te amar assim\nmesmo quando eu não mereço"
+  ],
+  [
+   115.94,
+   124.2,
+   "Tu me amou antes de mim\ne esse amor não tem preço"
+  ]
+ ],
+ "so_letra": true,
+ "substituir": [],
+ "clipes_locais": [
+  "producao/clipes_proprios/7674593162484059410.mp4",
+  "producao/clipes_proprios/7678234683003424013.mp4"
+ ],
+ "grade": "eq=contrast=1.08:saturation=1.3,colorbalance=rm=.04:bm=-.03:rh=.06:bh=-.04,vignette=PI/4",
+ "buscas": [],
+ "legenda": "Eu quero Te amar assim, do jeito que Tu me amou primeiro. 🤍🙏\n\nSe esse também é o teu desejo, escreve AMÉM.\n🎵 Te Amar Assim",
+ "hashtags": [
+  "#adoracao",
+  "#musicagospel",
+  "#louvor",
+  "#fe",
+  "#aindadepe"
+ ],
+ "fonte": "musica"
+}

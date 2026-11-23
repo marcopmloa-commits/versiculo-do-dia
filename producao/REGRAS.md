@@ -116,3 +116,8 @@ Aprendidas na revisão de 05/11/2026 do lote 015–024 (nota média ~7,4, veredi
 - Usar mais versículos famosos (Is 40:31, Sl 91, Sl 46, Sl 23, Fp 4:13, Jr 29:11), com o versículo entre aspas no início da legenda.
 - Pedir comentários: "Escreve AMÉM" / "Comenta..." no fim da letra e na legenda.
 - Teste: algumas músicas marcadas como "versão curta" (30 a 45 s) são exceção à regra de 1 minuto.
+
+## Texto na tela (23/11/2026, pedido do dono)
+- Nunca mostrar "Ainda de Pé" nas pausas sem voz: a tela fica limpa.
+- Estilo romântico/adoração: letra minimalista, **2 versos por vez** (config "versos"), sem a palavra grande.
+- Vídeos fornecidos pelo dono: config "clipes_locais" (pasta producao/clipes_proprios). Manter a marca d'água do autor original.

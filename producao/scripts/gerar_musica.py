@@ -159,11 +159,15 @@ html,body{margin:0;width:1080px;height:1920px;background:transparent;overflow:hi
 #grande{position:absolute;left:60px;right:60px;top:780px;height:200px;display:flex;align-items:center;justify-content:center;
   font-weight:600;letter-spacing:.24em;text-transform:uppercase;white-space:nowrap;
   text-shadow:0 0 30px rgba(255,236,200,.55),0 4px 18px rgba(0,0,0,.45)}
+#versos{position:absolute;left:70px;right:70px;top:760px;height:400px;display:none;align-items:center;justify-content:center;text-align:center;
+  font-weight:500;line-height:1.3;white-space:pre-line;text-wrap:balance;letter-spacing:.01em;
+  text-shadow:0 2px 14px rgba(0,0,0,.75),0 0 40px rgba(0,0,0,.35)}
 #marca{position:absolute;left:0;right:0;top:1000px;text-align:center;opacity:.85}
 #marca svg{display:block;margin:0 auto 8px}
 #marca div{font-size:22px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;text-shadow:0 2px 8px rgba(0,0,0,.5)}
 </style></head><body>
 <div id="grande"><span id="g"></span></div>
+<div id="versos"></div>
 <div id="marca"><svg width="46" height="70" viewBox="0 0 46 70"><defs><linearGradient id="ouro" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe7a3"/><stop offset="1" stop-color="#c8902c"/></linearGradient></defs><g fill="url(#ouro)" style="filter:drop-shadow(0 0 8px rgba(255,200,90,.8))"><rect x="19" y="0" width="8" height="70" rx="2"/><rect x="0" y="18" width="46" height="8" rx="2"/></g></svg>
 <div>Ainda de Pé</div></div>
 <script>
@@ -171,7 +175,15 @@ const ESCALA = 0.76, TAM_CAPA = 104;   // texto ~25%% menor (pedido do dono, 16/
 window.desenhar = async (c) => {
   await document.fonts.ready;
   const g = document.getElementById("g"); g.textContent = c.grande || "";
-  const box = document.getElementById("grande"), marca = document.getElementById("marca");
+  const box = document.getElementById("grande"), marca = document.getElementById("marca"), vs = document.getElementById("versos");
+  vs.style.display = "none"; box.style.display = "flex"; marca.style.display = c.sem_marca ? "none" : "block";
+  if (c.versos !== undefined) {   // modo minimalista: 2 versos por vez, sem palavra grande
+    box.style.display = "none"; vs.style.display = c.versos ? "flex" : "none"; vs.textContent = c.versos;
+    let tam = c.capa ? 74 : 62; vs.style.fontSize = tam + "px";
+    while ((vs.scrollHeight > 400 || vs.scrollWidth > 940) && tam > 36) { tam -= 2; vs.style.fontSize = tam + "px"; }
+    vs.style.opacity = c.entrada ? .4 : 1; vs.style.filter = c.entrada ? "blur(3px)" : "none";
+    marca.style.top = "1200px"; return;
+  }
   if (c.capa) {   // capa: frase-gancho inteira (é o 1º quadro, que o TikTok usa de thumbnail)
     box.style.top = "560px"; box.style.height = "520px"; marca.style.top = "1110px";
     box.style.background = "radial-gradient(ellipse 60%% 55%% at 50%% 50%%, rgba(0,0,0,.72), rgba(0,0,0,0) 80%%)";
@@ -280,7 +292,15 @@ def gerar(cfg_path):
         eventos.append((a, {"grande": palavra, "frase": frase_de[w], "entrada": True}))
         eventos.append((min(a + 0.09, prox), {"grande": palavra, "frase": frase_de[w]}))
         if prox - b > 1.2:  # pausa longa: volta para a referência
-            eventos.append((b + 0.4, {"grande": ref, "tam": 120, "frase": ""}))
+            eventos.append((b + 0.4, {"grande": "", "frase": "", "sem_marca": True}))   # sem voz: tela limpa (pedido do dono, 23/11)
+    if cfg.get("versos"):   # [[início, fim, "verso 1\nverso 2"], ...] (tempos do áudio já cortado)
+        eventos = []
+        for i, (a, b, txt) in enumerate(cfg["versos"]):
+            prox = cfg["versos"][i + 1][0] if i + 1 < len(cfg["versos"]) else dur
+            ext = {"capa": True} if i == 0 else {"sem_marca": True}
+            if i: eventos.append((a, {"versos": txt, "entrada": True, **ext}))
+            eventos.append((0.0 if i == 0 else a + 0.12, {"versos": txt, **ext}))
+            if prox - b > 1.0: eventos.append((b + 0.6, {"versos": "", "sem_marca": True}))
     eventos.sort(key=lambda e: e[0])
     estados = [((eventos[i + 1][0] if i + 1 < len(eventos) else dur) - t, e) for i, (t, e) in enumerate(eventos)]
     estados = [(d, e) for d, e in estados if d > 0.001]
@@ -298,7 +318,17 @@ def gerar(cfg_path):
         p = l.split()
         if p and not p[0].startswith("#"): usos[p[0]] = set(p[1:])
     outros = {k for k, v in usos.items() if v - {nome[:3]}}   # usados em OUTROS vídeos
-    fontes = clipes(cfg["buscas"], n, cena, cfg.get("evitar", []), outros)
+    segs = None
+    if cfg.get("clipes_locais"):   # vídeos fornecidos pelo dono: corta cada um em pedaços de 1 cena, intercalados
+        porfile = []
+        for f in cfg["clipes_locais"]:
+            d = float(sh("ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f, capture_output=True, text=True).stdout)
+            vid = "tk-" + os.path.splitext(os.path.basename(f))[0]
+            porfile.append([(vid, f, round(s0, 2)) for s0 in np.arange(0.2, d - cena - 0.1, cena)] or [(vid, f, 0.0)])
+        segs = [x for grupo in __import__("itertools").zip_longest(*porfile) for x in grupo if x]
+        fontes = [(v, f, "local") for v, f in dict.fromkeys((v, f) for v, f, _ in segs)]
+    else:
+        fontes = clipes(cfg["buscas"], n, cena, cfg.get("evitar", []), outros)
     # capa nunca repete (pedido do dono): o 1º clipe não pode ter sido capa de outro vídeo
     reg = os.path.join(RAIZ, "producao", "capas_usadas.txt")
     usadas = {}
@@ -309,7 +339,7 @@ def gerar(cfg_path):
     livre = lambda i: not (usadas.get(str(i), set()) - {num})
     if cfg.get("capa_clipe") and not livre(cfg["capa_clipe"]):
         raise SystemExit(f'capa_clipe {cfg["capa_clipe"]} já foi capa de {usadas[str(cfg["capa_clipe"])]}')
-    if not cfg.get("capa_clipe"):
+    if not cfg.get("capa_clipe") and not segs:
         k = next((i for i, x in enumerate(fontes) if livre(x[0])), None)
         if k is None:
             extra = [x for x in clipes(cfg["buscas"], n + 12, cena, cfg.get("evitar", []), outros) if livre(x[0])]
@@ -322,12 +352,15 @@ def gerar(cfg_path):
     if not fontes: raise SystemExit("nenhum clipe encontrado")
     partes = []
     for k in range(n):
-        vid, f, q = fontes[k % len(fontes)]
+        if segs:   # 2ª volta pelos mesmos pedaços: espelhado, para não parecer repetido
+            vid, f, ini = segs[k % len(segs)]; extra = "hflip," if (k // len(segs)) % 2 else ""
+        else:
+            vid, f, q = fontes[k % len(fontes)]; ini = 0.5 + (k // len(fontes)) * (cena + 0.5); extra = ""
         out = os.path.join(tmp, f"c{k:02d}.mp4")
-        sh("ffmpeg", "-y", "-loglevel", "error", "-ss", f"{0.5 + (k // len(fontes)) * (cena + 0.5):.2f}", "-t", f"{cena:.3f}", "-i", f, "-an",
-           "-vf", f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
+        sh("ffmpeg", "-y", "-loglevel", "error", "-ss", f"{ini:.2f}", "-t", f"{cena:.3f}", "-i", f, "-an",
+           "-vf", f"{extra}scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
                   f"zoompan=z='1+0.0006*on':d=1:s={W}x{H}:fps={FPS},"
-                  f"{GRADE},format=yuv420p",
+                  f"{cfg.get('grade') or GRADE},format=yuv420p",
            "-r", str(FPS), out)
         partes.append(out)
     lista = os.path.join(tmp, "fundo.txt")

@@ -182,7 +182,7 @@ window.desenhar = async (c) => {
     let tam = c.capa ? 74 : 62; vs.style.fontSize = tam + "px";
     while ((vs.scrollHeight > 400 || vs.scrollWidth > 940) && tam > 36) { tam -= 2; vs.style.fontSize = tam + "px"; }
     vs.style.opacity = c.entrada ? .4 : 1; vs.style.filter = c.entrada ? "blur(3px)" : "none";
-    marca.style.top = "1200px"; return;
+    marca.style.display = "block"; marca.style.top = "150px"; return;   // logo + "Ainda de Pé" sempre no alto (pedido do dono, 23/11)
   }
   if (c.capa) {   // capa: frase-gancho inteira (é o 1º quadro, que o TikTok usa de thumbnail)
     box.style.top = "560px"; box.style.height = "520px"; marca.style.top = "1110px";

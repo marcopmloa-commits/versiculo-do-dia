@@ -1,0 +1,170 @@
+{
+ "musica": "musicas/080-domingo-29-de-novembro.mp3",
+ "trechos": [
+  [
+   3.5,
+   74.0
+  ]
+ ],
+ "referencia": "Ainda de Pé",
+ "titulo": "080-domingo-29-de-novembro",
+ "so_letra": true,
+ "substituir": [
+  [
+   0.52,
+   4.16,
+   "Hoje é domingo, vinte e nove de novembro"
+  ],
+  [
+   9.06,
+   11.88,
+   "Hoje é domingo e eu vim Te adorar"
+  ],
+  [
+   12.5,
+   15.38,
+   "Antes de qualquer coisa, eu vim Te procurar"
+  ],
+  [
+   16.22,
+   18.88,
+   "Dia do Senhor, dia de recomeçar"
+  ],
+  [
+   18.88,
+   22.72,
+   "O que a semana quebrou, Tu vai restaurar"
+  ],
+  [
+   22.72,
+   26.04,
+   "Obrigado pela casa, pela mesa, pelo pão"
+  ],
+  [
+   26.04,
+   29.64,
+   "Pela família reunida, pela Tua proteção"
+  ],
+  [
+   29.64,
+   32.82,
+   "Por quem vai pro culto, por quem vai trabalhar"
+  ],
+  [
+   32.82,
+   36.58,
+   "Por quem tá no hospital, Senhor, vai lá visitar"
+  ],
+  [
+   36.58,
+   39.36,
+   "Hoje é domingo e eu vim Te adorar"
+  ],
+  [
+   40.04,
+   42.94,
+   "Antes de qualquer coisa, eu vim Te procurar"
+  ],
+  [
+   42.94,
+   46.3,
+   "Dia do Senhor, dia de recomeçar"
+  ],
+  [
+   46.3,
+   50.22,
+   "O que a semana quebrou, Tu vai restaurar"
+  ],
+  [
+   50.22,
+   54.2,
+   "Último domingo do mês, último de novembro"
+  ],
+  [
+   54.2,
+   57.68,
+   "Tudo que eu vivi até aqui, Senhor, eu lembro"
+  ],
+  [
+   57.68,
+   61.06,
+   "Cada luta, cada choro, cada vitória"
+  ],
+  [
+   61.06,
+   64.46,
+   "Foi tudo pra que hoje eu Te desse a glória"
+  ],
+  [
+   65.68,
+   69.92,
+   "Bom domingo. Escreve amém"
+  ]
+ ],
+ "clipes_longos": [
+  "producao/clipes_4k/119242.mp4",
+  "producao/clipes_4k/164775.mp4"
+ ],
+ "buscas": [],
+ "legenda": "Hoje é domingo, 29 de novembro. 🙏\nDia do Senhor, dia de recomeçar. O que a semana quebrou, Ele restaura.\n\nBom domingo! Escreve AMÉM.\n🎵 Hoje é Domingo",
+ "hashtags": [
+  "#domingo",
+  "#oracaodamanha",
+  "#trapgospel",
+  "#fe",
+  "#aindadepe"
+ ],
+ "fonte": "musica",
+ "versos": [
+  [
+   0.52,
+   4.16,
+   "Hoje é domingo, vinte e nove de novembro"
+  ],
+  [
+   9.06,
+   15.38,
+   "Hoje é domingo e eu vim Te adorar\nAntes de qualquer coisa, eu vim Te procurar"
+  ],
+  [
+   16.22,
+   22.72,
+   "Dia do Senhor, dia de recomeçar\nO que a semana quebrou, Tu vai restaurar"
+  ],
+  [
+   22.72,
+   29.64,
+   "Obrigado pela casa, pela mesa, pelo pão\nPela família reunida, pela Tua proteção"
+  ],
+  [
+   29.64,
+   36.58,
+   "Por quem vai pro culto, por quem vai trabalhar\nPor quem tá no hospital, Senhor, vai lá visitar"
+  ],
+  [
+   36.58,
+   42.94,
+   "Hoje é domingo e eu vim Te adorar\nAntes de qualquer coisa, eu vim Te procurar"
+  ],
+  [
+   42.94,
+   50.22,
+   "Dia do Senhor, dia de recomeçar\nO que a semana quebrou, Tu vai restaurar"
+  ],
+  [
+   50.22,
+   57.68,
+   "Último domingo do mês, último de novembro\nTudo que eu vivi até aqui, Senhor, eu lembro"
+  ],
+  [
+   57.68,
+   64.46,
+   "Cada luta, cada choro, cada vitória\nFoi tudo pra que hoje eu Te desse a glória"
+  ],
+  [
+   65.68,
+   69.92,
+   "Bom domingo. Escreve amém"
+  ]
+ ]
+}

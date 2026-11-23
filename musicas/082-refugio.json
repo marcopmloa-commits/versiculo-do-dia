@@ -1,25 +1,117 @@
 {
  "musica": "musicas/082-refugio.mp3",
- "trechos": "PREENCHER quando o áudio chegar",
+ "trechos": [
+  [
+   0.4,
+   109.5
+  ]
+ ],
  "referencia": "Ainda de Pé",
  "titulo": "082-refugio",
- "capa": "Deus é o nosso refúgio e fortaleza",
  "so_letra": true,
- "substituir": [],
- "buscas": [
-  "stormy sea waves",
-  "lightning storm sky",
-  "man standing storm",
-  "dark clouds sunset",
-  "mountain sunset",
-  "lighthouse sunset",
-  "man praying sunset",
-  "city night",
-  "red sunset sky",
-  "man hill sunset",
-  "waves rocks sunset",
-  "night sky stars"
+ "substituir": [
+  [
+   0.5,
+   6.62,
+   "Deus é o nosso refúgio e fortaleza"
+  ],
+  [
+   6.62,
+   10.76,
+   "Socorro bem presente na hora da tristeza"
+  ],
+  [
+   12.0,
+   14.24,
+   "Ainda que a terra trema e o mar se levante"
+  ],
+  [
+   14.24,
+   19.82,
+   "Eu não vou temer, meu Deus é constante"
+  ],
+  [
+   25.94,
+   31.44,
+   "Já vi meu chão tremer, já vi tudo desabar"
+  ],
+  [
+   32.66,
+   39.14,
+   "Já vi a tempestade chegar sem avisar"
+  ],
+  [
+   39.72,
+   46.34,
+   "Mas no meio do caos tem um rio que alegra"
+  ],
+  [
+   46.34,
+   53.78,
+   "A cidade de Deus, e a minha alma se entrega"
+  ],
+  [
+   55.34,
+   58.86,
+   "Deus é o nosso refúgio e fortaleza"
+  ],
+  [
+   58.86,
+   61.95,
+   "Socorro bem presente na hora da tristeza"
+  ],
+  [
+   62.42,
+   65.9,
+   "Ainda que a terra trema e o mar se levante"
+  ],
+  [
+   65.9,
+   69.46,
+   "Eu não vou temer, meu Deus é constante"
+  ],
+  [
+   69.8,
+   77.9,
+   "Aquietai-vos… e sabei que Ele é Deus."
+  ],
+  [
+   78.1,
+   85.6,
+   "O Senhor dos Exércitos tá do nosso lado"
+  ],
+  [
+   85.6,
+   89.04,
+   "O Deus de Jacó é o nosso refúgio, nosso cuidado"
+  ],
+  [
+   89.04,
+   92.52,
+   "Quebra o arco, quebra a lança, faz cessar a dor"
+  ],
+  [
+   92.52,
+   95.96,
+   "Salmo quarenta e seis, meu Deus é o Senhor"
+  ],
+  [
+   97.6,
+   101.32,
+   "Deus é o nosso refúgio e fortaleza"
+  ],
+  [
+   102.84,
+   106.78,
+   "Eu não vou temer, meu Deus é constante"
+  ]
  ],
+ "clipes_longos": [
+  "producao/clipes_4k/143485.mp4",
+  "producao/clipes_4k/86976.mp4",
+  "producao/clipes_4k/28262.mp4"
+ ],
+ "buscas": [],
  "legenda": "“Deus é o nosso refúgio e fortaleza, socorro bem presente na angústia.” Salmos 46:1 🙏\nAinda que a terra trema, eu não vou temer.\n\nComenta MEU REFÚGIO.\n🎵 Refúgio",
  "hashtags": [
   "#salmo46",
@@ -28,20 +120,62 @@
   "#fe",
   "#aindadepe"
  ],
- "evitar": [
-  "cartoon",
-  "animation",
-  "illustration",
-  "bikini",
-  "beach girl",
-  "uno",
-  "halloween",
-  "pumpkin",
-  "pregnant",
-  "video game",
-  "gaming",
-  "keyboard"
- ],
  "fonte": "musica",
- "pendente": "aguardando áudio do Suno"
+ "versos": [
+  [
+   0.5,
+   10.76,
+   "Deus é o nosso refúgio e fortaleza\nSocorro bem presente na hora da tristeza"
+  ],
+  [
+   12.0,
+   19.82,
+   "Ainda que a terra trema e o mar se levante\nEu não vou temer, meu Deus é constante"
+  ],
+  [
+   25.94,
+   39.14,
+   "Já vi meu chão tremer, já vi tudo desabar\nJá vi a tempestade chegar sem avisar"
+  ],
+  [
+   39.72,
+   53.78,
+   "Mas no meio do caos tem um rio que alegra\nA cidade de Deus, e a minha alma se entrega"
+  ],
+  [
+   55.34,
+   61.95,
+   "Deus é o nosso refúgio e fortaleza\nSocorro bem presente na hora da tristeza"
+  ],
+  [
+   62.42,
+   69.46,
+   "Ainda que a terra trema e o mar se levante\nEu não vou temer, meu Deus é constante"
+  ],
+  [
+   69.8,
+   77.9,
+   "Aquietai-vos… e sabei que Ele é Deus."
+  ],
+  [
+   78.1,
+   89.04,
+   "O Senhor dos Exércitos tá do nosso lado\nO Deus de Jacó é o nosso refúgio, nosso cuidado"
+  ],
+  [
+   89.04,
+   95.96,
+   "Quebra o arco, quebra a lança, faz cessar a dor\nSalmo quarenta e seis, meu Deus é o Senhor"
+  ],
+  [
+   97.6,
+   101.32,
+   "Deus é o nosso refúgio e fortaleza"
+  ],
+  [
+   102.84,
+   106.78,
+   "Eu não vou temer, meu Deus é constante"
+  ]
+ ]
 }

@@ -1,25 +1,112 @@
 {
  "musica": "musicas/078-salmo-91.mp3",
- "trechos": "PREENCHER quando o áudio chegar",
+ "trechos": [
+  [
+   11.5,
+   73.2
+  ]
+ ],
  "referencia": "Ainda de Pé",
  "titulo": "078-salmo-91",
- "capa": "Mil cairão ao teu lado",
  "so_letra": true,
- "substituir": [],
- "buscas": [
-  "man standing storm",
-  "dark clouds sunset",
-  "man walking night city",
-  "lightning storm sky",
-  "man hill sunset",
-  "city night",
-  "man praying sunset",
-  "sunset clouds",
-  "man standing alone",
-  "red sunset sky",
-  "night sky stars",
-  "eagle sky"
+ "substituir": [
+  [
+   0.48,
+   3.76,
+   "Mil cairão ao meu lado, dez mil à direita"
+  ],
+  [
+   3.76,
+   7.14,
+   "Mas nada vai me atingir, a minha vida tá feita"
+  ],
+  [
+   7.14,
+   10.6,
+   "Debaixo das Tuas asas eu encontro abrigo"
+  ],
+  [
+   10.6,
+   13.56,
+   "O Altíssimo é meu refúgio, meu Deus tá comigo"
+  ],
+  [
+   14.18,
+   17.44,
+   "Não temo o terror da noite nem a flecha do dia"
+  ],
+  [
+   17.44,
+   20.98,
+   "Nem a peste que anda no escuro, nem a mão que me feria"
+  ],
+  [
+   20.98,
+   24.1,
+   "Ele mandou os anjos pra guardar o meu caminho"
+  ],
+  [
+   24.1,
+   27.76,
+   "Eles me levam nas mãos, eu nunca ando sozinho"
+  ],
+  [
+   27.76,
+   30.84,
+   "Mil cairão ao meu lado, dez mil à direita"
+  ],
+  [
+   30.84,
+   34.28,
+   "Mas nada vai me atingir, a minha vida tá feita"
+  ],
+  [
+   34.28,
+   37.72,
+   "Debaixo das Tuas asas eu encontro abrigo"
+  ],
+  [
+   37.72,
+   40.92,
+   "O Altíssimo é meu refúgio, meu Deus tá comigo"
+  ],
+  [
+   41.44,
+   44.76,
+   "Piso no leão e na serpente sem temer"
+  ],
+  [
+   44.76,
+   47.86,
+   "Porque eu amo o Senhor, Ele vai me defender"
+  ],
+  [
+   47.86,
+   50.76,
+   "Clamei e Ele respondeu, tirou da angústia"
+  ],
+  [
+   51.42,
+   54.74,
+   "Salmo noventa e um, essa é a minha luta"
+  ],
+  [
+   54.74,
+   57.9,
+   "Mil cairão ao meu lado, dez mil à direita"
+  ],
+  [
+   57.9,
+   61.24,
+   "O Altíssimo é meu refúgio, meu Deus tá comigo"
+  ]
  ],
+ "clipes_longos": [
+  "producao/clipes_4k/146617.mp4",
+  "producao/clipes_4k/28975.mp4",
+  "producao/clipes_4k/66508.mp4"
+ ],
+ "buscas": [],
  "legenda": "“Mil cairão ao teu lado, e dez mil à tua direita, mas tu não serás atingido.” Salmos 91:7 🙏\nDebaixo das asas Dele você tá guardado.\n\nComenta EU TÔ GUARDADO.\n🎵 Salmo 91",
  "hashtags": [
   "#salmo91",
@@ -28,20 +115,57 @@
   "#fe",
   "#aindadepe"
  ],
- "evitar": [
-  "cartoon",
-  "animation",
-  "illustration",
-  "bikini",
-  "beach girl",
-  "uno",
-  "halloween",
-  "pumpkin",
-  "pregnant",
-  "video game",
-  "gaming",
-  "keyboard"
- ],
  "fonte": "musica",
- "pendente": "aguardando áudio do Suno"
+ "versos": [
+  [
+   0.48,
+   7.14,
+   "Mil cairão ao meu lado, dez mil à direita\nMas nada vai me atingir, a minha vida tá feita"
+  ],
+  [
+   7.14,
+   13.56,
+   "Debaixo das Tuas asas eu encontro abrigo\nO Altíssimo é meu refúgio, meu Deus tá comigo"
+  ],
+  [
+   14.18,
+   17.44,
+   "Não temo o terror da noite nem a flecha do dia"
+  ],
+  [
+   17.44,
+   20.98,
+   "Nem a peste que anda no escuro,\nnem a mão que me feria"
+  ],
+  [
+   20.98,
+   27.76,
+   "Ele mandou os anjos pra guardar o meu caminho\nEles me levam nas mãos, eu nunca ando sozinho"
+  ],
+  [
+   27.76,
+   34.28,
+   "Mil cairão ao meu lado, dez mil à direita\nMas nada vai me atingir, a minha vida tá feita"
+  ],
+  [
+   34.28,
+   40.92,
+   "Debaixo das Tuas asas eu encontro abrigo\nO Altíssimo é meu refúgio, meu Deus tá comigo"
+  ],
+  [
+   41.44,
+   47.86,
+   "Piso no leão e na serpente sem temer\nPorque eu amo o Senhor, Ele vai me defender"
+  ],
+  [
+   47.86,
+   54.74,
+   "Clamei e Ele respondeu, tirou da angústia\nSalmo noventa e um, essa é a minha luta"
+  ],
+  [
+   54.74,
+   61.24,
+   "Mil cairão ao meu lado, dez mil à direita\nO Altíssimo é meu refúgio, meu Deus tá comigo"
+  ]
+ ]
 }

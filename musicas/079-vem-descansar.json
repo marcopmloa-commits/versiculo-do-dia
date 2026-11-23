@@ -1,25 +1,112 @@
 {
  "musica": "musicas/079-vem-descansar.mp3",
- "trechos": "PREENCHER quando o áudio chegar",
+ "trechos": [
+  [
+   14.5,
+   93.2
+  ]
+ ],
  "referencia": "Ainda de Pé",
  "titulo": "079-vem-descansar",
- "capa": "Vem descansar",
  "so_letra": true,
- "substituir": [],
- "buscas": [
-  "window rain night",
-  "city lights night",
-  "candle light dark",
-  "night sky stars",
-  "man sitting alone night",
-  "sunset clouds",
-  "woman window rain",
-  "rain night street",
-  "moon night sky",
-  "calm lake sunset",
-  "bedroom lamp night",
-  "sunset horizon"
+ "substituir": [
+  [
+   0.52,
+   5.38,
+   "Vem descansar, vem descansar"
+  ],
+  [
+   5.38,
+   9.3,
+   "Tira esse peso, deixa Eu carregar"
+  ],
+  [
+   9.3,
+   13.26,
+   "Cansado e sobrecarregado, pode vir"
+  ],
+  [
+   13.88,
+   17.24,
+   "Meu jugo é suave, você pode dormir"
+  ],
+  [
+   18.14,
+   21.7,
+   "O dia foi pesado, ninguém viu tua dor"
+  ],
+  [
+   22.26,
+   25.78,
+   "Mas o Pai te viu, chama o teu nome com amor"
+  ],
+  [
+   25.78,
+   30.62,
+   "Fecha os olhos agora, solta o que te prende"
+  ],
+  [
+   30.62,
+   34.9,
+   "Quem cuida de você não dorme, não se rende"
+  ],
+  [
+   34.9,
+   39.36,
+   "Vem descansar, vem descansar"
+  ],
+  [
+   39.36,
+   43.32,
+   "Tira esse peso, deixa Eu carregar"
+  ],
+  [
+   43.32,
+   47.42,
+   "Cansado e sobrecarregado, pode vir"
+  ],
+  [
+   47.42,
+   51.38,
+   "Meu jugo é suave, você pode dormir"
+  ],
+  [
+   51.38,
+   56.2,
+   "Amanhã é outro dia, deixa o amanhã com Ele"
+  ],
+  [
+   56.2,
+   60.44,
+   "O que te tirou o sono não é maior que Ele"
+  ],
+  [
+   60.44,
+   64.74,
+   "Respira devagar, entrega tua oração"
+  ],
+  [
+   64.74,
+   69.04,
+   "E dorme em paz na palma da Sua mão"
+  ],
+  [
+   69.04,
+   72.74,
+   "Vem descansar, vem descansar"
+  ],
+  [
+   73.42,
+   78.2,
+   "Meu jugo é suave, você pode dormir"
+  ]
  ],
+ "clipes_longos": [
+  "producao/clipes_4k/137009.mp4",
+  "producao/clipes_4k/127993.mp4",
+  "producao/clipes_4k/164773.mp4"
+ ],
+ "buscas": [],
  "legenda": "“Vinde a mim, todos os que estais cansados e sobrecarregados, e eu vos aliviarei.” Mateus 11:28 🌙🙏\nSolta esse peso. Boa noite.\n\nEscreve AMÉM.\n🎵 Vem Descansar",
  "hashtags": [
   "#boanoite",
@@ -28,21 +115,52 @@
   "#fe",
   "#aindadepe"
  ],
- "evitar": [
-  "cartoon",
-  "animation",
-  "illustration",
-  "bikini",
-  "beach girl",
-  "uno",
-  "halloween",
-  "pumpkin",
-  "pregnant",
-  "video game",
-  "gaming",
-  "keyboard"
- ],
  "fonte": "musica",
- "pendente": "aguardando áudio do Suno",
- "versao_curta": "cortar em ~40 s"
+ "versos": [
+  [
+   0.52,
+   9.3,
+   "Vem descansar, vem descansar\nTira esse peso, deixa Eu carregar"
+  ],
+  [
+   9.3,
+   17.24,
+   "Cansado e sobrecarregado, pode vir\nMeu jugo é suave, você pode dormir"
+  ],
+  [
+   18.14,
+   25.78,
+   "O dia foi pesado, ninguém viu tua dor\nMas o Pai te viu, chama o teu nome com amor"
+  ],
+  [
+   25.78,
+   34.9,
+   "Fecha os olhos agora, solta o que te prende\nQuem cuida de você não dorme, não se rende"
+  ],
+  [
+   34.9,
+   43.32,
+   "Vem descansar, vem descansar\nTira esse peso, deixa Eu carregar"
+  ],
+  [
+   43.32,
+   51.38,
+   "Cansado e sobrecarregado, pode vir\nMeu jugo é suave, você pode dormir"
+  ],
+  [
+   51.38,
+   60.44,
+   "Amanhã é outro dia, deixa o amanhã com Ele\nO que te tirou o sono não é maior que Ele"
+  ],
+  [
+   60.44,
+   69.04,
+   "Respira devagar, entrega tua oração\nE dorme em paz na palma da Sua mão"
+  ],
+  [
+   69.04,
+   78.2,
+   "Vem descansar, vem descansar\nMeu jugo é suave, você pode dormir"
+  ]
+ ]
 }

@@ -14,7 +14,7 @@ while i < len(ws):
     best = (0, None, 0)
     for L in linhas:
         n = len(norm(L))
-        for k in range(max(1, n - 2), n + 3):
+        for k in range(max(1, n - 2), min(n + 3, len(ws) - i + 1)):
             r = difflib.SequenceMatcher(None, " ".join(W[i:i + k]), " ".join(norm(L))).ratio()
             if r > best[0]: best = (r, L, k)
     if best[0] >= 0.6:

@@ -147,5 +147,61 @@
   "gaming",
   "keyboard"
  ],
- "fonte": "musica"
+ "fonte": "musica",
+ "versos": [
+  [
+   0.22,
+   4.68,
+   "Hoje é quarta-feira, 25 de novembro"
+  ],
+  [
+   6.78,
+   13.48,
+   "Hoje é quarta-feira, metade do caminho\nObrigado, Senhor, por eu não estar sozinho"
+  ],
+  [
+   13.48,
+   20.44,
+   "O que começou na segunda Tu vai completar\nMeio da semana, e eu continuo a Te louvar"
+  ],
+  [
+   20.44,
+   27.14,
+   "Tô cansado, eu confesso, mas não vou parar\nQuem me trouxe até quarta me leva até sábado"
+  ],
+  [
+   27.14,
+   34.64,
+   "Renova minhas forças como renova a manhã\nMinha esperança tá em Ti, e não é vã"
+  ],
+  [
+   34.64,
+   41.34,
+   "Hoje é quarta-feira, metade do caminho\nObrigado, Senhor, por eu não estar sozinho"
+  ],
+  [
+   41.34,
+   48.18,
+   "O que começou na segunda Tu vai completar\nMeio da semana, e eu continuo a Te louvar"
+  ],
+  [
+   48.18,
+   55.16,
+   "Abençoa quem tá ouvindo essa oração agora\nQuem tá passando aperto, Senhor, não demora"
+  ],
+  [
+   55.16,
+   61.96,
+   "Que o resto da semana seja de vitória\nE que tudo que eu fizer seja pra Tua glória"
+  ],
+  [
+   61.96,
+   69.04,
+   "Hoje é quarta-feira, metade do caminho\nMeio da semana, e eu continuo a Te louvar"
+  ]
+ ],
+ "clipes_longos": [
+  "producao/clipes_4k/133185.mp4",
+  "producao/clipes_4k/74666.mp4"
+ ]
 }

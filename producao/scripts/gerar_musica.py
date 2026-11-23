@@ -21,6 +21,9 @@ FILTRO_COR = True   # só cenas quentes (laranja/vermelho) ou noturnas escuras
 # visual estilo "trap gospel" (referência do dono): céu laranja/vermelho saturado, sombras frias, contraste alto
 GRADE = ("eq=contrast=1.15:saturation=1.85:brightness=0.02:gamma=1.05,"   # bem saturado (pedido do dono, 18/11)
          "colorbalance=rs=-.05:bs=.07:rm=.08:bm=-.06:rh=.12:gh=.04:bh=-.10,vignette=PI/5")
+# drone 4K (formato novo): saturado, mas sem estourar o sol e um pouco mais escuro para o texto
+GRADE_4K = ("eq=contrast=1.08:saturation=1.5:brightness=-0.04,"
+            "colorbalance=rs=-.04:bs=.05:rm=.06:bm=-.05:rh=.08:gh=.03:bh=-.08,vignette=PI/4")
 # clipes já vistos e reprovados (IA, 3D, desenho, fora do tema): nunca usar
 # palavras proibidas inteiras (como substring dariam falso positivo: "bar" em "barn", "gin" em "imagine")
 PROIBIDAS_PALAVRA = {"bar", "pub", "club", "party", "toast", "cheers", "rum", "gin", "pint", "joint", "lighter", "beverage", "booze"}
@@ -159,9 +162,10 @@ html,body{margin:0;width:1080px;height:1920px;background:transparent;overflow:hi
 #grande{position:absolute;left:60px;right:60px;top:780px;height:200px;display:flex;align-items:center;justify-content:center;
   font-weight:600;letter-spacing:.24em;text-transform:uppercase;white-space:nowrap;
   text-shadow:0 0 30px rgba(255,236,200,.55),0 4px 18px rgba(0,0,0,.45)}
-#versos{position:absolute;left:70px;right:70px;top:760px;height:400px;display:none;align-items:center;justify-content:center;text-align:center;
+#versos{position:absolute;left:0;right:0;top:700px;height:520px;padding:0 70px;box-sizing:border-box;
+  background:radial-gradient(ellipse 75%% 42%% at 50%% 50%%, rgba(0,0,0,.55), rgba(0,0,0,0) 85%%);display:none;align-items:center;justify-content:center;text-align:center;
   font-weight:500;line-height:1.3;white-space:pre-line;text-wrap:balance;letter-spacing:.01em;
-  text-shadow:0 2px 14px rgba(0,0,0,.75),0 0 40px rgba(0,0,0,.35)}
+  text-shadow:0 2px 6px rgba(0,0,0,.9),0 0 28px rgba(0,0,0,.6)}
 #marca{position:absolute;left:0;right:0;top:1000px;text-align:center;opacity:.85}
 #marca svg{display:block;margin:0 auto 8px}
 #marca div{font-size:22px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;text-shadow:0 2px 8px rgba(0,0,0,.5)}
@@ -178,9 +182,12 @@ window.desenhar = async (c) => {
   const box = document.getElementById("grande"), marca = document.getElementById("marca"), vs = document.getElementById("versos");
   vs.style.display = "none"; box.style.display = "flex"; marca.style.display = c.sem_marca ? "none" : "block";
   if (c.versos !== undefined) {   // modo minimalista: 2 versos por vez, sem palavra grande
-    box.style.display = "none"; vs.style.display = c.versos ? "flex" : "none"; vs.textContent = c.versos;
-    let tam = c.capa ? 74 : 62; vs.style.fontSize = tam + "px";
-    while ((vs.scrollHeight > 400 || vs.scrollWidth > 940) && tam > 36) { tam -= 2; vs.style.fontSize = tam + "px"; }
+    box.style.display = "none"; vs.style.display = c.versos ? "flex" : "none";
+    vs.innerHTML = ""; const linhas = (c.versos || "").split("\n").map(t => { const d = document.createElement("div"); d.textContent = t; d.style.whiteSpace = "nowrap"; d.style.display = "inline-block"; vs.appendChild(d); return d; });
+    vs.style.flexDirection = "column";
+    let tam = c.capa ? 70 : 58; vs.style.fontSize = tam + "px";   // cada verso numa linha só
+    while (linhas.some(d => d.offsetWidth > 940) && tam > 34) { tam -= 2; vs.style.fontSize = tam + "px"; }
+    if (linhas.some(d => d.offsetWidth > 940)) linhas.forEach(d => { d.style.whiteSpace = "normal"; d.style.display = "block"; });
     vs.style.opacity = c.entrada ? .4 : 1; vs.style.filter = c.entrada ? "blur(3px)" : "none";
     marca.style.display = "block"; marca.style.top = "150px"; return;   // logo + "Ainda de Pé" sempre no alto (pedido do dono, 23/11)
   }
@@ -319,7 +326,16 @@ def gerar(cfg_path):
         if p and not p[0].startswith("#"): usos[p[0]] = set(p[1:])
     outros = {k for k, v in usos.items() if v - {nome[:3]}}   # usados em OUTROS vídeos
     segs = None
-    if cfg.get("clipes_locais"):   # vídeos fornecidos pelo dono: corta cada um em pedaços de 1 cena, intercalados
+    if cfg.get("clipes_longos"):   # formato novo (23/11): poucos clipes 4K, cada um inteiro numa cena longa, sem cortes
+        plano, t = [], 0.0
+        for f in cfg["clipes_longos"]:
+            f = f if os.path.isabs(f) else os.path.join(RAIZ, f)
+            d = float(sh("ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f, capture_output=True, text=True).stdout)
+            if t >= dur: break
+            usa = min(d - 0.6, dur - t + 0.1); plano.append(("px-" + os.path.splitext(os.path.basename(f))[0], f, 0.3, usa)); t += usa
+        if t < dur: raise SystemExit(f"clipes_longos cobrem só {t:.1f}s de {dur:.1f}s")
+        fontes = [(v, f, "longo") for v, f, _, _ in plano]; segs = plano
+    elif cfg.get("clipes_locais"):   # vídeos fornecidos pelo dono: corta cada um em pedaços de 1 cena, intercalados
         porfile = []
         for f in cfg["clipes_locais"]:
             d = float(sh("ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f, capture_output=True, text=True).stdout)
@@ -351,6 +367,15 @@ def gerar(cfg_path):
         if os.path.exists(f): fontes = [(str(cfg["capa_clipe"]), f, "capa")] + [x for x in fontes if str(x[0]) != str(cfg["capa_clipe"])][:n - 1]
     if not fontes: raise SystemExit("nenhum clipe encontrado")
     partes = []
+    if cfg.get("clipes_longos"):
+        for k, (vid, f, ini, t) in enumerate(segs):
+            out = os.path.join(tmp, f"c{k:02d}.mp4"); nq = int(t * FPS)
+            sh("ffmpeg", "-y", "-loglevel", "error", "-ss", f"{ini:.2f}", "-t", f"{t:.3f}", "-i", f, "-an",
+               "-vf", f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
+                      f"zoompan=z='1+{0.06 / max(nq, 1):.7f}*on':d=1:s={W}x{H}:fps={FPS},"
+                      f"{cfg.get('grade') or GRADE_4K},format=yuv420p", "-r", str(FPS), out)
+            partes.append(out)
+        n = 0
     for k in range(n):
         if segs:   # 2ª volta pelos mesmos pedaços: espelhado, para não parecer repetido
             vid, f, ini = segs[k % len(segs)]; extra = "hflip," if (k // len(segs)) % 2 else ""

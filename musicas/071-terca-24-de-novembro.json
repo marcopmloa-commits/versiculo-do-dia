@@ -133,5 +133,66 @@
   "gaming",
   "keyboard"
  ],
- "fonte": "musica"
+ "fonte": "musica",
+ "versos": [
+  [
+   0.26,
+   5.5,
+   "Hoje é terça-feira, 24 de novembro"
+  ],
+  [
+   7.14,
+   14.24,
+   "Hoje é terça-feira e eu agradeço, Pai,\npelo ar que entra e pela dor que sai"
+  ],
+  [
+   14.24,
+   21.56,
+   "Mais um dia de graça que eu não mereci\nObrigado, Senhor, por eu estar aqui"
+  ],
+  [
+   22.26,
+   28.82,
+   "Acordei e a primeira palavra foi Teu nome\nAntes do celular, antes da fome"
+  ],
+  [
+   28.82,
+   35.12,
+   "Quero que o meu dia comece em Ti\nE termine em Ti, do jeito que eu pedi"
+  ],
+  [
+   35.12,
+   42.08,
+   "Hoje é terça-feira e eu agradeço, Pai,\npelo ar que entra e pela dor que sai"
+  ],
+  [
+   42.08,
+   49.16,
+   "Mais um dia de graça que eu não mereci\nObrigado, Senhor, por eu estar aqui"
+  ],
+  [
+   49.16,
+   56.2,
+   "Quem tá no hospital, Senhor, visita agora\nQuem perdeu alguém, consola nessa hora"
+  ],
+  [
+   56.2,
+   62.78,
+   "Quem tá sem esperança, acende uma luz\nQue todos que ouvirem encontrem Jesus"
+  ],
+  [
+   62.78,
+   66.52,
+   "Hoje é terça-feira e eu agradeço, Pai"
+  ],
+  [
+   70.22,
+   73.44,
+   "Obrigado, Senhor, por eu estar aqui"
+  ]
+ ],
+ "clipes_longos": [
+  "producao/clipes_4k/173833.mp4",
+  "producao/clipes_4k/137828.mp4"
+ ]
 }

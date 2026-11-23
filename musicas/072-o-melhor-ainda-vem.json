@@ -143,5 +143,61 @@
   "gaming",
   "keyboard"
  ],
- "fonte": "musica"
+ "fonte": "musica",
+ "versos": [
+  [
+   0.0,
+   15.2,
+   "O melhor ainda vem, o melhor ainda vem\nO melhor ainda vem"
+  ],
+  [
+   15.2,
+   21.76,
+   "Quem começou a obra vai terminar também\nNão desiste no meio, não para no caminho"
+  ],
+  [
+   21.76,
+   25.32,
+   "O melhor ainda vem e você não tá sozinho"
+  ],
+  [
+   25.72,
+   31.82,
+   "Já vi porta fechar, já vi plano cair\nJá vi gente sumir quando eu mais precisei de alguém aqui"
+  ],
+  [
+   31.82,
+   38.34,
+   "Mas cada queda me ensinou a levantar\nE cada não que eu ouvi me ensinou a esperar"
+  ],
+  [
+   38.34,
+   45.2,
+   "O melhor ainda vem, o melhor ainda vem\nQuem começou a obra vai terminar também"
+  ],
+  [
+   45.2,
+   51.82,
+   "Não desiste no meio, não para no caminho\nO melhor ainda vem e você não tá sozinho"
+  ],
+  [
+   51.82,
+   56.36,
+   "O vinho bom ficou pro fim da festa\nO milagre chega quando nada mais resta"
+  ],
+  [
+   56.36,
+   61.68,
+   "Então segura firme, que a virada tá chegando\nDeus tá no controle mesmo quando eu não tô vendo"
+  ],
+  [
+   61.68,
+   68.5,
+   "O melhor ainda vem, o melhor ainda vem\nE você não tá sozinho"
+  ]
+ ],
+ "clipes_longos": [
+  "producao/clipes_4k/176065.mp4",
+  "producao/clipes_4k/77235.mp4"
+ ]
 }

@@ -142,5 +142,56 @@
   "gaming",
   "keyboard"
  ],
- "fonte": "musica"
+ "fonte": "musica",
+ "versos": [
+  [
+   0.0,
+   7.12,
+   "Se Ele cuida dos pássaros, cuida de mim\nSe Ele veste os lírios, não vai me deixar assim"
+  ],
+  [
+   7.12,
+   13.88,
+   "Eu não vou me preocupar com o que vou comer\nMeu Pai sabe do que eu preciso antes de eu dizer"
+  ],
+  [
+   15.96,
+   22.6,
+   "Olhei pro céu e vi os pássaros voando\nNinguém planta pra eles, e eles tão cantando"
+  ],
+  [
+   22.6,
+   29.22,
+   "Se o Pai cuida deles, por que eu vou temer\nEu valho muito mais, Ele vai me sustentar"
+  ],
+  [
+   29.88,
+   36.86,
+   "Se Ele cuida dos pássaros, cuida de mim\nSe Ele veste os lírios, não vai me deixar assim"
+  ],
+  [
+   36.86,
+   43.66,
+   "Eu não vou me preocupar com o que vou comer\nMeu Pai sabe do que eu preciso antes de eu dizer"
+  ],
+  [
+   43.66,
+   50.9,
+   "Busco primeiro o Reino, o resto vem depois\nO que Ele tem pra mim é melhor que o que eu propus"
+  ],
+  [
+   50.9,
+   57.8,
+   "Hoje eu descanso nessa promessa sem fim\nSe Ele cuida dos pássaros, cuida de mim"
+  ],
+  [
+   57.8,
+   64.7,
+   "Se Ele cuida dos pássaros, cuida de mim\nMeu Pai sabe do que eu preciso antes de eu dizer"
+  ]
+ ],
+ "clipes_longos": [
+  "producao/clipes_4k/85522.mp4",
+  "producao/clipes_4k/69371.mp4"
+ ]
 }

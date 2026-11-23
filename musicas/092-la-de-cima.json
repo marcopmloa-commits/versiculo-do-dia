@@ -1,0 +1,170 @@
+{
+ "musica": "musicas/092-la-de-cima.mp3",
+ "trechos": [
+  [
+   0,
+   63.0
+  ]
+ ],
+ "referencia": "Ainda de Pé",
+ "titulo": "092-la-de-cima",
+ "so_letra": true,
+ "substituir": [
+  [
+   0.0,
+   3.1,
+   "Lá de cima Ele vê o que ninguém viu"
+  ],
+  [
+   3.1,
+   6.82,
+   "Cada lágrima que caiu, cada noite que eu não dormi"
+  ],
+  [
+   6.82,
+   9.88,
+   "Lá de cima Ele cuida da cidade"
+  ],
+  [
+   9.88,
+   13.48,
+   "E no meio dessa multidão, Ele lembrou de mim"
+  ],
+  [
+   14.1,
+   17.24,
+   "Tanta luz acesa, tanta gente na rua"
+  ],
+  [
+   17.24,
+   20.7,
+   "Cada janela uma história, cada história uma luta"
+  ],
+  [
+   20.7,
+   24.22,
+   "Mas o Deus que fez o céu conhece o meu nome"
+  ],
+  [
+   24.22,
+   27.56,
+   "Sabe o que eu carrego, sabe da minha fome"
+  ],
+  [
+   27.56,
+   30.56,
+   "Lá de cima Ele vê o que ninguém viu"
+  ],
+  [
+   30.56,
+   34.18,
+   "Cada lágrima que caiu, cada noite que eu não dormi"
+  ],
+  [
+   34.18,
+   37.34,
+   "Lá de cima Ele cuida da cidade"
+  ],
+  [
+   37.34,
+   41.02,
+   "E no meio dessa multidão, Ele lembrou de mim"
+  ],
+  [
+   41.02,
+   44.62,
+   "Eu me achei pequeno, perdido no concreto"
+  ],
+  [
+   44.62,
+   48.32,
+   "Mas pra Ele eu não sou número, eu sou filho, eu sou neto"
+  ],
+  [
+   48.32,
+   51.58,
+   "Da promessa de Abraão, da graça do Calvário"
+  ],
+  [
+   51.58,
+   54.98,
+   "Quem me vê lá de cima nunca me deixa no páreo"
+  ],
+  [
+   54.98,
+   57.94,
+   "Lá de cima Ele vê o que ninguém viu"
+  ],
+  [
+   57.94,
+   61.4,
+   "E no meio dessa multidão, Ele lembrou de mim"
+  ]
+ ],
+ "clipes_longos": [
+  "producao/clipes_4k/172350.mp4",
+  "producao/clipes_4k/174460.mp4"
+ ],
+ "buscas": [],
+ "legenda": "Lá de cima Ele vê o que ninguém viu. 🙏\nNo meio dessa multidão, Ele lembrou de você.\n\nSe você sabe que Ele te vê, escreve AMÉM.\n🎵 Lá de Cima",
+ "hashtags": [
+  "#trapgospel",
+  "#musicagospel",
+  "#deusvê",
+  "#fe",
+  "#aindadepe"
+ ],
+ "fonte": "musica",
+ "versos": [
+  [
+   0.0,
+   6.82,
+   "Lá de cima Ele vê o que ninguém viu\nCada lágrima que caiu, cada noite que eu não dormi"
+  ],
+  [
+   6.82,
+   13.48,
+   "Lá de cima Ele cuida da cidade\nE no meio dessa multidão, Ele lembrou de mim"
+  ],
+  [
+   14.1,
+   20.7,
+   "Tanta luz acesa, tanta gente na rua\nCada janela uma história, cada história uma luta"
+  ],
+  [
+   20.7,
+   27.56,
+   "Mas o Deus que fez o céu conhece o meu nome\nSabe o que eu carrego, sabe da minha fome"
+  ],
+  [
+   27.56,
+   34.18,
+   "Lá de cima Ele vê o que ninguém viu\nCada lágrima que caiu, cada noite que eu não dormi"
+  ],
+  [
+   34.18,
+   41.02,
+   "Lá de cima Ele cuida da cidade\nE no meio dessa multidão, Ele lembrou de mim"
+  ],
+  [
+   41.02,
+   44.62,
+   "Eu me achei pequeno, perdido no concreto"
+  ],
+  [
+   44.62,
+   48.32,
+   "Mas pra Ele eu não sou número,\neu sou filho, eu sou neto"
+  ],
+  [
+   48.32,
+   54.98,
+   "Da promessa de Abraão, da graça do Calvário\nQuem me vê lá de cima nunca me deixa no páreo"
+  ],
+  [
+   54.98,
+   61.4,
+   "Lá de cima Ele vê o que ninguém viu\nE no meio dessa multidão, Ele lembrou de mim"
+  ]
+ ]
+}

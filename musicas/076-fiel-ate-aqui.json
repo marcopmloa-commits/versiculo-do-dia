@@ -148,5 +148,66 @@
   "gaming",
   "keyboard"
  ],
- "fonte": "musica"
+ "fonte": "musica",
+ "versos": [
+  [
+   0.2,
+   11.2,
+   "Até aqui o Senhor me ajudou\nCada passo que eu dei, foi Ele que guiou"
+  ],
+  [
+   13.12,
+   24.46,
+   "Olho pra trás e vejo a Tua mão\nFiel até aqui, fiel no meu coração"
+  ],
+  [
+   27.46,
+   33.78,
+   "Lembro da noite que eu achei que era o fim\nLembro do hospital, Senhor, Tu tava ali"
+  ],
+  [
+   33.78,
+   40.52,
+   "Lembro da porta que fechou e eu chorei\nHoje eu entendo o caminho que eu trilhei"
+  ],
+  [
+   40.52,
+   51.72,
+   "Até aqui o Senhor me ajudou\nCada passo que eu dei, foi Ele que guiou"
+  ],
+  [
+   53.4,
+   64.88,
+   "Olho pra trás e vejo a Tua mão\nFiel até aqui, fiel no meu coração"
+  ],
+  [
+   70.52,
+   78.1,
+   "Se Ele foi fiel até aqui…\nEle não vai te largar agora."
+  ],
+  [
+   80.46,
+   87.84,
+   "O que Ele fez ontem, Ele faz amanhã\nCada promessa Dele nunca foi vã"
+  ],
+  [
+   87.84,
+   94.54,
+   "Então eu sigo em frente, sem medo de cair\nQuem me trouxe até aqui vai me levar até o fim"
+  ],
+  [
+   94.54,
+   98.86,
+   "Até aqui o Senhor me ajudou"
+  ],
+  [
+   100.52,
+   105.52,
+   "Fiel até aqui, fiel no meu coração"
+  ]
+ ],
+ "clipes_longos": [
+  "producao/clipes_4k/131195.mp4",
+  "producao/clipes_4k/173201.mp4"
+ ]
 }

@@ -138,5 +138,57 @@
   "gaming",
   "keyboard"
  ],
- "fonte": "musica"
+ "fonte": "musica",
+ "versos": [
+  [
+   0.0,
+   7.78,
+   "Quando a ansiedade vem, Tua paz me alcança\nQuando a mente acelera, Tua voz me descansa"
+  ],
+  [
+   7.78,
+   15.5,
+   "Eu respiro fundo e entrego pra Você\nO que eu não controlo, eu deixo acontecer"
+  ],
+  [
+   16.78,
+   23.98,
+   "Três da manhã e os pensamentos não param\nAs preocupações de amanhã me cercam, me encaram"
+  ],
+  [
+   24.84,
+   32.36,
+   "Mas eu lembro que o amanhã já é Teu\nE quem cuida do amanhã é o mesmo Deus que me escolheu"
+  ],
+  [
+   32.36,
+   40.08,
+   "Quando a ansiedade vem, Tua paz me alcança\nQuando a mente acelera, Tua voz me descansa"
+  ],
+  [
+   40.08,
+   47.84,
+   "Eu respiro fundo e entrego pra Você\nO que eu não controlo, eu deixo acontecer"
+  ],
+  [
+   49.46,
+   55.9,
+   "Não tô sozinho no quarto escuro\nTua presença é meu lugar seguro"
+  ],
+  [
+   56.66,
+   64.3,
+   "Fecho os olhos, solto o peso no chão\nE durmo em paz na palma da Tua mão"
+  ],
+  [
+   64.3,
+   76.08,
+   "Quando a ansiedade vem, Tua paz me alcança\nEu respiro fundo e entrego pra Você"
+  ]
+ ],
+ "clipes_longos": [
+  "producao/clipes_4k/173197.mp4",
+  "producao/clipes_4k/168141.mp4",
+  "producao/clipes_4k/85763.mp4"
+ ]
 }

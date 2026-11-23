@@ -1,0 +1,165 @@
+{
+ "musica": "musicas/093-ninguem-viu.mp3",
+ "trechos": [
+  [
+   11.1,
+   76.0
+  ]
+ ],
+ "referencia": "Ainda de Pé",
+ "titulo": "093-ninguem-viu",
+ "so_letra": true,
+ "substituir": [
+  [
+   0.54,
+   2.72,
+   "Ninguém viu quando eu caí"
+  ],
+  [
+   2.72,
+   6.26,
+   "Ninguém viu quando eu chorei"
+  ],
+  [
+   7.4,
+   9.6,
+   "Mas o Pai tava ali"
+  ],
+  [
+   9.6,
+   13.04,
+   "E foi Ele que me levantou, eu sei"
+  ],
+  [
+   14.84,
+   18.5,
+   "Sorriso no rosto, guerra por dentro"
+  ],
+  [
+   18.5,
+   22.0,
+   "Falei que tava bem, mas tava sangrando por dentro"
+  ],
+  [
+   22.0,
+   25.44,
+   "Ninguém perguntou, ninguém percebeu"
+  ],
+  [
+   25.44,
+   28.46,
+   "Mas no quarto escuro, quem me abraçou foi Deus"
+  ],
+  [
+   28.46,
+   30.12,
+   "Ninguém viu quando eu caí"
+  ],
+  [
+   30.12,
+   35.3,
+   "Ninguém viu quando eu chorei"
+  ],
+  [
+   35.3,
+   36.96,
+   "Mas o Pai tava ali"
+  ],
+  [
+   36.96,
+   40.44,
+   "E foi Ele que me levantou, eu sei"
+  ],
+  [
+   41.8,
+   44.5,
+   "Hoje eu canto o que antes eu chorava"
+  ],
+  [
+   44.5,
+   47.88,
+   "A dor que me quebrou virou a minha palavra"
+  ],
+  [
+   47.88,
+   50.82,
+   "Se você tá passando o que eu passei"
+  ],
+  [
+   50.82,
+   54.84,
+   "Ele vê você também, foi assim que eu fiquei de pé"
+  ],
+  [
+   55.54,
+   57.54,
+   "Ninguém viu quando eu caí"
+  ],
+  [
+   57.54,
+   64.5,
+   "Ninguém viu quando eu chorei"
+  ]
+ ],
+ "clipes_longos": [
+  "producao/clipes_4k/147617.mp4",
+  "producao/clipes_4k/168140.mp4"
+ ],
+ "buscas": [],
+ "legenda": "Ninguém viu quando você caiu… mas o Pai tava ali. 🙏\n\nSe Ele já te levantou, comenta ELE ME LEVANTOU.\n🎵 Ninguém Viu",
+ "hashtags": [
+  "#trapgospel",
+  "#musicagospel",
+  "#superacao",
+  "#fe",
+  "#aindadepe"
+ ],
+ "fonte": "musica",
+ "versos": [
+  [
+   0.54,
+   6.26,
+   "Ninguém viu quando eu caí\nNinguém viu quando eu chorei"
+  ],
+  [
+   7.4,
+   13.04,
+   "Mas o Pai tava ali\nE foi Ele que me levantou, eu sei"
+  ],
+  [
+   14.84,
+   22.0,
+   "Sorriso no rosto, guerra por dentro\nFalei que tava bem, mas tava sangrando por dentro"
+  ],
+  [
+   22.0,
+   28.46,
+   "Ninguém perguntou, ninguém percebeu\nMas no quarto escuro, quem me abraçou foi Deus"
+  ],
+  [
+   28.46,
+   35.3,
+   "Ninguém viu quando eu caí\nNinguém viu quando eu chorei"
+  ],
+  [
+   35.3,
+   40.44,
+   "Mas o Pai tava ali\nE foi Ele que me levantou, eu sei"
+  ],
+  [
+   41.8,
+   47.88,
+   "Hoje eu canto o que antes eu chorava\nA dor que me quebrou virou a minha palavra"
+  ],
+  [
+   47.88,
+   54.84,
+   "Se você tá passando o que eu passei\nEle vê você também, foi assim que eu fiquei de pé"
+  ],
+  [
+   55.54,
+   64.5,
+   "Ninguém viu quando eu caí\nNinguém viu quando eu chorei"
+  ]
+ ]
+}

@@ -1,0 +1,176 @@
+{
+ "musica": "musicas/098-ninguem-me-para.mp3",
+ "trechos": [
+  [
+   0.4,
+   62.0
+  ]
+ ],
+ "referencia": "Ainda de Pé",
+ "titulo": "098-ninguem-me-para",
+ "so_letra": true,
+ "substituir": [
+  [
+   0.54,
+   3.06,
+   "Ninguém me para, ninguém me para"
+  ],
+  [
+   3.06,
+   6.38,
+   "Quem tá comigo é o Deus que não falha"
+  ],
+  [
+   6.38,
+   9.28,
+   "Pode vir o vento, pode vir o mar"
+  ],
+  [
+   9.28,
+   12.5,
+   "Se Ele abriu a porta, ninguém vai fechar"
+  ],
+  [
+   13.48,
+   15.22,
+   "Me disseram que eu não ia chegar"
+  ],
+  [
+   15.22,
+   18.48,
+   "Riram do meu sonho, mandaram eu parar"
+  ],
+  [
+   19.44,
+   22.04,
+   "Mas eu orei no escuro e Ele me ouviu"
+  ],
+  [
+   22.04,
+   24.76,
+   "O que era fim pra eles, pra mim Deus abriu"
+  ],
+  [
+   24.76,
+   27.5,
+   "Ninguém me para, ninguém me para"
+  ],
+  [
+   27.74,
+   30.7,
+   "Quem tá comigo é o Deus que não falha"
+  ],
+  [
+   31.08,
+   33.55,
+   "Pode vir o vento, pode vir o mar"
+  ],
+  [
+   33.6,
+   36.6,
+   "Se Ele abriu a porta, ninguém vai fechar"
+  ],
+  [
+   37.38,
+   39.26,
+   "Cada cicatriz virou testemunho"
+  ],
+  [
+   39.26,
+   40.84,
+   "Cada lágrima virou o meu rumo"
+  ],
+  [
+   40.84,
+   42.46,
+   "Eu não corro sozinho, eu não luto à toa"
+  ],
+  [
+   42.46,
+   44.5,
+   "Quem me chamou pelo nome nunca me abandona"
+  ],
+  [
+   44.5,
+   47.02,
+   "Ninguém me para, ninguém me para"
+  ],
+  [
+   47.02,
+   49.8,
+   "Se Ele abriu a porta, ninguém vai fechar"
+  ],
+  [
+   60.18,
+   61.5,
+   "Ninguém me para, ninguém me para"
+  ]
+ ],
+ "clipes_longos": [
+  "producao/clipes_proprios/7710976359077661959.mp4",
+  "producao/clipes_proprios/7700201593546886420.mp4",
+  "producao/clipes_proprios/7645206968575085857.mp4"
+ ],
+ "buscas": [],
+ "legenda": "Se Ele abriu a porta, ninguém vai fechar. 🙌\nQuem tá com você é o Deus que não falha.\n\nComenta NINGUÉM ME PARA.\n🎵 Ninguém Me Para",
+ "hashtags": [
+  "#trapgospel",
+  "#motivacao",
+  "#riodejaneiro",
+  "#fe",
+  "#aindadepe"
+ ],
+ "fonte": "musica",
+ "versos": [
+  [
+   0.54,
+   6.38,
+   "Ninguém me para, ninguém me para\nQuem tá comigo é o Deus que não falha"
+  ],
+  [
+   6.38,
+   12.5,
+   "Pode vir o vento, pode vir o mar\nSe Ele abriu a porta, ninguém vai fechar"
+  ],
+  [
+   13.48,
+   18.48,
+   "Me disseram que eu não ia chegar\nRiram do meu sonho, mandaram eu parar"
+  ],
+  [
+   19.44,
+   24.76,
+   "Mas eu orei no escuro e Ele me ouviu\nO que era fim pra eles, pra mim Deus abriu"
+  ],
+  [
+   24.76,
+   30.7,
+   "Ninguém me para, ninguém me para\nQuem tá comigo é o Deus que não falha"
+  ],
+  [
+   31.08,
+   36.6,
+   "Pode vir o vento, pode vir o mar\nSe Ele abriu a porta, ninguém vai fechar"
+  ],
+  [
+   37.38,
+   40.84,
+   "Cada cicatriz virou testemunho\nCada lágrima virou o meu rumo"
+  ],
+  [
+   40.84,
+   44.5,
+   "Eu não corro sozinho, eu não luto à toa\nQuem me chamou pelo nome nunca me abandona"
+  ],
+  [
+   44.5,
+   49.8,
+   "Ninguém me para, ninguém me para\nSe Ele abriu a porta, ninguém vai fechar"
+  ],
+  [
+   60.18,
+   61.5,
+   "Ninguém me para, ninguém me para"
+  ]
+ ]
+}

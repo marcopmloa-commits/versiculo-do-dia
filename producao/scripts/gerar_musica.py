@@ -162,7 +162,7 @@ html,body{margin:0;width:1080px;height:1920px;background:transparent;overflow:hi
 #grande{position:absolute;left:60px;right:60px;top:780px;height:200px;display:flex;align-items:center;justify-content:center;
   font-weight:600;letter-spacing:.24em;text-transform:uppercase;white-space:nowrap;
   text-shadow:0 0 30px rgba(255,236,200,.55),0 4px 18px rgba(0,0,0,.45)}
-#versos{position:absolute;left:0;right:0;top:700px;height:520px;padding:0 70px;box-sizing:border-box;
+#versos{position:absolute;left:0;right:0;top:700px;height:520px;padding:0 180px 0 70px;box-sizing:border-box;
   background:radial-gradient(ellipse 75%% 42%% at 50%% 50%%, rgba(0,0,0,.55), rgba(0,0,0,0) 85%%);display:none;align-items:center;justify-content:center;text-align:center;
   font-weight:500;line-height:1.3;white-space:pre-line;text-wrap:balance;letter-spacing:.01em;
   text-shadow:0 2px 6px rgba(0,0,0,.9),0 0 28px rgba(0,0,0,.6)}
@@ -186,10 +186,11 @@ window.desenhar = async (c) => {
     vs.innerHTML = ""; const linhas = (c.versos || "").split(String.fromCharCode(10)).map(t => { const d = document.createElement("div"); d.textContent = t; d.style.whiteSpace = "nowrap"; d.style.display = "inline-block"; vs.appendChild(d); return d; });
     vs.style.flexDirection = "column";
     let tam = c.capa ? 70 : 58; vs.style.fontSize = tam + "px";   // cada verso numa linha só
-    while (linhas.some(d => d.offsetWidth > 940) && tam > 34) { tam -= 2; vs.style.fontSize = tam + "px"; }
-    if (linhas.some(d => d.offsetWidth > 940)) linhas.forEach(d => { d.style.whiteSpace = "normal"; d.style.display = "block"; });
+    // área segura do TikTok (24/11): à direita ficam os botões (perfil, curtir) -> texto até x=900
+    while (linhas.some(d => d.offsetWidth > 830) && tam > 40) { tam -= 2; vs.style.fontSize = tam + "px"; }
+    linhas.forEach(d => { if (d.offsetWidth > 830) { d.style.whiteSpace = "normal"; d.style.display = "block"; d.style.maxWidth = "830px"; } });   // só quebra o verso que não cabe
     vs.style.opacity = c.entrada ? .4 : 1; vs.style.filter = c.entrada ? "blur(3px)" : "none";
-    marca.style.display = "block"; marca.style.top = "150px"; return;   // logo + "Ainda de Pé" sempre no alto (pedido do dono, 23/11)
+    marca.style.display = "block"; marca.style.top = "270px"; return;   // abaixo da barra de busca do TikTok (24/11)   // logo + "Ainda de Pé" sempre no alto (pedido do dono, 23/11)
   }
   if (c.capa) {   // capa: frase-gancho inteira (é o 1º quadro, que o TikTok usa de thumbnail)
     box.style.top = "560px"; box.style.height = "520px"; marca.style.top = "1110px";

@@ -130,3 +130,8 @@ Aprendidas na revisão de 05/11/2026 do lote 015–024 (nota média ~7,4, veredi
 - Style: christian motivational trap, hard 808, punchy drums, dark piano, solo male rapper, deep baritone voice, low register, raspy, single lead vocal, dry vocals, no backing vocals, light autotune, brazilian portuguese, confident, 150 bpm
 - Exclude: choir, gospel choir, backing vocals, harmonies, vocal layers, stacked vocals, female vocals, high pitched vocals, falsetto, orchestra, strings, ballad, hymn, worship
 - Evitar a palavra "gospel" no Style (puxa coro). Usar [Hook - solo male vocal] na letra.
+
+## Área segura do TikTok (24/11/2026, pedido do dono)
+- Letra: no máximo até x=900 (os botões de perfil e curtir ficam à direita). Margens de 70 px à esquerda e 180 px à direita; verso que não cabe quebra em 2 linhas.
+- Logo "Ainda de Pé": em y=270, abaixo da barra de busca do TikTok.
+- Nada importante no rodapé (abaixo de y≈1540 fica a legenda do post).

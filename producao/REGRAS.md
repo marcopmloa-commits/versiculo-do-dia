@@ -121,3 +121,7 @@ Aprendidas na revisão de 05/11/2026 do lote 015–024 (nota média ~7,4, veredi
 - Nunca mostrar "Ainda de Pé" nas pausas sem voz: a tela fica limpa.
 - Estilo romântico/adoração: letra minimalista, **2 versos por vez** (config "versos"), sem a palavra grande.
 - Vídeos fornecidos pelo dono: config "clipes_locais" (pasta producao/clipes_proprios). Manter a marca d'água do autor original.
+
+## Clipes do TikTok enviados pelo dono (24/11/2026)
+- O dono informou que os vídeos em producao/clipes_proprios estão liberados para uso e que não precisa de crédito na legenda.
+- Não usar o nº 9 (praia lotada, biquíni). Os nºs 10 e 11 têm baixa resolução: só usar se faltar. Catálogo em producao/clipes_proprios.json.

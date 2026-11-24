@@ -124,4 +124,4 @@ Aprendidas na revisão de 05/11/2026 do lote 015–024 (nota média ~7,4, veredi
 
 ## Clipes do TikTok enviados pelo dono (24/11/2026)
 - O dono informou que os vídeos em producao/clipes_proprios estão liberados para uso e que não precisa de crédito na legenda.
-- Não usar o nº 9 (praia lotada, biquíni). Os nºs 10 e 11 têm baixa resolução: só usar se faltar. Catálogo em producao/clipes_proprios.json.
+- Praia com gente de biquíni nos clipes enviados pelo dono (nºs 9 e 19) está liberada, por serem cenas de praia (dono, 24/11). Os nºs 10 e 11 têm baixa resolução: só usar se faltar. Catálogo em producao/clipes_proprios.json.

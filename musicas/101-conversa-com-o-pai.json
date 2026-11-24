@@ -1,0 +1,194 @@
+{
+ "musica": "musicas/101-conversa-com-o-pai.mp3",
+ "trechos": [
+  [
+   0,
+   80.5
+  ]
+ ],
+ "referencia": "Ainda de Pé",
+ "titulo": "101-conversa-com-o-pai",
+ "so_letra": true,
+ "substituir": [
+  [
+   0.0,
+   3.28,
+   "Pai, eu só vim conversar"
+  ],
+  [
+   3.28,
+   6.66,
+   "Não vim pedir nada, só vim Te contar"
+  ],
+  [
+   12.7,
+   16.1,
+   "Hoje o dia foi pesado, Tu viu, Tu tava lá"
+  ],
+  [
+   16.1,
+   19.26,
+   "Quando eu fiquei calado pra não ter que chorar"
+  ],
+  [
+   19.54,
+   22.84,
+   "Quando falaram de mim e eu fingi não ouvir"
+  ],
+  [
+   22.84,
+   25.32,
+   "Quando a vontade era largar tudo e sumir"
+  ],
+  [
+   25.32,
+   29.44,
+   "Mas eu lembrei da cruz, lembrei do Teu amor"
+  ],
+  [
+   29.44,
+   32.92,
+   "Lembrei que Tu passou por coisa muito pior"
+  ],
+  [
+   32.92,
+   36.52,
+   "E mesmo assim perdoou quem Te machucou"
+  ],
+  [
+   36.52,
+   39.74,
+   "Então quem sou eu pra guardar o que me magoou"
+  ],
+  [
+   40.44,
+   43.6,
+   "Pai, cuida da minha mãe, ela tá cansada"
+  ],
+  [
+   43.6,
+   47.12,
+   "Cuida do meu irmão que tá perdido na estrada"
+  ],
+  [
+   47.12,
+   50.42,
+   "Cuida de quem tá ouvindo e não sabe orar"
+  ],
+  [
+   50.42,
+   53.7,
+   "Que essa música seja a forma dele falar"
+  ],
+  [
+   53.7,
+   57.94,
+   "Eu não tenho palavra bonita, nem decorei versículo"
+  ],
+  [
+   57.94,
+   60.98,
+   "Só tenho um coração que às vezes fica ridículo"
+  ],
+  [
+   61.46,
+   64.56,
+   "Mas Tu disse que ouve quem clama de verdade"
+  ],
+  [
+   64.56,
+   68.1,
+   "Então aqui tá meu clamor, minha sinceridade"
+  ],
+  [
+   69.74,
+   72.8,
+   "Pai, eu só vim conversar"
+  ],
+  [
+   72.8,
+   76.06,
+   "Não vim pedir nada, só vim Te contar"
+  ],
+  [
+   78.8,
+   80.3,
+   "Amém."
+  ]
+ ],
+ "clipes_longos": [
+  "producao/clipes_proprios/7104089775287782702.mp4",
+  "producao/clipes_proprios/7560040433015901470.mp4",
+  "producao/clipes_proprios/7543732877918326071.mp4",
+  "producao/clipes_proprios/7562315989631782158.mp4",
+  "producao/clipes_proprios/7659931636418530590.mp4",
+  "producao/clipes_proprios/7604910405126868237.mp4"
+ ],
+ "buscas": [],
+ "legenda": "Pai, eu só vim conversar. Não vim pedir nada. 🙏\n\nSe essa também é a tua oração, escreve AMÉM.\n🎵 Só Vim Conversar",
+ "hashtags": [
+  "#trapgospel",
+  "#oracao",
+  "#conversacomdeus",
+  "#fe",
+  "#aindadepe"
+ ],
+ "fonte": "musica",
+ "versos": [
+  [
+   0.0,
+   6.66,
+   "Pai, eu só vim conversar\nNão vim pedir nada, só vim Te contar"
+  ],
+  [
+   12.7,
+   19.26,
+   "Hoje o dia foi pesado, Tu viu, Tu tava lá\nQuando eu fiquei calado pra não ter que chorar"
+  ],
+  [
+   19.54,
+   25.32,
+   "Quando falaram de mim e eu fingi não ouvir\nQuando a vontade era largar tudo e sumir"
+  ],
+  [
+   25.32,
+   32.92,
+   "Mas eu lembrei da cruz, lembrei do Teu amor\nLembrei que Tu passou por coisa muito pior"
+  ],
+  [
+   32.92,
+   39.74,
+   "E mesmo assim perdoou quem Te machucou\nEntão quem sou eu pra guardar o que me magoou"
+  ],
+  [
+   40.44,
+   47.12,
+   "Pai, cuida da minha mãe, ela tá cansada\nCuida do meu irmão que tá perdido na estrada"
+  ],
+  [
+   47.12,
+   53.7,
+   "Cuida de quem tá ouvindo e não sabe orar\nQue essa música seja a forma dele falar"
+  ],
+  [
+   53.7,
+   60.98,
+   "Eu não tenho palavra bonita, nem decorei versículo\nSó tenho um coração que às vezes fica ridículo"
+  ],
+  [
+   61.46,
+   68.1,
+   "Mas Tu disse que ouve quem clama de verdade\nEntão aqui tá meu clamor, minha sinceridade"
+  ],
+  [
+   69.74,
+   76.06,
+   "Pai, eu só vim conversar\nNão vim pedir nada, só vim Te contar"
+  ],
+  [
+   78.8,
+   80.3,
+   "Amém."
+  ]
+ ]
+}

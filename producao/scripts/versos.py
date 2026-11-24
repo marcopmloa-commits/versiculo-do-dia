@@ -10,7 +10,7 @@ longa = lambda t: len(t) > 55 and "," in t
 while i < len(L):
     a, b, t = L[i]
     if longa(t): V.append([a, b, meio(t)]); i += 1; continue
-    if i not in solo and i + 1 < len(L) and i + 1 not in solo and not longa(L[i + 1][2]) and L[i + 1][0] - b < 1.5:
+    if i not in solo and i + 1 < len(L) and i + 1 not in solo and not longa(L[i + 1][2]) and L[i + 1][0] - b < 2.0:
         V.append([a, L[i + 1][1], t + "\n" + L[i + 1][2]]); i += 2
     else: V.append([a, b, t]); i += 1
 cfg["versos"] = V; json.dump(cfg, open(f, "w"), ensure_ascii=False, indent=1)

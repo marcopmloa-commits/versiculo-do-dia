@@ -1,25 +1,113 @@
 {
  "musica": "musicas/085-meu-pastor.mp3",
- "trechos": "PREENCHER quando o áudio chegar",
+ "trechos": [
+  [
+   0.9,
+   126.0
+  ]
+ ],
  "referencia": "Ainda de Pé",
  "titulo": "085-meu-pastor",
- "capa": "O Senhor é meu pastor e nada me faltará",
  "so_letra": true,
- "substituir": [],
- "buscas": [
-  "green field sunset",
-  "calm lake sunset",
-  "river sunset",
-  "man walking field sunset",
-  "valley fog sunrise",
-  "mountain sunset",
-  "man praying sunset",
-  "golden hour field",
-  "sunset clouds",
-  "shepherd field sunset",
-  "table dinner family",
-  "night sky stars"
+ "substituir": [
+  [
+   0.48,
+   5.1,
+   "O Senhor é meu pastor e nada me faltará"
+  ],
+  [
+   5.1,
+   13.02,
+   "Em pastos verdes Ele me faz descansar"
+  ],
+  [
+   14.18,
+   18.28,
+   "Me leva às águas tranquilas, refrigera a minha alma"
+  ],
+  [
+   18.28,
+   27.92,
+   "No meio da tempestade, Ele me traz a calma"
+  ],
+  [
+   27.92,
+   31.68,
+   "Ainda que eu ande no vale da sombra da morte"
+  ],
+  [
+   35.0,
+   39.24,
+   "Não temo mal nenhum, porque o meu Deus é forte"
+  ],
+  [
+   42.4,
+   49.94,
+   "Tua vara e Teu cajado, eles me consolam"
+  ],
+  [
+   49.94,
+   54.22,
+   "Os que queriam minha queda hoje me olham"
+  ],
+  [
+   55.12,
+   59.62,
+   "O Senhor é meu pastor e nada me faltará"
+  ],
+  [
+   59.62,
+   65.96,
+   "Em pastos verdes Ele me faz descansar"
+  ],
+  [
+   66.9,
+   71.02,
+   "Me leva às águas tranquilas, refrigera a minha alma"
+  ],
+  [
+   71.02,
+   79.14,
+   "No meio da tempestade, Ele me traz a calma"
+  ],
+  [
+   80.08,
+   84.34,
+   "Prepara a mesa pra mim na frente de quem duvidou"
+  ],
+  [
+   87.7,
+   91.78,
+   "Unge a minha cabeça, meu cálice transbordou"
+  ],
+  [
+   91.78,
+   98.42,
+   "A bondade e a misericórdia vão me seguir"
+  ],
+  [
+   100.68,
+   104.8,
+   "E na casa do Senhor eu vou morar até o fim"
+  ],
+  [
+   111.62,
+   115.42,
+   "O Senhor é meu pastor e nada me faltará"
+  ],
+  [
+   118.62,
+   123.96,
+   "No meio da tempestade, Ele me traz a calma"
+  ]
  ],
+ "clipes_longos": [
+  "producao/clipes_4k/123207.mp4",
+  "producao/clipes_4k/148409.mp4",
+  "producao/clipes_4k/124028.mp4",
+  "producao/clipes_4k/127992.mp4"
+ ],
+ "buscas": [],
  "legenda": "“O Senhor é o meu pastor; nada me faltará.” Salmos 23:1 🙏\nNo meio da tempestade, Ele traz a calma.\n\nSe Ele é teu pastor, escreve AMÉM.\n🎵 Meu Pastor",
  "hashtags": [
   "#salmo23",
@@ -28,20 +116,67 @@
   "#fe",
   "#aindadepe"
  ],
- "evitar": [
-  "cartoon",
-  "animation",
-  "illustration",
-  "bikini",
-  "beach girl",
-  "uno",
-  "halloween",
-  "pumpkin",
-  "pregnant",
-  "video game",
-  "gaming",
-  "keyboard"
- ],
  "fonte": "musica",
- "pendente": "aguardando áudio do Suno"
+ "versos": [
+  [
+   0.48,
+   13.02,
+   "O Senhor é meu pastor e nada me faltará\nEm pastos verdes Ele me faz descansar"
+  ],
+  [
+   14.18,
+   27.92,
+   "Me leva às águas tranquilas, refrigera a minha alma\nNo meio da tempestade, Ele me traz a calma"
+  ],
+  [
+   27.92,
+   31.68,
+   "Ainda que eu ande no vale da sombra da morte"
+  ],
+  [
+   35.0,
+   39.24,
+   "Não temo mal nenhum, porque o meu Deus é forte"
+  ],
+  [
+   42.4,
+   54.22,
+   "Tua vara e Teu cajado, eles me consolam\nOs que queriam minha queda hoje me olham"
+  ],
+  [
+   55.12,
+   65.96,
+   "O Senhor é meu pastor e nada me faltará\nEm pastos verdes Ele me faz descansar"
+  ],
+  [
+   66.9,
+   79.14,
+   "Me leva às águas tranquilas, refrigera a minha alma\nNo meio da tempestade, Ele me traz a calma"
+  ],
+  [
+   80.08,
+   84.34,
+   "Prepara a mesa pra mim na frente de quem duvidou"
+  ],
+  [
+   87.7,
+   98.42,
+   "Unge a minha cabeça, meu cálice transbordou\nA bondade e a misericórdia vão me seguir"
+  ],
+  [
+   100.68,
+   104.8,
+   "E na casa do Senhor eu vou morar até o fim"
+  ],
+  [
+   111.62,
+   115.42,
+   "O Senhor é meu pastor e nada me faltará"
+  ],
+  [
+   118.62,
+   123.96,
+   "No meio da tempestade, Ele me traz a calma"
+  ]
+ ]
 }

@@ -6,7 +6,7 @@ def meio(t):
     i = min(cs, key=lambda i: abs(i - len(t) / 2)); return t[:i + 1].strip() + "\n" + t[i + 1:].strip()
 f = sys.argv[1]; solo = {int(x) for x in sys.argv[2:]}
 cfg = json.load(open(f)); L = cfg["substituir"]; V = []; i = 0
-longa = lambda t: len(t) > 50 and "," in t
+longa = lambda t: len(t) > 55 and "," in t
 while i < len(L):
     a, b, t = L[i]
     if longa(t): V.append([a, b, meio(t)]); i += 1; continue

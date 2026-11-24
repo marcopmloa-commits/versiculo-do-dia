@@ -1,25 +1,111 @@
 {
  "musica": "musicas/081-eu-sei-os-planos.mp3",
- "trechos": "PREENCHER quando o áudio chegar",
+ "trechos": [
+  [
+   0,
+   66.0
+  ]
+ ],
  "referencia": "Ainda de Pé",
  "titulo": "081-eu-sei-os-planos",
- "capa": "Eu sei os planos que tenho pra você",
  "so_letra": true,
- "substituir": [],
- "buscas": [
-  "man walking road sunset",
-  "path forest sunlight",
-  "man looking horizon",
-  "sunrise breaking clouds",
-  "man hill sunset",
-  "lonely road sunset",
-  "open door light",
-  "sunset clouds",
-  "man standing alone",
-  "sunrise mountains",
-  "city lights night",
-  "golden hour field"
+ "substituir": [
+  [
+   0.0,
+   3.06,
+   "\"Eu sei os planos que tenho pra você\""
+  ],
+  [
+   3.06,
+   6.52,
+   "Planos de paz, não de mal, pode crer"
+  ],
+  [
+   6.52,
+   9.82,
+   "Um futuro e uma esperança, foi Ele que falou"
+  ],
+  [
+   9.82,
+   13.44,
+   "Jeremias vinte e nove, onze, Deus não mudou"
+  ],
+  [
+   13.96,
+   17.16,
+   "Você olha pra vida e não entende o caminho"
+  ],
+  [
+   17.16,
+   20.8,
+   "Parece que tudo atrasa, parece que tá sozinho"
+  ],
+  [
+   20.8,
+   23.72,
+   "Mas quem desenhou teus dias conhece o final"
+  ],
+  [
+   23.72,
+   27.36,
+   "O que hoje parece perda, amanhã é sinal"
+  ],
+  [
+   27.36,
+   30.72,
+   "\"Eu sei os planos que tenho pra você\""
+  ],
+  [
+   30.72,
+   34.14,
+   "Planos de paz, não de mal, pode crer"
+  ],
+  [
+   34.14,
+   37.48,
+   "Um futuro e uma esperança, foi Ele que falou"
+  ],
+  [
+   37.48,
+   41.1,
+   "Jeremias vinte e nove, onze, Deus não mudou"
+  ],
+  [
+   41.64,
+   45.0,
+   "Me buscarão e me acharão, Ele prometeu"
+  ],
+  [
+   45.0,
+   48.42,
+   "Quando buscar de todo coração, o céu respondeu"
+  ],
+  [
+   48.42,
+   51.62,
+   "Então não para agora, não larga a tua fé"
+  ],
+  [
+   51.62,
+   55.06,
+   "O plano de Deus pra você ainda tá de pé"
+  ],
+  [
+   55.06,
+   58.48,
+   "\"Eu sei os planos que tenho pra você\""
+  ],
+  [
+   60.48,
+   64.64,
+   "Um futuro e uma esperança, foi Ele que falou"
+  ]
  ],
+ "clipes_longos": [
+  "producao/clipes_4k/164795.mp4",
+  "producao/clipes_4k/128222.mp4"
+ ],
+ "buscas": [],
  "legenda": "“Porque eu bem sei os planos que tenho a vosso respeito, planos de paz e não de mal, para vos dar um futuro e uma esperança.” Jeremias 29:11 🙏\n\nSe você crê nos planos Dele, comenta AMÉM.\n🎵 Eu Sei os Planos",
  "hashtags": [
   "#jeremias2911",
@@ -28,20 +114,57 @@
   "#fe",
   "#aindadepe"
  ],
- "evitar": [
-  "cartoon",
-  "animation",
-  "illustration",
-  "bikini",
-  "beach girl",
-  "uno",
-  "halloween",
-  "pumpkin",
-  "pregnant",
-  "video game",
-  "gaming",
-  "keyboard"
- ],
  "fonte": "musica",
- "pendente": "aguardando áudio do Suno"
+ "versos": [
+  [
+   0.0,
+   6.52,
+   "\"Eu sei os planos que tenho pra você\"\nPlanos de paz, não de mal, pode crer"
+  ],
+  [
+   6.52,
+   13.44,
+   "Um futuro e uma esperança, foi Ele que falou\nJeremias vinte e nove, onze, Deus não mudou"
+  ],
+  [
+   13.96,
+   20.8,
+   "Você olha pra vida e não entende o caminho\nParece que tudo atrasa, parece que tá sozinho"
+  ],
+  [
+   20.8,
+   27.36,
+   "Mas quem desenhou teus dias conhece o final\nO que hoje parece perda, amanhã é sinal"
+  ],
+  [
+   27.36,
+   34.14,
+   "\"Eu sei os planos que tenho pra você\"\nPlanos de paz, não de mal, pode crer"
+  ],
+  [
+   34.14,
+   41.1,
+   "Um futuro e uma esperança, foi Ele que falou\nJeremias vinte e nove, onze, Deus não mudou"
+  ],
+  [
+   41.64,
+   48.42,
+   "Me buscarão e me acharão, Ele prometeu\nQuando buscar de todo coração, o céu respondeu"
+  ],
+  [
+   48.42,
+   55.06,
+   "Então não para agora, não larga a tua fé\nO plano de Deus pra você ainda tá de pé"
+  ],
+  [
+   55.06,
+   58.48,
+   "\"Eu sei os planos que tenho pra você\""
+  ],
+  [
+   60.48,
+   64.64,
+   "Um futuro e uma esperança, foi Ele que falou"
+  ]
+ ]
 }

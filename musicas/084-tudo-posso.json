@@ -1,26 +1,112 @@
 {
  "musica": "musicas/084-tudo-posso.mp3",
- "trechos": "PREENCHER quando o áudio chegar",
+ "trechos": [
+  [
+   0,
+   60.6
+  ]
+ ],
  "referencia": "Ainda de Pé",
  "titulo": "084-tudo-posso",
- "capa": "Tudo posso Naquele que me fortalece",
  "so_letra": true,
- "substituir": [],
- "buscas": [
-  "man running sunrise",
-  "man climbing mountain",
-  "boxer training",
-  "man arms raised sunset",
-  "man running stairs",
-  "man hill sunset",
-  "athlete training night",
-  "sunrise mountains",
-  "city night",
-  "man running road",
-  "red sunset sky",
-  "man standing alone"
+ "substituir": [
+  [
+   0.0,
+   3.56,
+   "Tudo posso Naquele que me fortalece"
+  ],
+  [
+   3.56,
+   6.82,
+   "Quando eu fraquejo, é Ele que aparece"
+  ],
+  [
+   6.82,
+   10.04,
+   "Não é minha força, é a força Dele em mim"
+  ],
+  [
+   10.04,
+   12.94,
+   "Filipenses quatro, treze, eu vou até o fim"
+  ],
+  [
+   13.64,
+   15.36,
+   "Aprendi a viver com pouco e com muito"
+  ],
+  [
+   16.44,
+   18.74,
+   "Na fartura e na falta, eu continuo junto"
+  ],
+  [
+   19.66,
+   22.24,
+   "Do Deus que me sustenta em qualquer estação"
+  ],
+  [
+   22.8,
+   26.36,
+   "Eu não paro, eu não caio, Ele tá na minha mão"
+  ],
+  [
+   26.36,
+   30.06,
+   "Tudo posso Naquele que me fortalece"
+  ],
+  [
+   30.06,
+   33.02,
+   "Quando eu fraquejo, é Ele que aparece"
+  ],
+  [
+   33.02,
+   36.32,
+   "Não é minha força, é a força Dele em mim"
+  ],
+  [
+   36.32,
+   39.32,
+   "Filipenses quatro, treze, eu vou até o fim"
+  ],
+  [
+   39.32,
+   42.54,
+   "Segunda-feira cedo, o mundo diz que eu não consigo"
+  ],
+  [
+   42.54,
+   45.84,
+   "Mas eu levanto e oro, porque Ele tá comigo"
+  ],
+  [
+   45.84,
+   48.9,
+   "O que parecia muro, Ele transforma em porta"
+  ],
+  [
+   48.9,
+   52.42,
+   "Quem vive pela fé, o impossível não importa"
+  ],
+  [
+   53.12,
+   56.44,
+   "Tudo posso Naquele que me fortalece"
+  ],
+  [
+   56.44,
+   59.2,
+   "Filipenses quatro, treze, eu vou até o fim"
+  ]
  ],
- "legenda": "“Tudo posso naquele que me fortalece.” Filipenses 4:13 💪🙏\nNão é a minha força, é a Dele em mim.\n\nComenta TUDO POSSO.\n🎵 Tudo Posso",
+ "clipes_longos": [
+  "producao/clipes_4k/70466.mp4",
+  "producao/clipes_4k/18535.mp4"
+ ],
+ "buscas": [],
+ "legenda": "“Tudo posso naquele que me fortalece.” Filipenses 4:13 💪🙏\nNão é a minha força, é a Dele em mim. Boa semana!\n\nComenta TUDO POSSO.\n🎵 Tudo Posso",
  "hashtags": [
   "#filipenses413",
   "#tudoposso",
@@ -28,21 +114,52 @@
   "#fe",
   "#aindadepe"
  ],
- "evitar": [
-  "cartoon",
-  "animation",
-  "illustration",
-  "bikini",
-  "beach girl",
-  "uno",
-  "halloween",
-  "pumpkin",
-  "pregnant",
-  "video game",
-  "gaming",
-  "keyboard"
- ],
  "fonte": "musica",
- "pendente": "aguardando áudio do Suno",
- "versao_curta": "cortar em ~40 s"
+ "versos": [
+  [
+   0.0,
+   6.82,
+   "Tudo posso Naquele que me fortalece\nQuando eu fraquejo, é Ele que aparece"
+  ],
+  [
+   6.82,
+   12.94,
+   "Não é minha força, é a força Dele em mim\nFilipenses quatro, treze, eu vou até o fim"
+  ],
+  [
+   13.64,
+   18.74,
+   "Aprendi a viver com pouco e com muito\nNa fartura e na falta, eu continuo junto"
+  ],
+  [
+   19.66,
+   26.36,
+   "Do Deus que me sustenta em qualquer estação\nEu não paro, eu não caio, Ele tá na minha mão"
+  ],
+  [
+   26.36,
+   33.02,
+   "Tudo posso Naquele que me fortalece\nQuando eu fraquejo, é Ele que aparece"
+  ],
+  [
+   33.02,
+   39.32,
+   "Não é minha força, é a força Dele em mim\nFilipenses quatro, treze, eu vou até o fim"
+  ],
+  [
+   39.32,
+   45.84,
+   "Segunda-feira cedo, o mundo diz que eu não consigo\nMas eu levanto e oro, porque Ele tá comigo"
+  ],
+  [
+   45.84,
+   52.42,
+   "O que parecia muro, Ele transforma em porta\nQuem vive pela fé, o impossível não importa"
+  ],
+  [
+   53.12,
+   59.2,
+   "Tudo posso Naquele que me fortalece\nFilipenses quatro, treze, eu vou até o fim"
+  ]
+ ]
 }

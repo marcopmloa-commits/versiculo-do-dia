@@ -125,3 +125,8 @@ Aprendidas na revisão de 05/11/2026 do lote 015–024 (nota média ~7,4, veredi
 ## Clipes do TikTok enviados pelo dono (24/11/2026)
 - O dono informou que os vídeos em producao/clipes_proprios estão liberados para uso e que não precisa de crédito na legenda.
 - Praia com gente de biquíni nos clipes enviados pelo dono (nºs 9 e 19) está liberada, por serem cenas de praia (dono, 24/11). Os nºs 10 e 11 têm baixa resolução: só usar se faltar. Catálogo em producao/clipes_proprios.json.
+
+## Suno: menos coral, voz mais grossa (24/11/2026, pedido do dono)
+- Style: christian motivational trap, hard 808, punchy drums, dark piano, solo male rapper, deep baritone voice, low register, raspy, single lead vocal, dry vocals, no backing vocals, light autotune, brazilian portuguese, confident, 150 bpm
+- Exclude: choir, gospel choir, backing vocals, harmonies, vocal layers, stacked vocals, female vocals, high pitched vocals, falsetto, orchestra, strings, ballad, hymn, worship
+- Evitar a palavra "gospel" no Style (puxa coro). Usar [Hook - solo male vocal] na letra.
